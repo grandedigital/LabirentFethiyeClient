@@ -341,7 +341,6 @@ export default function ReservationBox() {
             value={dateRange.length == 0 ? t("chooseDate") : dateRange}
             onChange={(update) => {
               if (update.includes(null) && update.length == 2) {
-                console.log(update[0]);
                 setCalendarMinDate(
                   new Date(update[0]).setDate(new Date(update[0]).getDate() + 5)
                 );

@@ -23,8 +23,6 @@ export default function SaleDetail({
   imgs,
   villaSlug,
 }) {
-  console.log(villaDetail);
-
   const { t, i18n } = useTranslation("common");
   const router = useRouter();
   const [isDescOpen, setIsDescOpen] = useState(false);

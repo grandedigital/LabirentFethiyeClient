@@ -132,14 +132,17 @@ export default function List({
                         priceTypeText={currentPriceTypeText}
                         roomSlug={roomSlug}
                         villaName={villaName}
-                        prices={[{price: roomDetail?.data?.minPrice}, {price: roomDetail?.data?.maxPrice}]}
+                        prices={[
+                          { price: roomDetail?.data?.minPrice },
+                          { price: roomDetail?.data?.maxPrice },
+                        ]}
                         villaFirstPhoto={
                           roomDetail?.data?.photos[0]?.image || null
                         }
                         region={
-                          roomDetail?.data?.town?.district?.name +
+                          roomDetail?.data?.district +
                           " / " +
-                          roomDetail?.data?.town?.name
+                          roomDetail?.data?.town
                         }
                       />
                       {/* <FoodPackage /> */}

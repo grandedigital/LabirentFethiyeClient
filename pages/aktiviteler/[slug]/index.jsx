@@ -29,8 +29,6 @@ import { memo } from "react";
 // });
 
 export default function Aktivite({ activate }) {
-  console.log(activate);
-  
   const { t } = useTranslation("common");
   const router = useRouter();
   const renderHtmlContent = () => {
