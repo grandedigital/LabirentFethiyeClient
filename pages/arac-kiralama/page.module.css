@@ -1,0 +1,188 @@
+section.contentDetail {
+  width: 100%;
+  padding: 120px 0;
+}
+.container {
+  width: 1600px;
+  margin: 0 auto;
+}
+.titleBox {
+  width: 100%;
+  margin: 0 0 60px 0;
+}
+.titleBox .title {
+  width: 100%;
+  color: #02044a;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 55px;
+  text-align: center;
+}
+section.corporate .textBox {
+  width: 100%;
+  margin-bottom: 120px !important;
+}
+section.corporate .textBox .text {
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: #525265;
+}
+section.corporate .textBox .text h2,
+section.corporate .textBox .text h3,
+section.corporate .textBox .text h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #02044a;
+  margin: 0 0 30px 0;
+}
+section.corporate .textBox .text p {
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+section.corporate .textBox .text strong {
+  color: #02044a;
+}
+section.corporate .textBox .text a {
+  color: #02044a;
+  text-decoration: underline;
+  font-weight: bold;
+}
+section.corporate .textBox .text ul {
+  width: 100%;
+  margin: 15px 0 15px 0;
+}
+section.corporate .textBox .text ul li {
+  position: relative;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: #525265;
+  padding: 0 0 0 50px;
+  margin: 0 0 10px 0;
+}
+section.corporate .textBox .text ul li::before {
+  content: "";
+  position: absolute;
+  left: 22.5px;
+  top: 11.5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #3e2093;
+}
+section.corporate .textBox .text ul li a {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 26px;
+  color: #525265;
+}
+section.corporate .textBox .fancyboxImages {
+  width: 100%;
+}
+section.corporate .textBox .fancyboxImages ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.corporate .textBox .fancyboxImages ul li {
+  position: relative;
+  width: 377px;
+  margin: 0 30px 30px 0;
+}
+section.corporate .textBox .fancyboxImages ul li:nth-child(4n) {
+  margin: 0 0 30px 0;
+}
+section.corporate .textBox .fancyboxImages ul li:hover a::before {
+  opacity: 1;
+}
+section.corporate .textBox .fancyboxImages ul li a {
+  width: 100%;
+  display: flex;
+}
+section.corporate .textBox .fancyboxImages ul li a::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: calc(50% - 35px);
+  left: calc(50% - 35px);
+  background-image: url(/images/zoom.png);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+section.corporate .textBox .fancyboxImages ul li a .imageBox {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+section.corporate .textBox .fancyboxImages ul li a .imageBox .image {
+  width: 100%;
+  height: 320px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section.corporate .textBox {
+  margin: 0;
+}
+section.corporate .textBox .fancyboxImages ul li {
+  width: 300px;
+  margin: 0 15px 15px 0;
+}
+section.corporate .textBox .fancyboxImages ul li a .imageBox .image {
+  height: 255px;
+}
+@media screen and (max-width: 1699px) {
+  .container {
+    width: 1400px;
+  }
+}
+@media screen and (max-width: 1499px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .titleBox {
+    margin: 0 0 45px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .titleBox {
+    margin: 0 0 30px 0;
+  }
+  .titleBox .title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  section.corporate .textBox .text h2,
+  section.corporate .textBox .text h3,
+  section.corporate .textBox .text h4 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  section.corporate .textBox .text p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  section.corporate .textBox .fancyboxImages {
+    padding: 15px 0;
+  }
+  section.corporate .textBox .fancyboxImages ul li {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+  section.corporate .textBox .fancyboxImages ul li a .imageBox .image {
+    height: 293px;
+  }
+}

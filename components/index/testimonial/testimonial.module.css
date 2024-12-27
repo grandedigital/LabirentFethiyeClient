@@ -1,0 +1,101 @@
+.testimonials {
+    width: 100%;
+    position: relative;
+    padding: 105px 0 200px 0;
+    background: #F9F9FB;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.testimonials .box {
+    width: 100%;
+}
+
+.titleBox {
+    width: 100%;
+    margin: 0 0 60px 0;
+}
+
+.titleBox .title {
+    width: 100%;
+    color: #02044A;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.titleBox .subTitle {
+    width: 100%;
+    margin: 10px 0 0 0;
+    color: #525265;
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+}
+
+section.content .testimonials ul {
+    width: 100%;
+}
+
+.owlCarousel {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.dotListContainer {
+    margin-bottom: 50px;
+    gap: 30px;
+}
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .testimonials {
+        padding: 45px 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .titleBox {
+        margin: 0 0 45px 0;
+    }
+    .dotListContainer {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .testimonials {
+        padding: 30px 0;
+    }
+
+    .titleBox {
+        margin: 0 0 30px 0;
+    }
+
+    .titleBox .title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    .dotListContainer {
+        margin-bottom: 10px;
+    }
+}

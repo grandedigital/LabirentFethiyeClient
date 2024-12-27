@@ -1,0 +1,81 @@
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.animation {
+  animation: pulse 1.5s infinite;
+  background-color: #cfcfcf;
+}
+
+.priceTitle {
+  width: 200px;
+  height: 30px;
+  display: inline-block;
+}
+
+.cureButtons {
+  width: 70px;
+  height: 30px;
+  display: inline-block;
+}
+
+.priceMonthsContainer {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0 40px 0;
+}
+
+.priceMonthItemContainer {
+  width: 33.333%;
+  padding: 10px;
+}
+
+.priceMonthItemContainer .priceMonthItem {
+  width: 100%;
+  height: 150px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+  .priceTitle {
+    width: 130px;
+  }
+  .cureButtons {
+    width: 45px;
+    height: 30px;
+  }
+  .priceMonthItemContainer .priceMonthItem {
+    height: 120px;
+  }
+  .priceMonthsContainer {
+    padding: 20px 0 10px 0;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .cureButtons {
+    width: 25px;
+    height: 15px;
+  }
+  .priceTitle {
+    width: 70px;
+    height: 15px;
+  }
+  .priceMonthsContainer {
+    padding: 20px 0 0 0;
+  }
+  .priceMonthItemContainer {
+    width: 50%;
+  }
+  .priceMonthItemContainer .priceMonthItem {
+    height: 100px;
+  }
+}

@@ -1,0 +1,156 @@
+ .threeSteps {
+     width: 100%;
+     padding: 105px 0 120px 0;
+ }
+
+ .threeSteps .box {
+     width: 100%;
+ }
+
+ .threeSteps .box ul {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+
+ .threeSteps .box ul li {
+     width: 33.33%;
+     padding: 0 60px;
+ }
+
+ .threeSteps .box ul li .iconBox {
+     width: 100%;
+     margin: 0 0 20px 0;
+     display: flex;
+     justify-content: center;
+ }
+
+ .threeSteps .box ul li .iconBox i {
+     width: 100px;
+     height: 100px;
+     background: #EDF2FE;
+     border-radius: 45px;
+     display: block;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .threeSteps .box ul li .title {
+     width: 100%;
+     font-weight: 600;
+     font-size: 20px;
+     line-height: 28px;
+     text-align: center;
+     color: #02044A;
+     margin: 0 0 10px 0;
+ }
+
+ .container {
+     width: 1600px;
+     margin: 0 auto;
+ }
+
+ .threeSteps .box ul li .desc {
+     width: 100%;
+     font-size: 15px;
+     line-height: 26px;
+     text-align: center;
+     color: #525265;
+ }
+
+ .titleBox {
+     width: 100%;
+     margin: 0 0 60px 0;
+ }
+
+ .titleBox .title {
+     width: 100%;
+     color: #02044A;
+     font-weight: 600;
+     font-size: 40px;
+     line-height: 55px;
+     text-align: center;
+ }
+
+ .titleBox .subTitle {
+     width: 100%;
+     margin: 10px 0 0 0;
+     color: #525265;
+     font-size: 15px;
+     line-height: 26px;
+     text-align: center;
+ }
+
+ @media screen and (max-width: 1699px) {
+     .threeSteps .box ul li {
+         padding: 0 30px;
+     }
+
+     .container {
+         width: 1400px;
+     }
+ }
+
+ @media screen and (max-width: 1499px) {
+     .threeSteps .box ul li {
+         padding: 0 15px;
+     }
+
+     .container {
+         width: 1170px;
+     }
+
+ }
+
+ @media screen and (max-width: 1199px) {
+     .threeSteps {
+         padding: 45px 0;
+         display: none;
+     }
+
+     .threeSteps .box ul li .title {
+         font-size: 16px;
+         line-height: 24px;
+     }
+
+     .threeSteps .box ul li .desc {
+         font-size: 13px;
+         line-height: 22px;
+     }
+
+     .container {
+         width: 100%;
+         padding: 0 15px;
+     }
+
+     .titleBox {
+         margin: 0 0 45px 0;
+     }
+ }
+
+ @media screen and (max-width: 991px) {
+     .threeSteps .box ul {
+         flex-direction: column;
+     }
+
+     .threeSteps .box ul li {
+         width: 100%;
+         padding: 0;
+         margin: 0 0 30px 0;
+     }
+
+     .threeSteps .box ul li:last-child {
+         margin: 0;
+     }
+ }
+
+ @media screen and (max-width: 767px) {
+     .titleBox {
+         margin: 0 0 30px 0;
+     }
+
+     .titleBox .title {
+         font-size: 32px;
+         line-height: 42px;
+     }
+ }

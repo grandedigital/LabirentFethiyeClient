@@ -1,0 +1,193 @@
+.villas {
+    width: 100%;
+    position: relative;
+    padding: 105px 0 120px 0;
+    background: #F9F9FB;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.box {
+    width: 100%;
+}
+
+.titleBox {
+    width: 100%;
+    margin: 0 0 60px 0;
+}
+
+.titleBox .title {
+    width: 100%;
+    color: #02044A;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.titleBox .subTitle {
+    width: 100%;
+    margin: 10px 0 0 0;
+    color: #525265;
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+}
+
+.villas .box .top {
+    width: 100%;
+    margin: 0 0 60px 0;
+}
+
+.villas .box .top ul {
+    width: 100%;
+    display: flex;
+}
+
+.villas .box .bottom {
+    width: 100%;
+}
+
+.villas .box .bottom .row {
+    margin: 0 -15px;
+    position: relative;
+}
+
+.villas .box .bottom ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all .4s ease-in-out;
+    position: relative;
+    top: 0;
+}
+
+.villas .box .bottom ul .linkBox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 30px 0 0 0;
+}
+
+.linkBox a {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.linkBox a::after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox a:hover {
+    color: #ffffff;
+}
+
+.linkBox a:hover::after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox a span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.linkBox a.blueButton2 {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 15px 45px;
+}
+
+.linkBox a.blueButton2:hover {
+    color: #ffffff;
+}
+
+.linkBox a.blueButton2::after {
+    background: #7E53F9;
+}
+
+
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .villas {
+        padding: 45px 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .titleBox {
+        margin: 0 0 45px 0;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .villas .box .top {
+        margin: 0 0 45px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .villas {
+        padding: 30px 0;
+    }
+
+    .titleBox {
+        margin: 0 0 30px 0;
+    }
+
+    .titleBox .title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .villas .box .top {
+        margin: 0 0 15px 0;
+    }
+
+    .villas .box .top ul {
+        flex-wrap: wrap;
+    }
+
+    .villas .box .bottom ul .linkBox {
+        margin: 15px 0 0 0;
+    }
+}

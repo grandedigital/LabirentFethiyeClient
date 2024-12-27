@@ -1,0 +1,132 @@
+.cardContainer {
+    width: 25%;
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 10px;
+}
+
+.cardContainer a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cardContainer a .imgBox {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    transition: all .8s ease-in-out;
+}
+
+.cardContainer a .imgBox:hover {
+    background-size: 110%;
+}
+
+.cardContainer a .imgBox::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(2, 4, 74, 0) 0%, #02044A 100%);
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.cardContainer a .textBox {
+    width: 100%;
+    position: absolute;
+    padding: 30px;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.cardContainer a .textBox .title {
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #ffffff;
+}
+
+.cardContainer a .textBox .desc {
+    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1699px) {
+    .imgBox {
+        height: 422px;
+    }
+
+    .cardContainer a .textBox {
+        padding: 30px 15px 30px;
+    }
+
+    .cardContainer a .textBox .desc {
+        line-height: 20px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .imgBox {
+        height: 471px;
+    }
+
+    .cardContainer a .textBox {
+        padding: 30px 30px 30px;
+    }
+
+    .cardContainer a .textBox .desc {
+        line-height: 24px;
+    }
+
+    .cardContainer {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .imgBox {
+        height: 402px;
+    }
+
+    .cardContainer a .textBox {
+        padding: 20px 20px 20px;
+    }
+
+    .cardContainer a .textBox .desc {
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .imgBox {
+        height: 472px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .imgBox {
+        height: 460px;
+    }
+
+    .cardContainer {
+        width: 100%;
+    }
+}

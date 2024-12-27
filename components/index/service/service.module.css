@@ -1,0 +1,434 @@
+.services {
+    width: 100%;
+    position: relative;
+    padding: 105px 0 120px 0;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.titleBox {
+    width: 100%;
+    margin: 0 0 60px 0;
+}
+
+.titleBox .title {
+    width: 100%;
+    color: #02044A;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.titleBox .subTitle {
+    width: 100%;
+    margin: 10px 0 0 0;
+    color: #525265;
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+}
+
+.services .box {
+    width: 100%;
+}
+
+
+.services .box .top .colon {
+    width: 50%;
+    padding: 0 120px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.services .box .top .colon:nth-child(2n) {
+    padding: 0 0 0 120px;
+    flex-direction: column-reverse;
+}
+
+.services .box .top {
+    width: 100%;
+    display: flex;
+    margin: 0 0 120px 0;
+    position: relative;
+    background-image: url(/images/labirentMask.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.services .box .top .colon .imgBox {
+    width: 100%;
+    margin: 0 0 60px 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.services .box .top .colon:nth-child(2n) .imgBox {
+    margin: 110px 0 0 0;
+}
+
+.services .box .top .colon:nth-child(2n) .textBox {
+    margin: 50px 0 0 0;
+}
+
+.services .box .top .colon .imgBox .bgImage {
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.services .box .top .colon .textBox {
+    width: 100%;
+}
+
+.services .box .top .colon .textBox .title {
+    width: 100%;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    color: #02044A;
+}
+
+.services .box .top .colon .textBox .capitalize {
+    width: 100%;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    color: #02044A;
+    text-transform: capitalize;
+}
+
+.services .box .top .colon .textBox .desc {
+    width: 470px;
+    margin: 0 0 25px 0;
+    font-size: 15px;
+    line-height: 26px;
+    color: #525265;
+}
+
+.linkBox {
+    display: flex;
+}
+
+.linkBox a {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.linkBox a.blueButton2 {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 15px 45px;
+}
+
+.linkBox a.blueButton2:hover {
+    color: #ffffff;
+}
+
+.linkBox a.blueButton2::after {
+    background: #7E53F9;
+}
+
+.linkBox a::after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox a:hover {
+    color: #ffffff;
+}
+
+.linkBox a:hover::after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox a span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.services .box .bottom {
+    width: 100%;
+}
+
+.services .box .bottom .row {
+    margin: -10px;
+}
+
+.services .box .bottom ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.services .box .bottom ul li {
+    width: calc(100% / 8);
+    padding: 0 11.25px;
+}
+
+.services .box .bottom ul li .column {
+    width: 100%;
+    height: 180px;
+    background: #F9F6FF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    top: 0;
+    transition: all .4s ease-in-out;
+}
+
+.services .box .bottom ul li .column:hover {
+    background: #7E53F9;
+    top: -10px;
+}
+
+.services .box .bottom ul li .column:hover .iconBox i {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.services .box .bottom ul li .column:hover .iconBox i.two_i {
+    opacity: 1;
+    visibility: visible;
+}
+
+.services .box .bottom ul li .column:hover .title {
+    color: #ffffff;
+}
+
+.services .box .bottom ul li .column a {
+    width: 100%;
+    display: block;
+}
+
+.services .box .bottom ul li .column .iconBox {
+    width: 100%;
+    height: 50px;
+    margin: 0 0 30px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services .box .bottom ul li .column .iconBox i {
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s ease-in-out;
+    width: 50px;
+    height: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    z-index: 2;
+}
+
+.services .box .bottom ul li .column .iconBox i.two_i {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.services .box .bottom ul li .column .title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #02044A;
+    transition: all .4s ease-in-out;
+}
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+
+    .services .box .top .colon {
+        padding: 0 100px 0 0;
+    }
+
+    .services .box .top .colon:nth-child(2n) {
+        padding: 0 0 0 100px;
+    }
+
+    .services .box .top .colon .imgBox .bgImage {
+        height: 440px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+
+    .services .box .top .colon {
+        padding: 0 70px 0 0;
+    }
+
+    .services .box .top .colon:nth-child(2n) {
+        padding: 0 0 0 70px;
+    }
+
+    .services .box .top .colon .imgBox .bgImage {
+        height: 368px;
+    }
+
+    .services .box .bottom ul li {
+        padding: 10px 5px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .services {
+        padding: 45px 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .titleBox {
+        margin: 0 0 45px 0;
+    }
+
+    .services .box .top .colon {
+        padding: 0 35px 0 0;
+    }
+
+    .services .box .top .colon:nth-child(2n) {
+        padding: 0 0 0 35px;
+    }
+
+    .services .box .top .colon .imgBox {
+        margin: 0 0 90px 0;
+    }
+
+    .services .box .top .colon .imgBox .bgImage {
+        height: 328px;
+    }
+
+    .services .box .top .colon:nth-child(2n) .textBox {
+        margin: 40px 0 0 0;
+    }
+
+    .services .box .bottom ul li {
+        padding: 15px 15px;
+        width: calc(100% / 4);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .services .box .top {
+        flex-direction: column;
+    }
+
+    .services .box .top .colon {
+        padding: 0;
+        width: 100%;
+        margin: 0 0 30px 0;
+    }
+
+    .services .box .top .colon:nth-child(2n) {
+        padding: 0;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .services .box .top .colon .imgBox {
+        margin: 0 0 30px 0;
+    }
+
+    .services .box .top .colon .imgBox .bgImage {
+        height: 543px;
+    }
+
+    .services .box .top .colon .textBox .desc {
+        width: 100%;
+    }
+
+    .services .box .top .colon:nth-child(2n) .imgBox {
+        margin: 0 0 30px 0;
+    }
+
+    .services .box .top .colon:nth-child(2n) .textBox {
+        margin: 0 0 0 0;
+    }
+
+    .services .box .top .colon:nth-child(2n) .textBox .desc {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .services {
+        padding: 30px 0;
+    }
+
+    .titleBox {
+        margin: 0 0 30px 0;
+    }
+
+    .titleBox .title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .services .box .top .colon .imgBox {
+        margin: 0 0 15px 0;
+    }
+
+    .services .box .top .colon .imgBox .bgImage {
+        height: 254px;
+    }
+
+    .services .box .top .colon .textBox .title {
+        font-size: 28px;
+        line-height: 40px;
+        margin: 0 0 10px 0;
+    }
+
+    .services .box .top .colon:nth-child(2n) .imgBox {
+        margin: 0 0 15px 0;
+    }
+
+    .services .box .bottom ul li {
+        width: calc(100% / 2);
+        padding: 5px 5px;
+    }
+
+    .services .box .bottom ul li .column {
+        height: 160px;
+    }
+}

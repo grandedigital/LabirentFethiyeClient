@@ -1,0 +1,216 @@
+.villaRent {
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.villaRent .box {
+    width: 100%;
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.villaRent .box .colon {
+    width: 50%;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.villaRent .box .colon:last-child {
+    padding: 0 0 0 150px;
+}
+
+.villaRent .box .colon .rentTitle {
+    width: 100%;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    color: #FFFFFF;
+    display: block;
+}
+
+.villaRent .box .colon .rentDesc {
+    width: 485px;
+    margin: 0 0 40px 0;
+    font-size: 15px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.linkBox {
+    display: flex;
+}
+
+.linkBox a {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.linkBox a.pinkButton {
+    background: #7E53F9;
+    color: #ffffff;
+    padding: 15px 45px;
+}
+
+.linkBox a.pinkButton:hover {
+    color: #7E53F9;
+}
+
+.linkBox a.pinkButton:after {
+    background: #ffffff;
+}
+
+.linkBox a.blueButton {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 15px 45px;
+}
+
+.linkBox a.blueButton:hover {
+    color: #7E53F9;
+}
+
+.linkBox a.blueButton:after {
+    background: #ffffff;
+}
+
+.linkBox a:after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox a:hover {
+    color: #ffffff;
+}
+
+.linkBox a:hover:after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox a span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.villaRent .leftAbs {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #3E2093;
+    background-image: url("/images/leftAbs.png");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.villaRent .rightAbs {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #7E53F9;
+    background-image: url("/images/rightAbs.png");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+
+    .villaRent .box .colon:last-child {
+        padding: 0 0 0 30px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .villaRent .box {
+        flex-direction: column;
+    }
+
+    .villaRent .box .colon {
+        width: 100%;
+        height: 280px;
+    }
+
+    .villaRent .box .colon:last-child {
+        padding: 0 0;
+    }
+
+    .villaRent .box .colon .rentDesc {
+        width: 100%;
+    }
+
+    .villaRent .leftAbs {
+        width: 100%;
+        height: 50%;
+    }
+
+    .villaRent .rightAbs {
+        width: 100%;
+        height: 50%;
+        top: inherit;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .villaRent .box .colon {
+        height: 280px;
+    }
+
+    .villaRent .box .colon .rentTitle {
+        font-size: 24px;
+        line-height: 34px;
+        margin: 0 0 15px 0;
+    }
+
+    .villaRent .box .colon .rentDesc {
+        margin: 0 0 25px 0;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

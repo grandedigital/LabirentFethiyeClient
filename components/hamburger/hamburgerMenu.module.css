@@ -1,0 +1,332 @@
+/* .hamburgerMenu {
+    width: 100%;
+    height: 100vh;
+    background: rgba(2, 4, 74, 0.45);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
+} */
+
+
+.openMenuDark {
+    background: #0006;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.hamburgerMenu {
+    width: 412px;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* font-family: "Poppins", sans-serif; */
+    /* left: -100%; */
+    transition: all .4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hamburgerMenu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hamburgerMenu.active .hamburgerMenuBox {
+    right: 0;
+}
+
+/* .hamburgerMenu .hamburgerMenuBox {
+    width: 410px;
+    height: 95%;
+    background: #ffffff;
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+} */
+
+.hamburgerMenu .hamburgerMenuBox {
+    width: 95%;
+    height: 95%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.hamburgerMenu .hamburgerMenuBox .menuCloseBox {
+    width: 100%;
+    margin: 0 0 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburgerMenu .hamburgerMenuBox .menuCloseBox .logo {
+    background-color: #3E2093;
+    padding: 5px 25px;
+}
+
+.hamburgerMenu .hamburgerMenuBox .menuCloseBox .menuClose {
+    width: 40px;
+    height: 40px;
+    background-color: #F2EEFE;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url("/images/close.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu {
+    width: 100%;
+    display: flex;
+    height: 60%;
+    overflow: auto;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi {
+    width: 100%;
+    line-height: 1.4;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi:last-child {
+    margin: 0;
+    border-bottom: 0;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi.menuOpen .hmMenuLink::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-image: url("/images/menu-plus.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 2.5px;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi.open .hmMenuLink {
+    color: #7E53F9;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi.open .hmMenuLink::after {
+    background-image: url("/images/menu-plus-hover.png");
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi.open ul {
+    height: auto;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi .hmMenuLink {
+    width: 100%;
+    display: flex;
+    margin: 20px 0;
+    font-size: 17px;
+    color: #02044A;
+    transition: color .4s ease-in-out;
+    position: relative;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi .hmMenuLink:hover {
+    color: #7E53F9;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi ul {
+    width: 100%;
+    padding: 0 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi ul li {
+    width: 100%;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi ul li a {
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    color: #02044A;
+    margin: 0 0 24px 0;
+    position: relative;
+    transition: color .4s ease-in-out;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi ul li a:hover {
+    color: #7E53F9;
+}
+
+.hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi ul li a::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #D8CBFD;
+    border-radius: 8px;
+    position: absolute;
+    top: calc(50% - 4px);
+    left: -16px;
+}
+
+.hamburgerMenu .hamburgerMenuBox .bottomSection {
+    align-self: center;
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+}
+
+.hamburgerMenu .hamburgerMenuBox .bottomSection .container2 {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.hamburgerMenu .hamburgerMenuBox .bottomSection .container2 .linkBox {
+    width: 50%;
+}
+
+.linkBox a {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ff8300;
+    color: #ffffff;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.socialMedia {
+    padding: 10px 0;
+}
+
+.socialMedia .socialText {
+    width: 100%;
+    color: #FFFFFF;
+    opacity: 0.7;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+.socialMedia ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.socialMedia ul li {
+    display: flex;
+}
+
+.socialMedia ul li a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3E2093;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all .4s ease-in-out;
+}
+
+.socialMedia ul li a:hover {
+    background-color: #1DBAA2;
+}
+
+.socialMedia ul li a.facebook i {
+    background-image: url("/images/facebook.png");
+}
+
+.socialMedia ul li a.twitter i {
+    background-image: url("/images/twitter.png");
+}
+
+.socialMedia ul li a.instagram i {
+    background-image: url("/images/instagram.png");
+}
+
+.socialMedia ul li a.whatsapp i {
+    background-image: url("/images/whatsapp.png");
+}
+
+.socialMedia ul li a.call i {
+    background-image: url("/images/call.png");
+}
+
+.socialMedia ul li a.linkedin i {
+    background-image: url("/images/linkedin.png");
+}
+
+.socialMedia ul li a.youtube i {
+    background-image: url("/images/youtube.png");
+}
+
+.socialMedia ul li a.google i {
+    background-image: url("/images/google.png");
+}
+
+.socialMedia ul li a i {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@media screen and (max-width: 767px) {
+    .hamburgerMenu {
+        width: 95%;
+    }
+
+    .hamburgerMenu .hamburgerMenuBox {
+        width: 95%;
+        padding: 30px 30px;
+    }
+
+    .hamburgerMenu .hamburgerMenuBox .menuCloseBox {
+        margin: 0 0 15px 0;
+    }
+
+    .hamburgerMenu .hamburgerMenuBox .hmMenu .hmMenuUl .hmMenuLi .hmMenuLink {
+        margin: 10px 0;
+    }
+    .top .box .left .socialMedia {
+        margin: 0 0 20px 0;
+    }
+
+    .top .box .left .socialMedia .socialText {
+        margin: 0 0 10px 0;
+    }
+}

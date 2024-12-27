@@ -1,0 +1,114 @@
+.lightBoxItem {
+    float: left;
+    width: 377px;
+    margin: 10px;
+}
+
+.lightBoxItem .lightBoxItemChild {
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightBoxItem .lightBoxItemChild::before {
+    content: "";
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    background-image: url(/images/zoom.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.lightBoxItem.lastLi .lightBoxItemChild::before {
+    display: none;
+}
+
+.videoContainer {
+    height: 100%;
+    display: flex;
+    position: relative;
+    float: none;
+    overflow: visible;
+}
+
+.lightBoxItem .lightBoxItemChild.video-icon::before {
+    background-image: url(/images/player_btn.png);
+}
+
+.lightBoxItem .lightBoxItemChild:hover::before {
+    opacity: 1;
+}
+
+.lightBoxItem .lightBoxItemChild .imageBox {
+    display: flex;
+    width: 100%;
+    height: 320px;
+}
+
+.lightBoxItem.lastLi .lightBoxItemChild span {
+    width: 55px;
+    height: 55px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #02044A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.lightBoxItem.lastLi .lightBoxItemChild:hover span {
+    opacity: 1;
+}
+
+.lightBoxItem .lightBoxItemChild .imageBox .img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media screen and (max-width: 1199px) {
+    .lightBoxItem {
+        width: 300px;
+    }
+
+    .lightBoxItem .lightBoxItemChild .imageBox {
+        height: 255px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .lightBoxItem.lastLi {
+        display: none;
+    }
+
+    .lightBoxItem {
+        width: 100%;
+        margin: 0 0 5px 0;
+        padding: 0 2.5px;
+    }
+
+    .lightBoxItem .lightBoxItemChild::before {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lightBoxItem .lightBoxItemChild .imageBox {
+        height: 293px;
+    }
+}

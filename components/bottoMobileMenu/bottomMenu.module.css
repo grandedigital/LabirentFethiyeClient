@@ -1,0 +1,136 @@
+.mobilSearchModal {
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 35%;
+}
+
+.mobilSearchModal .searchInputContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobilSearchModal .searchInputContainer .searchInput {
+  width: 90%;
+  height: 50px;
+  padding-left: 5px;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 500;
+  border: 1px solid #D9D9E4;
+}
+
+.mobilSearchModal .searchInputContainer .searchInput::placeholder {
+  color: #6A6B93;
+  font-weight: bold;
+}
+
+.mobilSearchModal .searchListContainer {
+  width: 100%;
+  height: 70%;
+}
+
+.mobilSearchModal .searchListContainer .searchListItems {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.mobilSearchModal .searchListContainer .villaItem {
+  width: 85%;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #000;
+  padding-left: 5px;
+  padding: 10px 0;
+}
+
+.makeAReservation {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background-color: #f6f5f8;
+  color: #fff;
+  cursor: pointer;
+  height: 60px;
+  border-top: 1px solid rgb(136, 133, 133);
+}
+
+.makeAReservation .iconAndText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.makeAReservation .iconAndText img {
+  margin-bottom: 3px;
+}
+
+.makeAReservation .iconText {
+  color: #000;
+  font-size: 10px;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.makeAReservation .section1 {
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.makeAReservation .section2 {
+  width: calc(100% / 3);
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.makeAReservation .section2 .reservationIcon {
+  background-color: #7e53f9;
+  width: 100px;
+  height: 110%;
+  position: relative;
+  bottom: 15px;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.makeAReservation .section3 {
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen and (max-width: 499px) {
+  .makeAReservation {
+    display: flex;
+  }
+  .mobilSearchModal {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .mobilSearchModal {
+    display: none;
+  }
+}

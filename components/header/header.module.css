@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    min-height: 135px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}

@@ -1,0 +1,110 @@
+#villaTabLi {
+    width: calc(100% / 6);
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 25px 0;
+}
+
+#villaTabLi span:hover {
+    cursor: pointer;
+}
+
+#villaTabLi.active .title {
+    color: #3E2093;
+    opacity: 1;
+}
+
+#villaTabLi.active::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+#villaTabLi::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #D9D9E4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#villaTabLi::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #3E2093;
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    transition: all .4s ease-in-out;
+    z-index: 2;
+}
+
+#villaTabLi .iconBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 20px 0;
+}
+
+#villaTabLi .iconBox i {
+    width: 100px;
+    height: 100px;
+    background: #FFFFFF;
+    border-radius: 45px;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#villaTabLi .title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #02044A;
+    opacity: 0.5;
+    transition: all .4s ease-in-out;
+}
+
+@media screen and (max-width: 1199px) {
+    #villaTabLi .title {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #villaTabLi .iconBox {
+        margin: 0 0 10px 0;
+    }
+
+    #villaTabLi .iconBox i {
+        width: 80px;
+        height: 80px;
+    }
+
+    #villaTabLi .title {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #villaTabLi {
+        padding: 0 0 5px 0;
+        width: calc(100% / 3);
+        margin: 0 0 15px 0;
+    }
+
+    #villaTabLi .iconBox {
+        margin: 0 0 10px 0;
+    }
+
+    #villaTabLi .iconBox i {
+        width: 60px;
+        height: 60px;
+    }
+}

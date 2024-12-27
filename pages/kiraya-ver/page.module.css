@@ -1,0 +1,283 @@
+.container {
+    width: 100%;
+}
+
+.container .content {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.container .content .titleBox {
+    width: 100%;
+    margin: 0 0 60px;
+}
+
+.container .content .titleBox .titleBoxContainer {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.container .content .titleBox .titleBoxContainer .title {
+    width: 100%;
+    color: #02044a;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.container .content .titleBox .titleBoxContainer .subTitle {
+    width: 100%;
+    margin: 10px 0 0;
+    color: #525265;
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+    padding: 0 180px;
+}
+
+.container .content .formContent {
+    width: 70%;
+    max-width: 1600px;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    background: #FFFFFF;
+    padding: 30px;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
+    border-radius: 8px;
+}
+
+.container .content .formContent ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .content .formContent ul li {
+    width: 50%;
+    padding: 0 20px 0  0;
+}
+
+.container .content .formContent ul li:nth-child(even) {
+    padding: 0 0 0 20px;
+}
+
+.container .content .formContent .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.container .content .formContent .mask.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.container .content .formContent .mask .iconBox {
+    margin: 0 0 30px;
+}
+
+.container .content .formContent .mask .title {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #02044A;
+    margin: 0 0 15px;
+}
+
+.container .content .formContent .mask .desc {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #02044A;
+    text-align: center;
+}
+
+.container .content .inputBox {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.container .content ul li:last-child .inputBox{
+    margin: 0;
+}
+
+.container .content .inputBox .inputName {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    color: #02044A;
+    margin: 0 0 10px 0;
+}
+
+.container .content .inputBox.error input {
+    border: 1px solid #ff4c4c;
+}
+
+.inputFeedback {
+    color: red;
+    margin-top: 0.25rem;
+    font-size: 15px;
+}
+
+.container .content .inputBox input {
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #02044A;
+}
+
+.container .content .inputBox textarea {
+    width: 100%;
+    resize: none;
+    background: #FFFFFF;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 215px;
+    padding: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #6A6B93;
+    font-family: Sofia Pro;
+    font-style: normal;
+}
+
+.linkBox {
+    display: flex;
+    margin-top: 20px;
+}
+
+.linkBox button {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.linkBox button.blueButton2 {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 15px 45px;
+}
+
+.linkBox button.blueButton2:hover {
+    color: #ffffff;
+}
+
+.linkBox button.blueButton2::after {
+    background: #7E53F9;
+}
+
+.linkBox button::after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox button:hover {
+    color: #ffffff;
+}
+
+.linkBox button:hover::after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+@media only screen and (max-width: 1499px) {
+    .container .content .titleBox .titleBoxContainer {
+        width: 1170px;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .container .content .titleBox {
+        margin: 0 0 45px;
+    }
+    .container .content .titleBox .titleBoxContainer {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .container .content .titleBox .titleBoxContainer .subTitle {
+        padding: 0 0;
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .container .content .formContent {
+        width: 100%;
+    }
+
+    .container .content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container .content .titleBox {
+        margin: 0 0 30px;
+    }
+
+    .container .content .formContent ul li {
+        width: 100%;
+        padding: 0;
+    }
+    .container .content .formContent ul li:nth-child(even) {
+        padding: 0;
+    }
+
+    .container .content .titleBox .titleBoxContainer .title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+}

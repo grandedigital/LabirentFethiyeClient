@@ -1,0 +1,1374 @@
+.contentDetail {
+    width: 100%;
+    padding: 120px 0;
+}
+
+.twoDots {
+    display: inline;
+}
+
+.contentDetail .stepMenuBox {
+    margin: 0 0 80px 0;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.contentDetail .stepMenuBox ul {
+    display: flex;
+}
+
+.contentDetail .stepMenuBox ul li {
+    width: 33.3333%;
+    border-bottom: 3px solid #D9D9E4;
+    padding: 0 0 30px 0;
+    margin: 0 30px 0 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.contentDetail .stepMenuBox ul li:nth-child(3) {
+    margin: 0;
+}
+
+.contentDetail .stepMenuBox ul li:hover {
+    border-bottom: 3px solid #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li:hover .imageBg {
+    border: 2px solid transparent;
+    background: #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li:hover .imageBg .imageBox i.firstIcon {
+    background-image: url(/images/reservation-icon-1-hover.png);
+}
+
+.contentDetail .stepMenuBox ul li:hover .imageBg .imageBox i.secondIcon {
+    background-image: url(/images/reservation-icon-2-hover.png);
+}
+
+.contentDetail .stepMenuBox ul li:hover .imageBg .imageBox i.thirdIcon {
+    background-image: url(/images/reservation-icon-3-hover.png);
+}
+
+.contentDetail .stepMenuBox ul li:hover .textBox .text {
+    color: #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li:hover .textBox .number {
+    color: #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li.active {
+    border-bottom: 3px solid #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li.active .imageBg {
+    border: none;
+    background: #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li.active .imageBg .imageBox i.firstIcon {
+    background-image: url(/images/reservation-icon-1-hover.png);
+}
+
+.contentDetail .stepMenuBox ul li.active .imageBg .imageBox i.secondIcon {
+    background-image: url(/images/reservation-icon-2-hover.png);
+}
+
+.contentDetail .stepMenuBox ul li.active .imageBg .imageBox i.thirdIcon {
+    background-image: url(/images/reservation-icon-3-hover.png);
+}
+
+.contentDetail .stepMenuBox ul li.active .textBox .text {
+    color: #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li.active .textBox .number {
+    color: #7E53F9;
+}
+
+.contentDetail .stepMenuBox ul li a {
+    display: flex;
+    width: 100%;
+}
+
+.contentDetail .stepMenuBox ul li a .imageBg {
+    width: 80px;
+    height: 80px;
+    background: #FFFFFF;
+    border-radius: 35px;
+    border: 2px solid #D9D9E4;
+    transition: all 0.3s ease-in-out;
+}
+
+.contentDetail .stepMenuBox ul li a .imageBg .imageBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentDetail .stepMenuBox ul li a .imageBg .imageBox i {
+    display: flex;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+}
+
+.contentDetail .stepMenuBox ul li a .imageBg .imageBox i.firstIcon {
+    background-image: url(/images/reservation-icon-1.png);
+    width: 33px;
+    height: 33px;
+}
+
+.contentDetail .stepMenuBox ul li a .imageBg .imageBox i.secondIcon {
+    background-image: url(/images/reservation-icon-2.png);
+    width: 35px;
+    height: 35px;
+}
+
+.contentDetail .stepMenuBox ul li a .imageBg .imageBox i.thirdIcon {
+    background-image: url(/images/reservation-icon-3.png);
+    width: 45px;
+    height: 45px;
+}
+
+.contentDetail .stepMenuBox ul li a .textBox {
+    width: calc(100% - 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 20px;
+}
+
+.contentDetail .stepMenuBox ul li a .textBox .text {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    color: #6A6B93;
+    transition: all 0.3s ease-in-out;
+}
+
+.contentDetail .stepMenuBox ul li a .textBox .number {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 62px;
+    color: #6A6B93;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contentDetail .rezervationBox {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contentDetail .rezervationBox .reservation .left {
+    padding: 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox {
+    width: 100%;
+    border-bottom: solid 1px #D9D9E4;
+    padding: 0 0 60px 0;
+    margin: 0 0 60px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox .subTitle {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    color: #02044A;
+    margin: 0 0 25px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li {
+    width: 50%;
+    padding: 0 20px 0 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li:nth-child(even) {
+    padding: 0 0 0 20px;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li:last-child .inputBox:last-child {
+    margin: 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li.full {
+    width: 100%;
+    padding: 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #D9D9E4;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0 20px;
+    position: relative;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city.requareClick {
+    border: 1px solid red;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city.opened {
+    border-radius: 8px 8px 0 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city .selectedItem {
+    color: #6A6B93;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city .selection_arrow {
+    width: 10px;
+    height: 6px;
+    right: 20px;
+    top: calc(50% - 3px);
+    background-image: url("/images/down-arrow-icon.png");
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-in-out;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city .cityDropMenu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    z-index: 10;
+    border: 1px solid #D9D9E4;
+    border-radius: 0 0 8px 8px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city .cityDropMenu .dropMenuItem {
+    height: 30px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #6A6B93;
+    font-weight: normal;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city .cityDropMenu .dropMenuItem:hover {
+    background-color: #7E53F9;
+    color: white;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .form_city.opened .selection_arrow {
+    transform: rotate(180deg);
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox.error input {
+    border: 1px solid #ff4c4c;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox.error textarea {
+    border: 1px solid #ff4c4c;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox .inputName {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    color: #02044A;
+    margin: 0 0 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox input {
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #02044A;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox input::placeholder {
+    color: #6A6B93;
+    letter-spacing: 5px;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox textarea {
+    width: 100%;
+    resize: none;
+    background: #FFFFFF;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 150px;
+    padding: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #6A6B93;
+}
+
+.contentDetail .rezervationBox .reservation .left .personInfoBox ul li .inputBox textarea::placeholder {
+    color: #6A6B93;
+    letter-spacing: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contentDetail .rezervationBox .reservation .left .paymentBox {
+    width: 100%;
+    border-bottom: solid 1px #D9D9E4;
+    padding: 0 0 60px 0;
+    margin: 0 0 60px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .subTitle {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    margin: 0 0 30px 0;
+    color: #02044A;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType {
+    margin: 0 0 30px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul {
+    display: flex;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li {
+    width: 50%;
+    margin: 0 30px 0 0;
+    border: 2px solid #D9D9E4;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border 0.2s ease-in-out;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li.creditCard a {
+    cursor: not-allowed;
+}
+
+/* .contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li:hover {
+    border: 2px solid #3E2093;
+} */
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li:hover a .imageBox i.creditCardIcon {
+    background-image: url(/images/payment-icon-1-hover.png);
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li:hover a .imageBox i.transferIcon {
+    background-image: url(/images/payment-icon-2-hover.png);
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li:last-child {
+    margin: 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li.active {
+    border: 2px solid #3E2093;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li.active a .imageBox i.creditCardIcon {
+    background-image: url(/images/payment-icon-1-hover.png);
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li.active a .imageBox i.transferIcon {
+    background-image: url(/images/payment-icon-2-hover.png);
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li a {
+    display: flex;
+    padding: 50px 60px;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li a .imageBox i {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease-in-out;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li a .imageBox i.creditCardIcon {
+    background-image: url(/images/payment-icon-1.png);
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li a .imageBox i.transferIcon {
+    background-image: url(/images/payment-icon-2.png);
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li a .textBox {
+    padding: 0 0 0 25px;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li a .textBox .title {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    color: #02044A;
+    margin: 0 0 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li a .textBox .desc {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #525265;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox {
+    width: 100%;
+    display: none;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox.active {
+    display: block;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px 0 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li {
+    width: 50%;
+    padding: 0 30px 0 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li:last-child {
+    padding: 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li.full {
+    width: 100%;
+    padding: 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li .inputBox {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li .inputBox.error input {
+    border: 1px solid #ff4c4c;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li .inputBox.error textarea {
+    border: 1px solid #ff4c4c;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li .inputBox .inputName {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    color: #02044A;
+    margin: 0 0 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li .inputBox input {
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #02044A;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li .inputBox input::placeholder {
+    color: #6A6B93;
+    letter-spacing: 5px;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox ul li .inputBox textarea {
+    width: 100%;
+    resize: none;
+    background: #FFFFFF;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 150px;
+    padding: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #6A6B93;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox .linkBox a {
+    padding: 18px 65px 18px 35px;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .creditCardBox .linkBox a.blueButtonArrow::before {
+    right: 35px;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox {
+    width: 100%;
+    display: none;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox.active {
+    display: block;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox ul li {
+    width: 50%;
+    margin: 0 0 30px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox ul li.full {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox ul li .title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #02044A;
+    margin: 0 0 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox ul li .desc {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #6A6B93;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox .linkBox a {
+    padding: 18px 65px 18px 35px;
+}
+
+.contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentInformation .transferbox .linkBox a.blueButtonArrow::before {
+    right: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contentDetail .rezervationBox .reservation .left .successMessage {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .iconBox {
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .iconBox i {
+    background-image: url(/images/success-icon.png);
+    width: 98px;
+    height: 96px;
+    background-repeat: no-repeat;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .textBox {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .textBox .title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    color: #02044A;
+    margin: 0 0 35px 0;
+    text-align: center;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .textBox .desc {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+    color: #6A6B93;
+    max-width: 600px;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .reservationInfosContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .controls .reservationInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .controls .reservationInfos .resevationTitleAndNumberContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contentDetail .rezervationBox .reservation .left .successMessage .controls .reservationInfos .title {
+    color: #02044A;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contentDetail .rezervationBox .reservation .right {
+    width: 375px;
+    height: fit-content;
+    background: #FFFFFF;
+    padding: 30px;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
+    border-radius: 8px;
+}
+
+.contentDetail .rezervationBox .reservation .right .top {
+    width: 100%;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contentDetail .rezervationBox .reservation .right .top .imageBox {
+    width: 120px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contentDetail .rezervationBox .reservation .right .top .imageBox .img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.contentDetail .rezervationBox .reservation .right .top .textBox {
+    width: calc(100% - 120px);
+    padding: 0 0 0 20px;
+}
+
+.contentDetail .rezervationBox .reservation .right .top .textBox .title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #02044A;
+    margin: 0 0 5px 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .top .textBox .desc {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #525265;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li {
+    width: 100%;
+    border-bottom: 1px solid #D9D9E4;
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li:last-child {
+    margin: 0;
+    padding: 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .visitorNumberBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .visitorNumberBox .visitorBox {
+    position: relative;
+    padding: 0 0 0 35px;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .visitorNumberBox .visitorBox::before {
+    content: "";
+    display: flex;
+    background-image: url(/images/user-add.png);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 12px);
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .visitorNumberBox .visitorBox span {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+    color: #525265;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .visitorNumberBox .changeButton a {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: right;
+    color: #6A6B93;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox {
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox .date {
+    width: 50%;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox .date:first-child {
+    padding: 0 20px 0 0;
+    border-right: 1px solid #D9D9E4;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox .date:last-child {
+    padding: 0 0 0 20px;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox .date .title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #02044A;
+    margin: 0 0 10px 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox .date .textBox {
+    width: 100%;
+    position: relative;
+    padding: 0 0 0 35px;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox .date .textBox::before {
+    content: "";
+    display: flex;
+    background-image: url(/images/calendar-tick.png);
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .dateBox .date .textBox span {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .priceBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .priceBox span {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    color: #525265;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .priceBox span i {
+    background-image: url(/images/info.png);
+    width: 15px;
+    height: 15px;
+    display: flex;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .linkBox {
+    width: 100%;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .linkBox a {
+    width: 100%;
+    padding: 18px 0;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .linkBox a.blueButtonArrow {
+    background-color: #7E53F9;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .linkBox a.blueButtonArrow::before {
+    right: 45px;
+}
+
+.contentDetail .rezervationBox .reservation .right .bottom ul li .linkBox a.blueButtonArrow::after {
+    background-color: #3E2093;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.linkBox {
+    display: flex;
+}
+
+.linkBox a {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+
+.linkBox a.blueButtonArrow {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 18px 90px 18px 60px;
+    position: relative;
+}
+
+.linkBox a.blueButtonArrow:hover {
+    color: #7E53F9;
+}
+
+.linkBox a.blueButtonArrow:hover::before {
+    right: 50px;
+}
+
+.linkBox a.blueButtonArrow::after {
+    background: #7E53F9;
+}
+
+.linkBox a.blueButtonArrow::before {
+    content: "";
+    background-image: url("/images/right-arrow-white.png");
+    width: 8px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 60px;
+    top: calc(50% - 7px);
+    z-index: 3;
+    transition: right 0.2s ease-in-out;
+}
+
+.linkBox a.blueButtonArrow span {
+    color: #FFFFFF;
+}
+
+.linkBox a:after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox a:hover {
+    color: #ffffff;
+}
+
+.linkBox a:hover:after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox a span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+.linkBox button {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+
+.linkBox button.blueButtonArrow {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 18px 90px 18px 60px;
+    position: relative;
+}
+
+.linkBox button.blueButtonArrow:hover {
+    color: #7E53F9;
+}
+
+.linkBox button.blueButtonArrow:hover::before {
+    right: 50px;
+}
+
+.linkBox button.blueButtonArrow::after {
+    background: #7E53F9;
+}
+
+.linkBox button.blueButtonArrow::before {
+    content: "";
+    background-image: url("/images/right-arrow-white.png");
+    width: 8px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 60px;
+    top: calc(50% - 7px);
+    z-index: 3;
+    transition: right 0.2s ease-in-out;
+}
+
+.linkBox button.blueButtonArrow span {
+    color: #FFFFFF;
+}
+
+.linkBox button:after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox button:hover {
+    color: #ffffff;
+}
+
+.linkBox button:hover:after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.inputFeedback {
+    color: red;
+    margin-top: 0.25rem;
+    font-size: 15px;
+}
+
+
+
+
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .contentDetail .rezervationBox .reservation .left .personInfoBox ul li {
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    .paymentBox .payment ul {
+        flex-wrap: wrap;
+    }
+
+    .paymentBox .payment ul li {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .linkBox.BottomButton {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+
+    .contentDetail .rezervationBox .reservation .left {
+        padding: 0
+    }
+
+    .stepMenuBox ul li .textBox .text,
+    .stepMenuBox ul li .textBox .number {
+        font-size: 20px !important;
+        font-weight: 500 !important;
+    }
+}
+
+@media screen and (max-width: 759px) {
+
+    .contentDetail {
+        width: 100%;
+        padding: 50px 0;
+    }
+
+    .contentDetail .stepMenuBox {
+        margin: 0 0 50px 0;
+    }
+
+    .stepMenuBox ul {
+        flex-wrap: wrap;
+    }
+
+    .stepMenuBox ul li {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 10px 0 10px 0 !important;
+    }
+
+    .linkBox.BottomButton {
+        justify-content: flex-start !important;
+    }
+
+    .linkBox.BottomButton .blueButtonArrow {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 699px) {
+
+    .contentDetail .rezervationBox .reservation {
+        flex-direction: column-reverse;
+    }
+
+    .contentDetail .rezervationBox .reservation .right {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .contentDetail .rezervationBox .reservation .left .personInfoBox ul li {
+        width: 50%;
+    }
+
+    .contentDetail .rezervationBox .reservation .left .personInfoBox ul li:nth-child(even) {
+        padding: 0 0 0 20px !important;
+    }
+
+    .contentDetail .rezervationBox .reservation .left {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 499px) {
+
+    .contentDetail .rezervationBox .reservation .left .successMessage .controls .reservationInfos .resevationTitleAndNumberContainer{
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .twoDots {
+        display: none;
+    }
+
+    .contentDetail .rezervationBox .reservation {
+        flex-direction: column-reverse;
+    }
+
+    .contentDetail .rezervationBox .reservation .right {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .contentDetail .rezervationBox .reservation .left .personInfoBox ul li {
+        width: 100%;
+    }
+
+    .contentDetail .rezervationBox .reservation .left .personInfoBox ul li:nth-child(even) {
+        padding: 0 !important;
+    }
+
+    .contentDetail .rezervationBox .reservation .left {
+        width: 100%;
+    }
+
+    .stepMenuBox ul li .textBox .text,
+    .stepMenuBox ul li .textBox .number {
+        font-size: 15px !important;
+        font-weight: 500 !important;
+    }
+
+    .contentDetail .stepMenuBox ul li a .imageBg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contentDetail .stepMenuBox ul li a {
+        align-items: center;
+    }
+
+    .contentDetail .stepMenuBox ul li a .textBox {
+        width: calc(100% - 40px);
+        padding: 0 0 0 10px;
+    }
+
+    .contentDetail .stepMenuBox ul li a .imageBg .imageBox i {
+        width: 30px !important;
+        height: 30px !important;
+        background-size: contain !important;
+        background-position: center !important;
+    }
+}

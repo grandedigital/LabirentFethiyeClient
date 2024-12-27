@@ -1,0 +1,316 @@
+.imgNav {
+    width: 100%;
+    position: absolute;
+    top: calc(50% - 12px);
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    gap: 50%;
+}
+
+.imgNav button {
+    width: 24px;
+    height: 24px;
+    z-index: 3;
+    background: none;
+    background-image: url("/images/arrowLeft.png");
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#cardContainer {
+    width: 25%;
+    padding: 0 15px;
+    margin: 0 0 30px 0;
+}
+
+.testimonialItemContainer {
+    padding: 0 12px;
+}
+
+.column {
+    background: #FFFFFF;
+    box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+
+.column:hover {
+    box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.4);
+}
+
+.column .imgBox {
+    width: 100%;
+    position: relative;
+}
+
+.column .imgBox .carouselBox {
+    width: 100%;
+    height: 280px;
+    position: relative;
+}
+
+/* .column .imgBox .carouselBox::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(2, 4, 74, 0) 0%, #02044A 100%);
+    opacity: 0.5;
+} */
+
+.column .imgBox .carouselBox img {
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.column .imgBox .carouselBox img.active {
+    opacity: 1;
+}
+
+.column .imgBox .cardFeatures {
+    padding: 6px 20px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    background: rgba(2, 4, 74, 0.5);
+    border-radius: 60px;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 1.25px;
+    color: #FFFFFF;
+}
+
+.column .imgBox .cardFeatures2 {
+    padding: 8px 22px;
+    position: absolute;
+    z-index: 2;
+    bottom: -17px;
+    right: 30px;
+    background: #E8543E;
+    border-radius: 60px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.75px;
+    color: #FFFFFF;
+}
+
+.column .imgBox .cardFeatures3 {
+    padding: 0 0 0 31px;
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    left: 30px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    letter-spacing: 0.75px;
+    color: #FFFFFF;
+}
+
+.column .imgBox .cardFeatures3::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(/images/medal-star.png);
+    position: absolute;
+    left: 0;
+}
+
+.column .textBox {
+    width: 100%;
+    min-height: 215px;
+    padding: 20px 30px;
+}
+
+.column .textBox .title {
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #02044A;
+}
+
+.column .textBox .location {
+    width: 100%;
+    padding: 0 0 0 27px;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #525265;
+    position: relative;
+}
+
+.column .textBox .location::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/images/location.png);
+}
+
+.column .textBox .priceTitle {
+    width: 100%;
+    margin: 0 0 7px 0;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    color: #02044A;
+}
+
+.column .textBox .price {
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #7E53F9;
+}
+
+.column .textBox .shortDesc {
+    width: 100%;
+    padding: 15px 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #000;
+    height: auto;
+    max-height: 200px;
+}
+
+.column .textBox .features {
+    width: 100%;
+    padding: 15px 0 0 0;
+    border-top: 1px solid #D9D9E4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column .textBox .features .colon {
+    display: flex;
+    align-items: center;
+}
+
+.column .textBox .features .colon:last-child {
+    margin: 0;
+}
+
+.column .textBox .features .colon i {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px 0 0;
+    background-repeat: no-repeat;
+}
+
+.column .textBox .features .colon i.person_icon {
+    background-image: url(/images/person.png);
+}
+
+.column .textBox .features .colon i.room_icon {
+    background-image: url(/images/bed.png);
+}
+
+.column .textBox .features .colon i.bath_icon {
+    background-image: url(/images/bath.png);
+}
+
+.column .textBox .features .colon span {
+    font-size: 15px;
+    line-height: 20px;
+    color: #525265;
+}
+
+@media screen and (max-width: 1699px) {
+    .column .imgBox .carouselBox {
+        height: 240px;
+    }
+
+    .column .textBox .features .colon i {
+        margin: 0 5px 0 0;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .column .imgBox .carouselBox {
+        height: 199px;
+    }
+
+    .column .imgBox .cardFeatures {
+        left: 15px;
+        padding: 6px 10px;
+    }
+
+    .column .imgBox .cardFeatures2 {
+        right: 15px;
+        padding: 8px 10px;
+    }
+
+    .column .imgBox .cardFeatures3 {
+        left: 15px;
+    }
+
+    .column .textBox {
+        padding: 15px 15px;
+    }
+
+    .column .textBox .features .colon i {
+        margin: 0 5px 0 0;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    #cardContainer {
+        width: 33.33%;
+    }
+
+    .column .imgBox .carouselBox {
+        height: 223px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #cardContainer {
+        width: 50%;
+    }
+
+    .column .imgBox .carouselBox {
+        height: 264px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    #cardContainer {
+        width: 100%;
+    }
+
+    .column .imgBox .carouselBox {
+        height: 257px;
+    }
+
+    .testimonialItemContainer {
+        padding: 0 100px;
+    }
+
+    .column .textBox .features {
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .testimonialItemContainer {
+        padding: 0 10px;
+    }
+}

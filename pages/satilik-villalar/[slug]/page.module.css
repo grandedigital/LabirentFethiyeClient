@@ -1,0 +1,1075 @@
+.breadCrumb {
+  width: 100%;
+  height: 80px;
+  background-color: #f9f9fb;
+  display: flex;
+  align-items: center;
+}
+.container {
+  width: 1600px;
+  margin: 0 auto;
+}
+.breadCrumb .breadCrumbBox {
+  display: flex;
+  justify-content: space-between;
+}
+.breadCrumb .breadCrumbBox ul.breadCrumbList {
+  display: flex;
+}
+.breadCrumb .breadCrumbBox ul.breadCrumbList li.breadCrumbItem::before {
+  content: "/";
+  padding: 0 10px 0 10px;
+}
+.breadCrumb
+  .breadCrumbBox
+  ul.breadCrumbList
+  li.breadCrumbItem:first-child::before {
+  display: none;
+}
+.breadCrumb .breadCrumbBox ul.breadCrumbList li.breadCrumbItem:last-child a {
+  color: #02044a;
+}
+.breadCrumb .breadCrumbBox ul.breadCrumbList li.breadCrumbItem a {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #525265;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+.breadCrumb .breadCrumbBox ul.breadCrumbList li.breadCrumbItem a:hover {
+  color: #02044a;
+}
+.contentDetail {
+  width: 100%;
+  padding: 120px 0;
+}
+.villaDetail {
+  width: 100%;
+  padding: 60px 0 0 0;
+}
+.villaDetail .detailTitleBox {
+  width: 100%;
+  margin: 0 0 55px 0;
+}
+.villaDetail .detailTitleBox .box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.villaDetail .detailTitleBox .box .left {
+  width: 70%;
+}
+.villaDetail .detailTitleBox .box .left .detailTitle {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 55px;
+  color: #02044a;
+  margin: 0 0 15px 0;
+}
+.villaDetail .detailTitleBox .box .left .villaInformation .features {
+  width: 100%;
+  display: flex;
+}
+.villaDetail .detailTitleBox .box .left .villaInformation .features .colon {
+  margin: 0 30px 0 0;
+  display: flex;
+  align-items: center;
+}
+.villaDetail
+  .detailTitleBox
+  .box
+  .left
+  .villaInformation
+  .features
+  .colon:last-child {
+  margin: 0;
+}
+.villaDetail .detailTitleBox .box .left .villaInformation .features .colon i {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px 0 0;
+  background-repeat: no-repeat;
+}
+.villaDetail
+  .detailTitleBox
+  .box
+  .left
+  .villaInformation
+  .features
+  .colon
+  i.pin_icon {
+  background-image: url(/images/location.png);
+}
+.villaDetail
+  .detailTitleBox
+  .box
+  .left
+  .villaInformation
+  .features
+  .colon
+  i.person_icon {
+  background-image: url(/images/person.png);
+}
+.villaDetail
+  .detailTitleBox
+  .box
+  .left
+  .villaInformation
+  .features
+  .colon
+  i.room_icon {
+  background-image: url(/images/bed.png);
+}
+.villaDetail
+  .detailTitleBox
+  .box
+  .left
+  .villaInformation
+  .features
+  .colon
+  i.bath_icon {
+  background-image: url(/images/bath.png);
+}
+.villaDetail
+  .detailTitleBox
+  .box
+  .left
+  .villaInformation
+  .features
+  .colon
+  span {
+  font-size: 15px;
+  line-height: 20px;
+  color: #525265;
+}
+.villaDetail .detailTitleBox .box .right {
+  width: 30%;
+}
+.villaDetail .detailTitleBox .box .right .priceType {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: right;
+  color: #02044a;
+  margin: 0 0 10px 0;
+}
+.villaDetail .detailTitleBox .box .right .price {
+  font-weight: 600;
+  font-size: 28px;
+  text-align: right;
+  color: #7e53f9;
+}
+.villaDetail .villaDetailContentBox {
+  width: 100%;
+}
+.villaDetail .villaDetailContentBox .villaDetailContent {
+  width: 100%;
+  display: flex;
+}
+.villaDetail .villaDetailContentBox .villaDetailContent .left {
+  width: calc(100% - 375px);
+  padding: 0 165px 0 0;
+  position: relative;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailTitle {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 36px;
+  color: #02044a;
+  margin: 0 0 30px 0;
+}
+.villaDetail .villaDetailContentBox .villaDetailContent .left .villaDetailDesc {
+  width: 100%;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  margin: 0 0 30px 0;
+  position: relative;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .desc {
+  width: 100%;
+  height: 282px;
+  overflow: hidden;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .desc.active {
+  height: auto;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .desc
+  p {
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .readMore {
+  width: 100%;
+  height: 224px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .readMore.active {
+  background: transparent;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .readMore.active
+  .allButton
+  .first {
+  display: none;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .readMore.active
+  .allButton
+  .last {
+  display: block;
+  position: relative;
+  top: 28px;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .readMore
+  .allButton {
+  cursor: pointer;
+  color: #7e53f9;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+}
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .left
+  .villaDetailDesc
+  .readMore
+  .allButton
+  .last {
+  display: none;
+}
+.villaDetail .productImagesBox {
+  width: 100%;
+  display: flex;
+  margin: 0 0 50px 0;
+}
+.villaDetail .productImagesBox .productImages {
+  width: 100%;
+}
+.villaDetail .productImagesBox .productImages .row {
+  margin: -10px;
+}
+.villaDetail .dualBoxes {
+  width: 100%;
+  margin: 0 0 60px 0;
+}
+.villaDetail .dualBoxes .row {
+  margin: 0 -15px;
+}
+.villaDetail .dualBoxes ul {
+  width: 100%;
+  display: flex;
+  padding: 0 0 50px 0;
+}
+.villaDetail .dualBoxes ul li {
+  width: 50%;
+  padding: 0 15px;
+  overflow: hidden;
+}
+.villaDetail .dualBoxes ul li.popupImage:hover .box a::before {
+  opacity: 1;
+}
+.villaDetail .dualBoxes ul li.popupImage:hover {
+  cursor: pointer;
+}
+.villaDetail .dualBoxes ul li.popupImage:hover .box a .imageBox .img {
+  transform: scale(1.1);
+}
+.villaDetail .dualBoxes ul li.popupImage:hover .box .videoItem {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.villaDetail .dualBoxes ul li .title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 36px;
+  color: #02044a;
+  margin: 0 0 30px 0;
+}
+.villaDetail .dualBoxes ul li .box {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+}
+.villaDetail .dualBoxes ul li .box a {
+  display: flex;
+  width: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.villaDetail .dualBoxes ul li .box a::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 35px);
+  top: calc(50% - 35px);
+  background-image: url(/images/player_btn.png);
+  width: 70px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.villaDetail .dualBoxes ul li .box a .imageBox {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.villaDetail .dualBoxes ul li .box a .imageBox .img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transition: transform 0.4s ease-in-out;
+}
+.villaDetail .apartments {
+  width: 100%;
+  position: relative;
+  padding: 105px 0 105px 0;
+  background: #f9f9fb;
+}
+.villaDetail .apartments .box {
+  width: 100%;
+}
+.villaDetail .apartments .box .row {
+  margin: 0 -15px;
+}
+.villaDetail .apartments .box ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.titleBox {
+  width: 100%;
+  margin: 0 0 60px 0;
+}
+.titleBox .title {
+  width: 100%;
+  color: #02044a;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 55px;
+  text-align: center;
+}
+.titleBox .subTitle {
+  width: 100%;
+  margin: 10px 0 0 0;
+  color: #525265;
+  font-size: 15px;
+  line-height: 26px;
+  text-align: center;
+}
+.villaDetail .villaDetailContentBox .villaDetailContent .right {
+  width: 375px;
+  position: relative;
+}
+.villaDetail .villaDetailContentBox .villaDetailContent .right .general {
+  width: 375px;
+  position: absolute;
+  top: 0;
+}
+.linkBox {
+  display: flex;
+}
+.linkBox a {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #7e53f9;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.linkBox a.blueButton {
+  background: #3e2093;
+  color: #ffffff;
+  padding: 15px 45px;
+}
+.linkBox a.blueButton:after {
+  background: #7e53f9;
+}
+.linkBox a.blueButtonArrow {
+  background: #3e2093;
+  color: #ffffff;
+  padding: 18px 90px 18px 60px;
+  position: relative;
+}
+.linkBox a.blueButtonArrow:hover {
+  color: #7e53f9;
+}
+.linkBox a.blueButtonArrow:hover::before {
+  right: 50px;
+}
+.linkBox a.blueButtonArrow::after {
+  background: #7e53f9;
+}
+.linkBox a.blueButtonArrow::before {
+  content: "";
+  background-image: url("/images/right-arrow-white.png");
+  width: 8px;
+  height: 14px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 60px;
+  top: calc(50% - 7px);
+  z-index: 3;
+  transition: right 0.2s ease-in-out;
+}
+.linkBox a.blueButtonArrow span {
+  color: #ffffff;
+}
+.linkBox a:after {
+  position: absolute;
+  transition: 0.3s;
+  content: "";
+  width: 0;
+  left: auto;
+  right: -10%;
+  bottom: 0;
+  height: 100%;
+  background: #3e2093;
+  transform: skewX(15deg);
+  z-index: 1;
+}
+.linkBox a:hover {
+  color: #ffffff;
+}
+.linkBox a:hover:after {
+  left: -10%;
+  right: auto;
+  width: 120%;
+}
+.linkBox a span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+.dateRange {
+  position: absolute;
+  z-index: 5;
+  top: 80px;
+  border: 1px solid #d9d9e4;
+  border-radius: 8px;
+  box-shadow: 0px 40px 30px rgb(25 25 46 / 4%);
+}
+.videoContainer {
+  height: 100%;
+  display: flex;
+  position: relative;
+  float: none;
+  overflow: visible;
+}
+.videoItem {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+section.villaDetail .customerCommentsBox {
+  width: 100%;
+  margin: 0 0 120px 0;
+}
+section.villaDetail .customerCommentsBox .customerComments {
+  width: 100%;
+}
+section.villaDetail .customerCommentsBox .customerComments .title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 36px;
+  color: #02044a;
+  margin: 0 0 30px 0;
+}
+section.villaDetail .customerCommentsBox .customerComments .commentForm {
+  width: 100%;
+  width: calc(100% - 375px);
+  padding: 0 165px 0 0;
+}
+section.villaDetail .customerCommentsBox .customerComments .commentForm .row {
+  margin: 0 -30px;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 0 10px 0;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi {
+  padding: 0 30px;
+  margin: 0 0 20px 0;
+  width: 50%;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .text {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: #02044a;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars {
+  display: flex;
+  align-items: center;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .starItems {
+  display: flex;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .starItems
+  .starItem {
+  margin: 0 5px 0 0;
+  cursor: pointer;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .starItems
+  .starItem.active
+  .star {
+  background-image: url(../../../public/images/star-icon.png);
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .starItems
+  .starItem
+  .star {
+  background-image: url(../../../public/images/star-icon-passive.png);
+  width: 10px;
+  height: 10px;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6a6b93;
+}
+section.villaDetail .customerCommentsBox .customerComments .commentForm ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.villaDetail .customerCommentsBox .customerComments .commentForm ul li {
+  width: 50%;
+  padding: 0 20px 0 0;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li:nth-child(odd) {
+  padding: 0 0 0 20px;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li.full {
+  width: 100%;
+  padding: 0;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox {
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox.error
+  input {
+  border: 1px solid #ff4c4c;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox.error
+  textarea {
+  border: 1px solid #ff4c4c;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox
+  .inputName {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: #02044a;
+  margin: 0 0 10px 0;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox
+  input {
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #d9d9e4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6a6b93;
+  font-family: "Sofia Pro";
+  font-style: normal;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox
+  input::placeholder {
+  color: #6a6b93;
+  letter-spacing: 5px;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox
+  input:focus {
+  color: #02044a;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox
+  textarea {
+  width: 100%;
+  resize: none;
+  background: #ffffff;
+  border: 1px solid #d9d9e4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 215px;
+  padding: 20px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: #6a6b93;
+  font-family: "Sofia Pro";
+  font-style: normal;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox
+  textarea::placeholder {
+  color: #6a6b93;
+  letter-spacing: 5px;
+}
+section.villaDetail
+  .customerCommentsBox
+  .customerComments
+  .commentForm
+  ul
+  li
+  .inputBox
+  textarea:focus {
+  color: #02044a;
+}
+@media screen and (max-width: 1699px) {
+  .container {
+    width: 1400px;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .left {
+    padding: 0 80px 0 0;
+  }
+  section.villaDetail .customerCommentsBox .customerComments .commentForm {
+    padding: 0 80px 0 0;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul.commentUl {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1499px) {
+  .container {
+    width: 1170px;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .left {
+    width: calc(100% - 320px);
+    padding: 0 50px 0 0;
+  }
+  .villaDetail .dualBoxes ul li .box {
+    height: 290px;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .right {
+    width: 320px;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .right .general {
+    width: 320px;
+  }
+  section.villaDetail .customerCommentsBox .customerComments .commentForm {
+    width: calc(100% - 320px);
+    padding: 0 50px 0 0;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul.commentUl {
+    width: 100%;
+  }
+  .dateRange {
+    left: -40px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .villaDetail {
+    padding: 45px 0 0 0;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent {
+    flex-direction: column;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .left {
+    width: 100%;
+    padding: 0;
+  }
+  .villaDetail .productImagesBox {
+    margin: 0 0 25px 0;
+  }
+  .villaDetail .dualBoxes ul {
+    padding: 0;
+  }
+  .villaDetail .dualBoxes ul li .box {
+    height: 237px;
+  }
+  .titleBox {
+    margin: 0 0 45px 0;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .right {
+    width: 100%;
+    margin: 0 0 45px 0;
+  }
+  section.villaDetail .customerCommentsBox .customerComments .commentForm {
+    width: 100%;
+    padding: 0;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .right .general {
+    width: 100%;
+    position: relative;
+    top: inherit;
+  }
+  .dateRange {
+    left: 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .villaDetail .detailTitleBox .box .right .price {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .breadCrumb .breadCrumbBox {
+    flex-direction: column;
+  }
+  .breadCrumb .breadCrumbBox ul.breadCrumbList {
+    width: 100%;
+    margin: 0 0 15px 0;
+    justify-content: center;
+  }
+  .breadCrumb .breadCrumbBox ul.breadCrumbList li.breadCrumbItem::before {
+    padding: 0 2.5px;
+  }
+  .breadCrumb .breadCrumbBox ul.breadCrumbList li.breadCrumbItem a {
+    font-size: 12px;
+  }
+  .villaDetail {
+    padding: 30px 0 0 0;
+  }
+  .villaDetail .detailTitleBox {
+    margin: 0 0 30px 0;
+  }
+  .villaDetail .detailTitleBox .box {
+    flex-direction: column;
+  }
+  .villaDetail .detailTitleBox .box .left {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+  .villaDetail .detailTitleBox .box .left .detailTitle {
+    font-size: 32px;
+    line-height: 42px;
+    margin: 0 0 5px 0;
+  }
+  .villaDetail .detailTitleBox .box .left .villaInformation .features {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .villaDetail
+    .detailTitleBox
+    .box
+    .left
+    .villaInformation
+    .features
+    .colon:first-child {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+  .villaDetail .detailTitleBox .box .right {
+    width: 100%;
+  }
+  .villaDetail .detailTitleBox .box .right .priceType {
+    text-align: left;
+    margin: 0 0 5px 0;
+  }
+  .villaDetail .detailTitleBox .box .right .price {
+    text-align: left;
+  }
+  .villaDetail .productImagesBox {
+    margin: 0 0 15px 0;
+  }
+  .villaDetail .productImagesBox .productImages .row {
+    margin: 0 -2.5px;
+  }
+  .villaDetail .dualBoxes {
+    margin: 0 0 30px 0;
+  }
+  section.villaDetail .customerCommentsBox {
+    margin: 0 0 30px 0;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul.commentUl {
+    margin: 0 0 30px 0;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul.commentUl
+    li.commentLi {
+    width: 100%;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul.commentUl
+    li.commentLi:last-child {
+    margin: 0;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul
+    li {
+    width: 100%;
+    padding: 0;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul
+    li:nth-child(odd) {
+    padding: 0;
+  }
+  section.villaDetail
+    .customerCommentsBox
+    .customerComments
+    .commentForm
+    ul
+    li
+    .inputBox {
+    margin: 0 0 15px 0;
+  }
+  .villaDetail .dualBoxes ul {
+    flex-direction: column;
+  }
+  .villaDetail .dualBoxes ul li {
+    width: 100%;
+    margin: 0 0 30px 0;
+  }
+  .villaDetail .dualBoxes ul li:last-child {
+    margin: 0;
+  }
+  .villaDetail .dualBoxes ul li .title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .villaDetail .dualBoxes ul li .box {
+    height: 176px;
+  }
+  .titleBox {
+    margin: 0 0 30px 0;
+  }
+  .titleBox .title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .villaDetail .villaDetailContentBox .villaDetailContent .right {
+    margin: 0 0 30px 0;
+  }
+}

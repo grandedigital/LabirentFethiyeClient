@@ -1,0 +1,208 @@
+.container {
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.top {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 0 20px 0;
+}
+
+.top .box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.top .box .left {
+  width: 50%;
+  display: flex;
+  margin: 5px 0;
+}
+
+.top .box .left .colon {
+  display: flex;
+  margin: 0 15px 0 0;
+}
+
+.top .box .left .colon i {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-repeat: no-repeat;
+  margin: 0 10px 0 0;
+}
+
+.top .box .left .colon span {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.top .box .left .colon a {
+  margin: 0 0 0 5px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.top .box .right {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top .box .right .socialMedia {
+  display: flex;
+  align-items: center;
+}
+
+.top .box .right .socialMedia .socialText {
+  margin: 0 20px 0 0;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.top .box .right .socialMedia ul {
+  display: flex;
+}
+
+.top .box .right .socialMedia ul li {
+  display: flex;
+}
+
+.top .box .right .socialMedia ul li:last-child {
+  margin: 0;
+}
+
+.top .box .right .socialMedia ul li a {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.top .box .right .socialMedia ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top .box .right .socialMedia ul li a.facebook i {
+  background-image: url("/images/facebook.png");
+}
+
+.top .box .right .socialMedia ul li a.twitter i {
+  background-image: url("/images/twitter.png");
+}
+
+.top .box .right .socialMedia ul li a.instagram i {
+  background-image: url("/images/instagram.png");
+}
+
+.top .box .right .socialMedia ul li a.linkedin i {
+  background-image: url("/images/linkedin.png");
+}
+
+.top .box .right .socialMedia ul li a.youtube i {
+  background-image: url("/images/youtube.png");
+}
+
+.top .box .right .socialMedia ul li a.google i {
+  background-image: url("/images/google.png");
+}
+
+.top .box .right .socialMedia ul li a i {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.top .box .right .lang {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 30px;
+}
+
+.top .box .right .lang a {
+  font-size: 14px;
+  color: #ffffff;
+  padding: 0 17px 0 0;
+  position: relative;
+}
+
+.top .box .right .lang a::before {
+  content: "";
+  width: 8px;
+  height: 5px;
+  background-image: url(/images/down.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 2.5px);
+}
+
+.top .box .right .lang .langFlag {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .top {
+    margin: 0 0 10px 0;
+  }
+
+  .top .box .right .socialMedia .socialText {
+    margin: 0 10px 0 0;
+  }
+}
+
+@media screen and (max-width: 1699px) {
+  .container {
+    width: 1400px;
+  }
+}
+
+@media screen and (max-width: 1499px) {
+  .container {
+    width: 1100px;
+  }
+
+  .top .box .left .colon span {
+    font-size: 13px;
+  }
+
+  .top .box .right .socialMedia .socialText {
+    font-size: 13px;
+  }
+
+  .top .box .right .lang a {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .top .box .left {
+    display: none;
+  }
+
+  .top .box .right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

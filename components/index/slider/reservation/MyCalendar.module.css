@@ -1,0 +1,101 @@
+.mainContainer {
+    width: 350px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.monthTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #02044a;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.monthTitle span {
+    position: absolute;
+    background: url(../../../../public/images/arrow.png);
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.monthTitle span.leftArrow {
+    left: 30px;
+    transform: rotate(180deg);
+}
+
+.monthTitle span.rightArrow {
+    right: 30px;
+}
+
+/* .asd {
+    background: url(../sprite/arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0;
+    top: 47px;
+    cursor: pointer;
+} */
+
+.daysTitle {
+    display: flex;
+    color: #02044a;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 8px;
+}
+
+.daysTitleItem {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.daysRow {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.daysRowItem span {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #02044a;
+    transition: all 0.4s ease-in-out;
+    background: transparent;
+    font-weight: normal;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.daysRowItem span.passive {
+    visibility: hidden;
+}
+
+.daysRowItem span.disabled {
+    color: #6a6b93;
+    cursor: not-allowed;
+}
+
+.daysRowItem span.active:hover {
+    background: #7e53f9;
+    color: #ffffff;
+}
+
+.passive {
+    display: none;
+}

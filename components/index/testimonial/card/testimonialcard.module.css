@@ -1,0 +1,93 @@
+.ulTop {
+    width: 100%;
+    display: flex;
+    margin: 0 0 30px 0;
+}
+
+.ulTop .imgBox {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 20px 0 0;
+}
+
+.ulTop .imgBox .bgImage {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ulTop .textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ulTop .textBox .title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #02044A;
+}
+
+.cardContainer {
+    background-color: #fff;
+    margin: 0 15px;
+    padding: 50px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.cardContainer::before {
+    content: '';
+    width: 36px;
+    height: 26px;
+    background-image: url(/images/nail.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 35px;
+    right: 40px;
+}
+
+.ulTop .textBox .desc {
+    width: 100%;
+    font-size: 14px;
+    line-height: 26px;
+    color: #525265;
+}
+
+.ulCenter {
+    width: 100%;
+    display: flex;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 26px;
+    color: #525265;
+    word-break: break-word;
+}
+
+.ulBottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ulBottom .name {
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: #02044A;
+    margin: 0 0 5px 0;
+}
+
+.ulBottom .date {
+    width: 100%;
+    font-size: 14px;
+    line-height: 26px;
+    color: #525265;
+}

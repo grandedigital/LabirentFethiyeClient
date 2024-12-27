@@ -1,0 +1,208 @@
+.title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 36px;
+  color: #02044a;
+  margin: 0 0 30px 0;
+}
+
+.commentRating {
+  width: 100%;
+  margin: 0 0 40px 0;
+}
+
+.commentRating ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.commentRating ul li {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  padding: 0 15px;
+  margin: 0 0 20px 0;
+}
+
+.commentRating ul li .name {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: #02044a;
+}
+
+.commentRating ul li .rating {
+  display: flex;
+  align-items: center;
+}
+
+.commentRating ul li .rating .graphic {
+  background: #d9d9e4;
+  display: flex;
+  width: 120px;
+  height: 5px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.commentRating ul li .rating .graphic span {
+  background: #7e53f9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.commentRating ul li .rating .rate {
+  width: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: #02044a;
+  text-align: right;
+}
+
+.comments {
+  width: 100%;
+  padding: 0 0 60px 0;
+  margin: 0 0 60px 0;
+  border-bottom: 1px solid #e6e9ec;
+}
+
+.comments ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.comments ul li {
+  width: 33.3333%;
+  padding: 0 15px;
+  margin: 0 0 30px 0;
+}
+
+.comments ul li .imageBox {
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments ul li .imageBox .img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.comments ul li .imageBox .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comments ul li .name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #02044a;
+  margin: 0 0 10px 0;
+}
+
+.comments ul li .dateandRating {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 25px 0;
+}
+
+.comments ul li .dateandRating .date {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6a6b93;
+}
+
+.comments ul li .dateandRating .stars {
+  display: flex;
+  align-items: center;
+}
+
+.comments ul li .dateandRating .stars .starItems {
+  display: flex;
+}
+
+.comments ul li .dateandRating .stars .starItems .starItem {
+  margin: 0 5px 0 0;
+}
+
+.comments ul li .dateandRating .stars .starItems .starItem.active .star {
+  background-image: url(../../../public/images/star-icon.png);
+}
+
+.comments ul li .dateandRating .stars .starItems .starItem .star {
+  background-image: url(../../../public/images/star-icon-passive.png);
+  width: 10px;
+  height: 10px;
+}
+
+.comments ul li .dateandRating .stars .text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6a6b93;
+}
+
+.comments ul li .descBox {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: #6a6b93;
+}
+
+@media screen and (max-width: 1199px) {
+  .comments ul li {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .comments ul li {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .commentRating {
+    margin: 0 0 30px 0;
+  }
+  .commentRating ul li {
+    width: 100%;
+  }
+  .commentRating ul li:last-child {
+    margin: 0;
+  }
+  .comments {
+    padding: 0 0 30px 0;
+    margin: 0 0 30px 0;
+  }
+  .comments .linkBox {
+    width: 100%;
+  }
+  .comments .linkBox button.blueButtonArrowOpa {
+    width: 100%;
+    padding: 18px 50px 18px 30px;
+  }
+  .comments .linkBox button.blueButtonArrowOpa::before {
+    right: 30px;
+  }
+}

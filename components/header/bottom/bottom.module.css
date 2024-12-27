@@ -1,0 +1,343 @@
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.linkBox {
+    display: flex;
+}
+
+.linkBox a {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.linkBox a span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.linkBox a:hover {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.linkBox a:hover::after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox a::after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBoxDetailed a::after {
+    background: #7E53F9;
+}
+
+.bottom {
+    width: 100%;
+}
+
+.bottom .box {
+    width: 100%;
+    display: flex;
+}
+
+.bottom .box .left {
+    width: calc(100% - 300px);
+    display: flex;
+    align-items: center;
+}
+
+.bottom .box .left nav {
+    margin: 8px 0 0 50px;
+}
+
+.bottom .box .left nav .menu_ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom .box .left nav .menu_ul .menu_li {
+    position: relative;
+    padding: 0 0 20px 0;
+    margin: 20px 0 0 0;
+}
+
+.bottom .box .left nav .menu_ul .menu_li:hover .menuLink span::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.bottom .box .left nav .menu_ul .menu_li:hover .openMenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bottom .box .left nav .menu_ul .menu_li.li_open .menuLink i {
+    width: 10px;
+    height: 6px;
+    background-image: url(/images/menuDown.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 7px;
+    right: -22px;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .menuLink {
+    display: flex;
+    font-size: 15px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 0 0;
+    position: relative;
+    margin: 0 40px 0 0;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .menuLink span {
+    position: relative;
+    padding: 0 0 8px 0;
+    overflow: hidden;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .menuLink span::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    transition: all .4s ease;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .openMenu {
+    width: 280px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+    border-radius: 8px;
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .openMenu .openMenu_ul {
+    width: 100%;
+    padding: 20px 20px;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .openMenu .openMenu_ul .openMenu_li {
+    width: 100%;
+    position: relative;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .openMenu .openMenu_ul .openMenu_li:hover .openMenu_Link {
+    background: #F9F6FF;
+    color: #7E53F9;
+    border-radius: 8px;
+}
+
+.bottom .box .left nav .menu_ul .menu_li .openMenu .openMenu_ul .openMenu_li .openMenu_Link {
+    display: flex;
+    border-radius: 3px;
+    font-size: 15px;
+    color: #02044A;
+    padding: 12.5px 20px 12.5px 20px;
+    transition: all .3s ease-in-out;
+    position: relative;
+}
+
+.bottom .box .right {
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.bottom .box .right .basketBox {
+    margin: 0 25px 0 0;
+}
+
+.bottom .box .right .basketBox a {
+    display: flex;
+    align-items: center;
+}
+
+.bottom .box .right .basketBox a i {
+    width: 24px;
+    height: 24px;
+    margin: 0 6px 0 0;
+    background-image: url(/images/basket.png);
+}
+
+.bottom .box .right .basketBox a span {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.bottom .box .right .linkBox {
+    margin: 0 30px 0 0;
+}
+
+.bottom .box .right .menuIcon {
+    width: 20px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.bottom .box .right .menuIcon span {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 0 0 7px 0;
+    display: block;
+}
+
+.bottom .box .right .menuIcon span:last-child {
+    margin: 0;
+}
+
+.bottom .box .right .menuIcon span:nth-child(2) {
+    width: 15px;
+}
+
+@media screen and (max-width: 1699px) {
+
+    .container {
+        width: 1400px;
+    }
+
+    .bottom .box .left nav .menu_ul .menu_li .menuLink {
+        margin: 0 35px 0 0;
+    }
+
+    .bottom .box .left nav .menu_ul .menu_li .menuLink i {
+        right: -15px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+
+    .container {
+        width: 1170px;
+    }
+
+    .bottom .box .left {
+        width: calc(100% - 245px);
+    }
+
+    .bottom .box .left nav {
+        margin: 8px 0 0 20px;
+    }
+
+    .bottom .box .left nav .menu_ul .menu_li.li_open .menuLink i {
+        right: -17px;
+    }
+
+    .bottom .box .left nav .menu_ul .menu_li .menuLink {
+        margin: 0 27.5px 0 0;
+        font-size: 13px;
+    }
+
+    .bottom .box .right {
+        width: 245px;
+    }
+
+    .bottom .box .right .basketBox {
+        margin: 0 15px 0 0;
+    }
+
+    .bottom .box .right .basketBox a span {
+        font-size: 13px;
+    }
+
+    .bottom .box .right .linkBox {
+        margin: 0 15px 0 0;
+    }
+
+    .bottom .box .right .linkBox a {
+        padding: 15px 15px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .bottom .box .left {
+        width: 50%;
+    }
+
+    .bottom .box .left nav {
+        display: none;
+    }
+
+    .bottom .box .right {
+        width: 50%;
+        justify-content: flex-end;
+    }
+
+    .bottom .box .right .linkBox {
+        display: none;
+    }
+
+    .bottom .box .right .menuIcon {
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .bottom .box .left {
+        width: 110px;
+    }
+
+    .bottom .box .right {
+        width: calc(100% - 110px);
+    }
+
+    .bottom .box .right .basketBox {
+        margin: 0 7.5px 0 0;
+    }
+
+    .bottom .box .right .basketBox a span {
+        overflow: hidden;
+        text-indent: -99px;
+    }
+
+    .bottom .box .right .linkBox a {
+        padding: 13px 7.5px;
+    }
+}

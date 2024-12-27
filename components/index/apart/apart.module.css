@@ -1,0 +1,136 @@
+.apartments {
+    width: 100%;
+    position: relative;
+    padding: 105px 0 120px 0;
+    background: #f9f9fb;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.box {
+    width: 100%;
+}
+
+.titleBox {
+    width: 100%;
+    margin: 0 0 60px 0;
+}
+
+.title {
+    width: 100%;
+    color: #02044A;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.subTitle {
+    width: 100%;
+    margin: 10px 0 0 0;
+    color: #525265;
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+}
+
+.linkBox {
+    display: flex;
+    justify-content: center;
+}
+
+.linkBox a {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.linkBox a span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.linkBox a.greyButton {
+    background: rgba(62, 32, 147, 0.1);
+    color: #3E2093;
+    padding: 15px 40px;
+    text-decoration: none;
+}
+
+.linkBox a.greyButton:hover {
+    color: #ffffff;
+}
+
+.linkBox a.greyButton::after {
+    background: #3E2093;
+}
+
+.linkBox a::after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox a:hover {
+    color: #ffffff;
+}
+
+.linkBox a:hover:after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.box ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.box ul li {
+    width: 23%;
+    margin-bottom: 30px;
+    padding: 0 15px
+}
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}

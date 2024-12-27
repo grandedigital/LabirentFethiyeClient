@@ -1,0 +1,7 @@
+.footer {
+    width: 100%;
+    background: #02044A;
+    background-image: url(/images/footerBg.png);
+    background-position: left 40px;
+    background-repeat: no-repeat;
+}

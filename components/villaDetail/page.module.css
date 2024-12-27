@@ -1,0 +1,33 @@
+.videoButton {
+  display: inline;
+  overflow: hidden;
+}
+
+.videoButton a {
+  display: flex;
+  background-color: #3e2093;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 15px 60px 15px 30px;
+  border-radius: 60px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.videoButton:hover a::before {
+  right: 10px;
+}
+
+.videoButton a::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 20px);
+  right: 5px;
+  background-image: url(../../public/images/player_btn_red.png);
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease-in-out;
+}

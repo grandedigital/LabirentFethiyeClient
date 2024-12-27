@@ -1,0 +1,83 @@
+section.slider {
+    width: 100%;
+    position: relative;
+}
+
+section.slider .sliderBox {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.slider .sliderBox .bgImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(/images/slider-1.jpg);
+}
+
+section.slider .sliderBox .sliderText {
+    width: 960px;
+    position: absolute;
+}
+
+section.slider .sliderBox .sliderText .sliderSubTitle {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+section.slider .sliderBox .sliderText .sliderTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    line-height: 84px;
+    color: #ffffff;
+}
+
+section.slider .sliderBox .sliderText .sliderTitle strong {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1699px) {}
+
+@media screen and (max-width: 1499px) {}
+
+@media screen and (max-width: 1199px) {
+    section.slider .sliderBox .sliderText {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    section.slider .sliderBox .sliderText .sliderTitle {
+        font-size: 48px;
+        line-height: 66px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    section.slider .sliderBox .sliderText {
+        margin: 50px 0 0 0;
+    }
+
+    section.slider .sliderBox .sliderText .sliderSubTitle {
+        font-size: 16px;
+    }
+
+    section.slider .sliderBox .sliderText .sliderTitle {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+}

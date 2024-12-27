@@ -1,0 +1,197 @@
+section.contentDetail {
+    width: 100%;
+    padding: 120px 0;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.titleBox {
+    width: 100%;
+    margin: 0 0 60px 0;
+}
+
+.titleBox .title {
+    width: 100%;
+    color: #02044A;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion .accordionColumn {
+    background: #ffffff;
+    height: 70px;
+    margin: 0 0 30px 0;
+    overflow: hidden;
+    border-radius: 3px;
+    transition: height .4s ease-in-out;
+}
+
+.accordion .accordionColumn:last-child {
+    margin: 0;
+}
+
+.accordion .accordionColumn.open {
+    height: auto !important;
+}
+
+.accordion .accordionColumn.open .title {
+    background: #3E2093;
+    color: #ffffff;
+    border: 1px solid #3E2093;
+}
+
+.accordion .accordionColumn.open .title::before {
+    background-image: url(/images/up-arrow-accordion.png);
+    width: 10px;
+    height: 6px;
+}
+
+.accordion .accordionColumn .title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #02044A;
+    position: relative;
+    padding: 22px 30px;
+    cursor: pointer;
+    border: 1px solid #D9D9E4;
+    border-radius: 8px;
+}
+
+.accordion .accordionColumn .title::before {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: calc(50% - 3px);
+    background-image: url(/images/down-arrow-accordion.png);
+    width: 10px;
+    height: 6px;
+}
+
+.accordion .accordionColumn .desc {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #525265;
+    padding: 30px 30px 0 30px;
+}
+
+.accordion .accordionColumn .desc a {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.accordion .accordionColumn .desc p {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.accordion .accordionColumn .desc ul {
+    width: 100%;
+    margin: 15px 0 15px 0;
+}
+
+.accordion .accordionColumn .desc ul li {
+    position: relative;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #525265;
+    padding: 0 0 0 50px;
+    margin: 0 0 10px 0;
+}
+
+.accordion .accordionColumn .desc ul li::before {
+    content: "";
+    position: absolute;
+    left: 22.5px;
+    top: calc(50% - 2.5px);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #3E2093;
+}
+
+.accordion .accordionColumn .desc ul li a {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #525265;
+}
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .titleBox {
+        margin: 0 0 45px 0;
+    }
+
+    .accordion .accordionColumn {
+        margin: 0 0 15px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .titleBox {
+        margin: 0 0 30px 0;
+    }
+
+    .titleBox .title {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .accordion .accordionColumn {
+        height: 50px;
+        margin: 0 0 10px 0;
+    }
+
+    .accordion .accordionColumn .title {
+        padding: 15px 40px 15px 20px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .accordion .accordionColumn .title::before {
+        right: 15px;
+    }
+
+    .accordion .accordionColumn .desc {
+        padding: 15px;
+        font-size: 13px;
+        line-height: 23px;
+    }
+
+    .accordion .accordionColumn .desc ul li {
+        font-size: 13px;
+        line-height: 23px;
+        margin: 0 0 5px 0;
+    }
+}

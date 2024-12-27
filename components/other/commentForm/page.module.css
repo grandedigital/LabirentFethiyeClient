@@ -1,0 +1,347 @@
+.commentForm {
+  width: 100%;
+  width: calc(100% - 375px);
+  padding: 0 165px 0 0;
+}
+
+.commentForm .title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 36px;
+  color: #02044a;
+  margin: 0 0 30px 0;
+}
+
+.commentForm .row {
+  margin: 0 -30px;
+}
+
+.commentForm ul.commentUl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 0 10px 0;
+}
+
+.commentForm ul.commentUl li.commentLi {
+  padding: 0 30px;
+  margin: 0 0 20px 0;
+  width: 50%;
+}
+
+.commentForm ul.commentUl li.commentLi .textandRating {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.commentForm ul.commentUl li.commentLi .textandRating .text {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: #02044a;
+}
+
+.commentForm ul.commentUl li.commentLi .textandRating .stars {
+  display: flex;
+  align-items: center;
+}
+
+.commentForm ul.commentUl li.commentLi .textandRating .stars .starItems {
+  display: flex;
+}
+
+.commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .starItems
+  .starItem {
+  margin: 0 5px 0 0;
+  cursor: pointer;
+}
+
+.commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .starItems
+  .starItem.active
+  .star {
+  background-image: url(../../../public/images/star-icon.png);
+}
+
+.commentForm
+  ul.commentUl
+  li.commentLi
+  .textandRating
+  .stars
+  .starItems
+  .starItem
+  .star {
+  background-image: url(../../../public/images/star-icon-passive.png);
+  width: 10px;
+  height: 10px;
+}
+
+.commentForm ul.commentUl li.commentLi .textandRating .stars .text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6a6b93;
+}
+
+.commentForm ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.commentForm ul li {
+  width: 50%;
+}
+
+.commentForm ul li:nth-child(odd) {
+  padding: 0 20px 0 0;
+}
+
+.commentForm ul li.full {
+  width: 100%;
+  padding: 0;
+}
+
+.commentForm ul li .inputBox {
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.commentForm ul li .inputBox.error input {
+  border: 1px solid #ff4c4c;
+}
+
+.commentForm ul li .inputBox.error textarea {
+  border: 1px solid #ff4c4c;
+}
+
+.commentForm ul li .inputBox .inputName {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: #02044a;
+  margin: 0 0 10px 0;
+}
+
+.commentForm ul li .inputBox input {
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #d9d9e4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6a6b93;
+  font-family: "Sofia Pro";
+  font-style: normal;
+}
+
+.commentForm ul li .inputBox input::placeholder {
+  color: #6a6b93;
+  letter-spacing: 5px;
+}
+
+.commentForm ul li .inputBox input:focus {
+  color: #02044a;
+}
+
+.commentForm ul li .inputBox textarea {
+  width: 100%;
+  resize: none;
+  background: #ffffff;
+  border: 1px solid #d9d9e4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 215px;
+  padding: 20px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: #6a6b93;
+  font-family: "Sofia Pro";
+  font-style: normal;
+}
+
+.commentForm ul li .inputBox textarea::placeholder {
+  color: #6a6b93;
+  letter-spacing: 5px;
+}
+
+.commentForm ul li .inputBox textarea:focus {
+  color: #02044a;
+}
+
+.linkBox {
+  display: flex;
+}
+
+.linkBox button {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #7e53f9;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkBox button.blueButton {
+  background: #3e2093;
+  color: #ffffff;
+  padding: 15px 45px;
+}
+
+.linkBox button.blueButton:after {
+  background: #7e53f9;
+}
+
+.linkBox button.blueButtonArrow {
+  background: #3e2093;
+  color: #ffffff;
+  padding: 18px 90px 18px 60px;
+  position: relative;
+  cursor: pointer;
+}
+
+.linkBox button.blueButtonArrow:hover {
+  color: #7e53f9;
+}
+
+.linkBox button.blueButtonArrow:hover::before {
+  right: 50px;
+}
+
+.linkBox button.blueButtonArrow::after {
+  background: #7e53f9;
+}
+
+.linkBox button.blueButtonArrow::before {
+  content: "";
+  background-image: url("/images/right-arrow-white.png");
+  width: 8px;
+  height: 14px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 60px;
+  top: calc(50% - 7px);
+  z-index: 3;
+  transition: right 0.2s ease-in-out;
+}
+
+.linkBox button.blueButtonArrow span {
+  color: #ffffff;
+}
+
+.linkBox button:after {
+  position: absolute;
+  transition: 0.3s;
+  content: "";
+  width: 0;
+  left: auto;
+  right: -10%;
+  bottom: 0;
+  height: 100%;
+  background: #3e2093;
+  transform: skewX(15deg);
+  z-index: 1;
+}
+
+.linkBox button:hover {
+  color: #ffffff;
+}
+
+.linkBox button:hover:after {
+  left: -10%;
+  right: auto;
+  width: 120%;
+}
+
+.linkBox button span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+@media screen and (max-width: 1699px) {
+  .commentForm {
+    padding: 0 80px 0 0;
+  }
+
+  .commentForm ul.commentUl {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1499px) {
+  .commentForm {
+    width: calc(100% - 320px);
+    padding: 0 50px 0 0;
+  }
+
+  .commentForm ul.commentUl {
+    width: 100%;
+  }
+
+  .dateRange {
+    left: -40px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .commentForm {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .commentForm ul.commentUl {
+    margin: 0 0 30px 0;
+  }
+
+  .commentForm ul.commentUl li.commentLi {
+    width: 100%;
+  }
+
+  .commentForm ul.commentUl li.commentLi:last-child {
+    margin: 0;
+  }
+
+  .commentForm ul li {
+    width: 100%;
+    padding: 0;
+  }
+
+  .commentForm ul li:nth-child(odd) {
+    padding: 0;
+  }
+
+  .commentForm ul li .inputBox {
+    margin: 0 0 15px 0;
+  }
+}
+
+.inputFeedback {
+  color: red;
+  margin-top: 0.25rem;
+  font-size: 15px;
+}

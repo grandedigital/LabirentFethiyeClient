@@ -1,0 +1,84 @@
+.listItemsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.listItemsContainer_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listItemsContainer_box div {
+  cursor: pointer;
+}
+
+.listItemsContainer_box div.disabled {
+  color: rgb(172, 171, 171);
+  cursor: default;
+}
+
+.listItemsContainer_box > div:first-child {
+  margin-right: 20px;
+}
+
+.listItemsContainer_box .listItemActive {
+  background-color: #7e53f9;
+  color: white;
+  cursor: default;
+}
+
+.listItemsContainer_box > div:last-child {
+  margin-left: 20px;
+}
+
+.listItemsContainer ul {
+  display: flex;
+  gap: 20px;
+}
+
+.listItemsContainer ul li {
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.5s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.listItemsContainer ul li:not(.listItemActive):hover {
+  background-color: #e7e7e7;
+}
+
+@media screen and (max-width: 767px) {
+  .listItemsContainer ul {
+    display: flex;
+    gap: 0;
+  }
+
+  .listItemsContainer ul li {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .listItemsContainer ul {
+    display: flex;
+    gap: 5px;
+  }
+
+  .listItemsContainer ul li {
+    width: 25px;
+    height: 25px;
+  }
+
+  .listItemsContainer {
+    margin-bottom: 30px;
+  }
+}

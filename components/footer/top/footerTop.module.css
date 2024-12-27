@@ -1,0 +1,347 @@
+.top {
+    width: 100%;
+}
+
+.container {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.top .box {
+    width: 100%;
+    padding: 100px 0 50px;
+    display: flex;
+}
+
+.top .box .left {
+    width: 50%;
+}
+
+.top .box .left .footerLogo {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.top .box .left .footerContact {
+    width: 100%;
+}
+
+.top .box .left .footerContact ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top .box .left .footerContact ul li {
+    width: 50%;
+    margin: 0 0 30px 0;
+}
+
+.top .box .left .footerContact ul li .footerTitle {
+    width: 100%;
+    color: #FFFFFF;
+    opacity: 0.7;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+.top .box .left .footerContact ul li .footerDecs {
+    width: 250px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.top .box .left .footerContact ul li .footerDecs a {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.top .box .left .socialMedia {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.top .box .left .socialMedia .socialText {
+    width: 100%;
+    color: #FFFFFF;
+    opacity: 0.7;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+.top .box .left .socialMedia ul {
+    display: flex;
+}
+
+.top .box .left .socialMedia ul li {
+    display: flex;
+    margin: 0 15px 0 0;
+}
+
+.top .box .left .socialMedia ul li:last-child {
+    margin: 0;
+}
+
+.top .box .left .socialMedia ul li a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all .4s ease-in-out;
+}
+
+.top .box .left .socialMedia ul li a:hover {
+    background-color: #1DBAA2;
+}
+
+.top .box .left .socialMedia ul li a.facebook i {
+    background-image: url("/images/facebook.png");
+}
+
+.top .box .left .socialMedia ul li a.twitter i {
+    background-image: url("/images/twitter.png");
+}
+
+.top .box .left .socialMedia ul li a.instagram i {
+    background-image: url("/images/instagram.png");
+}
+
+.top .box .left .socialMedia ul li a.linkedin i {
+    background-image: url("/images/linkedin.png");
+}
+
+.top .box .left .socialMedia ul li a.youtube i {
+    background-image: url("/images/youtube.png");
+}
+
+.top .box .left .socialMedia ul li a.google i {
+    background-image: url("/images/google.png");
+}
+
+.top .box .left .socialMedia ul li a i {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.top .box .left .tursabBox {
+    width: 100%;
+}
+
+.top .box .left .tursabBox img {
+    margin: 0 20px 0 0;
+}
+
+.top .box .right {
+    width: 50%;
+}
+
+.top .box .right .formBulletion {
+    width: 100%;
+    margin: 0 0 40px 0;
+}
+
+.top .box .right .formBulletion .formTitle {
+    width: 100%;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.top .box .right .formBulletion .inputBox {
+    width: 100%;
+    position: relative;
+}
+
+.top .box .right .formBulletion .inputBox .inputText {
+    width: 100%;
+    height: 70px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #525265;
+    padding: 0 90px 0 20px;
+}
+
+.top .box .right .formBulletion .inputBox .bulletionButton {
+    width: 60px;
+    height: 60px;
+    background-color: #7E53F9;
+    border-radius: 8px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    background-image: url("/images/nextArrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .4s ease-in-out;
+}
+
+.top .box .right .formBulletion .inputBox .bulletionButton:hover {
+    background-color: #02044A;
+}
+
+.top .box .right .footerMenu {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.top .box .right .footerMenu .colon {
+    width: 33.33%;
+}
+
+.top .box .right .footerMenu .colon .colonTitle {
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+}
+
+.top .box .right .footerMenu .colon ul li {
+    width: 100%;
+    margin: 0 0 15px 0;
+    overflow: hidden;
+    padding: 0 0 5px 0;
+}
+
+.top .box .right .footerMenu .colon ul li a {
+    color: #ffffff;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    line-height: normal;
+}
+
+.top .box .right .footerMenu .colon ul li a:hover:before {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.top .box .right .footerMenu .colon ul li a::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -3px;
+    left: auto;
+    right: 0;
+    transition: all .4s ease-in-out;
+}
+
+@media screen and (max-width: 1699px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .top .box {
+        flex-direction: column;
+        padding: 45px 0 45px;
+    }
+
+    .top .box .left {
+        width: 100%;
+        margin: 0 0 30px 0;
+    }
+
+    .top .box .right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .top .box {
+        padding: 30px 0 0;
+    }
+
+    .top .box .left {
+        margin: 0 0 30px 0;
+    }
+
+    .top .box .left .footerLogo {
+        margin: 0 0 20px 0;
+    }
+
+    .top .box .left .footerContact ul li {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .top .box .left .footerContact ul li .footerTitle {
+        margin: 0 0 5px 0;
+    }
+
+    .top .box .left .footerContact ul li .footerDecs {
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .top .box .left .socialMedia {
+        margin: 0 0 20px 0;
+    }
+
+    .top .box .left .socialMedia .socialText {
+        margin: 0 0 10px 0;
+    }
+
+    .top .box .right .formBulletion {
+        margin: 0 0 30px 0;
+    }
+
+    .top .box .right .formBulletion .inputBox .inputText {
+        height: 50px;
+    }
+
+    .top .box .right .formBulletion .inputBox .bulletionButton {
+        height: 40px;
+        width: 40px;
+    }
+
+    .top .box .right .footerMenu {
+        flex-direction: column;
+    }
+
+    .top .box .right .footerMenu .colon {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .top .box .right .footerMenu .colon:last-child {
+        margin: 0;
+    }
+
+    .top .box .right .footerMenu .colon .colonTitle {
+        margin: 0 0 15px 0;
+    }
+
+    .top .box .right .footerMenu .colon ul li {
+        margin: 0 0 10pxpx 0;
+    }
+}

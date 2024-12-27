@@ -1,0 +1,252 @@
+.container {
+    width: 100%;
+}
+
+.container .content {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.container .content .formContent {
+    width: 900px;
+    margin: auto;
+    margin-top: 50px;
+
+    background: #FFFFFF;
+    padding: 30px;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    box-shadow: 0px 6px 15px rgba(64, 79, 104, 0.05);
+    border-radius: 8px;
+}
+
+.container .content .formContent ul li {
+    margin-bottom: 25px;
+}
+
+.container .content h1 {
+    color: #02044a;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+}
+
+.container .content .inputBox:last-child {
+    margin: 0;
+}
+
+.container .content .inputBox {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.container .content .inputBox .inputName {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    color: #02044A;
+    margin: 0 0 10px 0;
+}
+
+.container .content .inputBox.error input {
+    border: 1px solid #ff4c4c;
+}
+
+.inputFeedback {
+    color: red;
+    margin-top: 0.25rem;
+    font-size: 15px;
+}
+
+.container .content .inputBox input {
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9E4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #02044A;
+}
+
+.linkBox {
+    display: flex;
+    margin: 10px 0;
+}
+
+.linkBox button {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.linkBox button.blueButton2 {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 15px 45px;
+}
+
+.linkBox button.blueButton2:hover {
+    color: #ffffff;
+}
+
+.linkBox button.blueButton2::after {
+    background: #7E53F9;
+}
+
+.linkBox button::after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox button:hover {
+    color: #ffffff;
+}
+
+.linkBox button:hover::after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.linkBox a {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #7E53F9;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.linkBox a::after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: auto;
+    right: -10%;
+    bottom: 0;
+    height: 100%;
+    background: #3E2093;
+    transform: skewX(15deg);
+    z-index: 1;
+}
+
+.linkBox a:hover {
+    color: #ffffff;
+}
+
+.linkBox a:hover::after {
+    left: -10%;
+    right: auto;
+    width: 120%;
+}
+
+.linkBox a span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+.linkBox a.blueButton2 {
+    background: #3E2093;
+    color: #ffffff;
+    padding: 15px 45px;
+}
+
+.linkBox a.blueButton2:hover {
+    color: #ffffff;
+}
+
+.linkBox a.blueButton2::after {
+    background: #7E53F9;
+}
+
+.successMessage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.successMessage .iconBox {
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.successMessage .iconBox div {
+    background-size: cover;
+    width: 250px;
+    height: 200px;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.successMessage .textBox {
+    width: 100%;
+}
+
+.successMessage .textBox .title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    color: #02044A;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.successMessage .textBox .desc {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+    color: #6A6B93;
+}
+
+@media only screen and (max-width: 920px) {
+    .container .content .formContent {
+        width: 100%;
+    }
+
+    .container .content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container .content h1 {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,76 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modalContent .calendarContainer {
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 36px;
+  color: #02044a;
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 20px;
+}
+
+.title .titleSubContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title .titleSubContainer .propsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.title .closeButton {
+  padding: 10px 20px;
+  font-size: 40px;
+}
+
+.title span:not(.closeButton) {
+  position: relative;
+  padding: 0 0 0 30px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.title span:not(.closeButton):before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+}
+
+.title .red:before {
+  background-color: #e8543e;
+}
+
+.title .orange:before {
+  background-color: #ff7f27;
+}

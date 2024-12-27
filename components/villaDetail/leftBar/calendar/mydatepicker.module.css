@@ -1,0 +1,197 @@
+.months-container {
+    width: 100%;
+    display: none;
+    flex-wrap: wrap
+}
+
+.months-container .month-container {
+    float: left;
+    text-align: center;
+    padding: 0
+}
+
+.months-container .month-container.month- {
+    width: 33.33333%;
+    margin: 15px 0;
+    padding: 0 20px;
+}
+
+.month-container .month {
+    margin: auto;
+}
+
+.month-container .mainTitleContainer {
+    width: 100%;
+    background-color: #3E2093;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.month-container .month .montTitleContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.month-container .month .daysHeaderContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.month-container .month .day {
+    text-align: center;
+    width: 14.285%;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+}
+
+.month-container .month .month-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    user-select: none;
+    color: #fff;
+}
+    
+.month-container .month .day-header {
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+    width: 40px;
+    color: #fff
+}
+
+.rowContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.month-container .month .new,
+.month-container .month .new:hover,
+.month-container .month .old,
+.month-container .month .old:hover {
+    background: 0 0;
+    cursor: default;
+}
+
+.month-container .month .day .day-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column-reverse;
+}
+
+.month-container .month .day .day-content .dayPrice {
+    color: #1b1d78;
+    font-size: 12px;
+}
+
+.month-container .month .day.day-startRed {
+    background: linear-gradient(to top left, #e8543e 50%, white 50%);
+}
+
+.month-container .month .day.day-startOrange {
+    background: linear-gradient(to top left, #ff7f27 50%, white 50%);
+}
+
+.month-container .month .day.day-starRedToOrange {
+    background: linear-gradient(to bottom right, #ff7f27 50%, #e8543e 50%);
+}
+
+.month-container .month .day.day-starRedToOrange .day-content .dayPrice {
+    opacity: 0
+}
+
+.month-container .month .day.day-starOrangeToRed {
+    background: linear-gradient(to top left, #ff7f27 50%, #e8543e 50%);
+}
+
+.month-container .month .day.day-starOrangeToRed .day-content .dayPrice {
+    opacity: 0
+}
+
+.month-container .month .day.day-endRed {
+    background: linear-gradient(to bottom right, #e8543e 50%, white 50%);
+}
+
+.month-container .month .day.day-endOrange {
+    background: linear-gradient(to bottom right, #ff7f27 50%, white 50%);
+}
+
+.month-container .month .day.day-continueRed {
+    background-color: rgb(232, 84, 62);
+}
+
+.month-container .month .day.day-continueRed .day-content .dayPrice {
+    opacity: 0
+}
+
+.month-container .month .day.day-continueOrange {
+    background-color: #ff7f27;
+}
+
+.month-container .month .day.day-continueOrange .day-content .dayPrice {
+    opacity: 0
+}
+
+@media screen and (max-width: 1499px) {
+    .months-container .month-container.month- {
+        width: 33.33333%;
+    }
+    .month-container .month .day .day-content .dayPrice {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .month-container .month .day .day-content .dayPrice {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .months-container .month-container.month- {
+        width: 33.33333%;
+    }
+    .month-container .month .day .day-content .dayPrice {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .month-container .month .day .day-content .dayPrice {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .months-container .month-container.month- {
+        width: 50%;
+    }
+    .month-container .month .day .day-content .dayPrice {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .month-container .month .day .day-content .dayPrice {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .months-container .month-container.month- {
+        width: 100%;
+        display: flex;
+        padding: 0;
+    }
+
+    .month-container .month {
+        margin: 0;
+        width: 100%;
+    }
+
+    .month-container .month .day .day-content .dayPrice {
+        font-size: 12px;
+    }
+}

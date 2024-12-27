@@ -1,0 +1,510 @@
+.reservationBox {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+    border-radius: 60px;
+    margin: 0 0 40px 0;
+    padding: 15px 70px 15px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dateRange {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    z-index: 2;
+}
+
+
+
+.rdrDateDisplayWrapper {
+    display: none;
+}
+
+.reservationBox .colon {
+    padding: 0 30px;
+    height: 100%;
+    border-right: 1px solid #d9d9e4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.reservationBox .colon:nth-child(3) {
+    border: none;
+}
+
+.reservationBox .colon.location {
+    width: calc(100% - 633px);
+}
+
+.reservationBox .colon.date {
+    width: 250px;
+    position: relative;
+}
+
+.reservationBox .colon.numberPeople {
+    width: 170px;
+}
+
+.reservationBox .colon .colonTitle {
+    width: 100%;
+    margin: 0 0 10px 0;
+    color: #02044a;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.reservationBox .colon .colonInput {
+    width: 100%;
+    position: relative;
+}
+
+.reservationBox .colon .colonInput .searchIcon {
+    width: 20px;
+    height: 20px;
+    background-image: url(/images/search2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+}
+
+.reservationBox .colon .colonInput .dateIcon {
+    width: 20px;
+    height: 20px;
+    background-image: url(/images/date.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+}
+
+.reservationBox .colon .colonInput .peopleIcon {
+    width: 20px;
+    height: 20px;
+    background-image: url(/images/people.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+}
+
+.reservationBox .colon .colonInput input {
+    width: 100%;
+    background-color: transparent;
+    color: #6a6b93;
+    font-size: 14px;
+    padding: 0 0 0 30px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.reservationBox .colon .colonInput input::placeholder {
+    color: #6a6b93;
+}
+
+.reservationBox .colon .numberPeopleOpen {
+    width: 375px;
+    height: 260px;
+    padding: 20px 30px;
+    background: #ffffff;
+    box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+    border-radius: 8px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+}
+
+.reservationBox .colon .villaMenuOpen {
+    width: 305px;
+    max-height: 215px;
+    padding: 20px 30px;
+    background: #ffffff;
+    box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+    border-radius: 8px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+}
+
+.reservationBox .colon .numberPeopleOpen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reservationBox .colon .villaMenuOpen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reservationBox .colon .numberPeopleOpen ul {
+    width: 100%;
+}
+
+.reservationBox .colon .villaMenuOpen ul {
+    width: 100%;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li {
+    width: 100%;
+    border-bottom: 1px solid #d9d9e4;
+    padding: 0 0 20px 0;
+    margin: 0 0 20px 0;
+    display: flex;
+}
+
+.reservationBox .colon .villaMenuOpen ul li {
+    width: 100%;
+    border-bottom: 1px solid #d9d9e4;
+    padding: 0 0 12px 0;
+    margin: 0 0 12px 0;
+    display: flex;
+}
+
+.reservationBox .colon .villaMenuOpen ul li div {
+    color: #02044A;
+    transition: color .4s ease-in-out;
+}
+
+.reservationBox .colon .villaMenuOpen ul li div:hover {
+    transition: color .4s ease-in-out;
+    color: #7E53F9;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li:last-child {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.reservationBox .colon .villaMenuOpen ul li:last-child {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li .left {
+    width: calc(100% - 120px);
+    margin: 0 20px 0 0;
+}
+
+
+
+.reservationBox .colon .numberPeopleOpen ul li .left .title {
+    width: 100%;
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: #02044a;
+}
+
+.reservationBox .colon .villaMenuOpen ul li .title {
+    width: 100%;
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: #02044a;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li .left .villaTitle {
+    width: 100%;
+    margin: 0 0 0px 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: #02044a;
+}
+
+.reservationBox .colon .villaMenuOpen ul li .villaTitle {
+    width: 100%;
+    margin: 0 0 0px 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: #02044a;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li .left .desc {
+    width: 100%;
+    font-size: 14px;
+    line-height: 19px;
+    color: #6a6b93;
+}
+
+.reservationBox .colon .villaMenuOpen ul li .desc {
+    width: 100%;
+    font-size: 14px;
+    line-height: 19px;
+    color: #6a6b93;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li .right {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservationBox .colon .villaMenuOpen ul li .right {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li .right .minus {
+    width: 30px;
+    height: 30px;
+    background-color: #f2eefe;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url("/images/minus.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.reservationBox .colon .villaMenuOpen ul li .right .minus {
+    width: 30px;
+    height: 30px;
+    background-color: #f2eefe;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url("/images/minus.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li .right input {
+    width: 30px;
+    height: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    border: none;
+    color: #02044a;
+    font-size: 15px;
+}
+
+.reservationBox .colon .villaMenuOpen ul li .right input {
+    width: 30px;
+    height: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    border: none;
+    color: #02044a;
+    font-size: 15px;
+}
+
+.reservationBox .colon .numberPeopleOpen ul li .right .plus {
+    width: 30px;
+    height: 30px;
+    background-color: #f2eefe;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url("/images/plus.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.reservationBox .colon .villaMenuOpen ul li .right .plus {
+    width: 30px;
+    height: 30px;
+    background-color: #f2eefe;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url("/images/plus.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.reservationBox .searchButton {
+    width: 50px;
+    height: 50px;
+    background: #3e2093;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    background-image: url(/images/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.reservationBox .datepickerBox {
+    width: 768px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+    border-radius: 8px;
+}
+
+.reservationBox .datepickerBox .ui-datepicker {
+    display: flex;
+}
+
+.calendarsContainer {
+    position: absolute;
+    top: 85px;
+    left: 0px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+    cursor: default;
+}
+
+/* style={{position: "absolute", top: 85, left: 0, zIndex: 2, backgroundColor: "#fff", padding: 20, borderRadius: 15}} */
+
+@media screen and (max-width: 1199px) {
+    .dateRange {
+        left: -100px;
+    }
+    .calendarsContainer {
+        left: -300px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .reservationBox .colon {
+        padding: 0 10px;
+    }
+
+    .reservationBox .colon.location {
+        width: calc(100% - 450px);
+    }
+
+    .reservationBox .colon .colonInput input {
+        padding: 0 0 0 22px;
+    }
+
+    .reservationBox .datepickerBox {
+        width: 100%;
+    }
+
+    .dateRange {
+        left: -200px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .reservationBox .colon .villaMenuOpen {
+        left: 10px;
+    }
+
+    .calendarsContainer {
+        flex-direction: column;
+        left: -100px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .reservationBox {
+        height: auto;
+        flex-direction: column;
+        padding: 15px 15px 15px 15px;
+        border-radius: 8px;
+        margin: 0 0 15px 0;
+    }
+
+    .reservationBox .colon {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #d9d9e4;
+        padding: 0 0 10px 0;
+        margin: 0 0 10px 0;
+    }
+
+    .reservationBox .colon:last-child {
+        margin: 0;
+        padding: 0;
+    }
+
+    .reservationBox .colon.location {
+        width: 100%;
+    }
+
+    .reservationBox .colon.date {
+        width: 100%;
+    }
+
+    .reservationBox .colon.numberPeople {
+        width: 100%;
+        padding: 0;
+    }
+
+    .reservationBox .colon .colonTitle {
+        margin: 0 0 5px 0;
+    }
+
+    .reservationBox .colon .numberPeopleOpen {
+        width: 100%;
+        right: 0;
+        padding: 15px 15px;
+        top: 260px;
+        height: 185px;
+        z-index: 2;
+    }
+
+    .reservationBox .colon .villaMenuOpen {
+        width: 100%;
+        right: 0;
+        padding: 15px 15px;
+        top: 60px;
+        z-index: 2;
+        left: 0;
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .reservationBox .colon .numberPeopleOpen ul li {
+        padding: 0 0 5px 0;
+        margin: 0 0 5px 0;
+    }
+
+    .reservationBox .datepickerBox {
+        top: 0;
+        z-index: 2;
+    }
+
+    .reservationBox .datepickerBox .ui-datepicker {
+        flex-direction: column;
+    }
+
+    .reservationBox .searchButton {
+        width: 100%;
+        position: relative;
+        right: 0;
+        border-radius: 8px;
+    }
+
+    .dateRange {
+        left: 0;
+        top: 180px;
+        width: 100%;
+    }
+
+    .calendarsContainer {
+        left: -14px;
+        top: 0px;
+    }
+}

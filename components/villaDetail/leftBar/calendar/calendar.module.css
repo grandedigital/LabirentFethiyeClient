@@ -1,0 +1,153 @@
+.mobileAvailabilityCalendarButton {
+    display: none;
+    padding: 30px 20px;
+    width: 100%;
+    height: auto;
+    background-color: #3E2093;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+.fullDatepicker {
+    width: 100%;
+    margin: 0 0 60px 0;
+    border-bottom: 1px solid #E6E9EC;
+    display: flex;
+    flex-direction: column;
+}
+
+.fullDatepicker.modal {
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.fullDatepicker .title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    color: #02044A;
+    margin: 0 0 35px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fullDatepicker.modal .title {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.fullDatepicker.modal .datepickerBox {
+    overflow: auto;
+}
+
+.fullDatepicker .title span {
+    position: relative;
+    padding: 0 0 0 30px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.fullDatepicker .title span::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+}
+
+.fullDatepicker .title span.red::before {
+    background-color: #E8543E;
+}
+
+.fullDatepicker .title span.orange::before {
+    background-color: #ff7f27;
+}
+
+.calendar-header {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.calendar-header div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar-header div div {
+    font-size: 22px;
+    padding: 15px 10px;
+    cursor: pointer
+}
+
+.calendar-header div div:hover {
+    background: #eee
+}
+
+.calendar-header div div.disabled,
+.calendar-header div div.disabled:hover {
+    background: 0 0;
+    cursor: default;
+    color: #fff;
+    visibility: hidden;
+}
+
+.calendar-header div div.next,
+.calendar-header div div.prev {
+    width: 20px
+}
+
+.calendar-header .year-title {
+    font-weight: 700;
+    text-align: center;
+    width: auto
+}
+
+.calendar-header .year-neighbor {
+    opacity: .4
+}
+
+.calendar-header .year-neighbor2 {
+    opacity: .2;
+}
+
+@media screen and (max-width: 991px) {
+    .calendar-header .year-neighbor {
+        display: none
+    }
+
+    .calendar-header .year-neighbor2 {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .calendar-header .year-neighbor2 {
+        display: none
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .fullDatepicker {
+        display: none;
+    }
+
+    .fullDatepicker.modal {
+        display: flex;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 490px) {
+    .mobileAvailabilityCalendarButton {
+      display: inline-block; /* Veya görünür olmasını sağlayacak herhangi bir stil */
+    }
+  }
