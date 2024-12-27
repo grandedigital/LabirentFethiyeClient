@@ -195,7 +195,7 @@ export default function List({
                     isDescOpen={isDescOpen}
                     setIsDescOpen={setIsDescOpen}
                   />
-                  <DynamicDistanceRulerComponent t={t} villaSlug={villaSlug} />
+                  <DynamicDistanceRulerComponent t={t} language={i18n.language} villaSlug={villaSlug} />
                   <DynamicPriceTableComponent
                     villaSlug={villaSlug}
                     t={t}

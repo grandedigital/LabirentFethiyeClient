@@ -98,7 +98,7 @@ export default function List({
                     isDescOpen={isDescOpen}
                     setIsDescOpen={setIsDescOpen}
                   />
-                  <DynamicDistanceRulerComponent t={t} roomSlug={"room"} />
+                  <DynamicDistanceRulerComponent t={t} language={i18n.language} roomSlug={"room"} />
                   <DynamicPriceTableComponent
                     roomSlug={roomSlug}
                     t={t}

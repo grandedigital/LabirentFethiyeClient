@@ -151,7 +151,7 @@ export default function SaleDetail({
                     data={villaDetail?.data?.distanceRulers}
                     t={t}
                   /> */}
-                  <DynamicDistanceRulerComponent villaSlug={villaSlug} t={t} />
+                  <DynamicDistanceRulerComponent villaSlug={villaSlug} t={t} language={i18n.language} />
                   {/* <PriceTable
                                     data={villaDetail?.data[0]?.attributes?.price_tables?.data} t={t}
                                 />
