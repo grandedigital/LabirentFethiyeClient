@@ -33,7 +33,7 @@ const DynamicPriceTableComponent = ({
     return () => {
       if (ref.current) observer.disconnect();
     };
-  }, []);
+  }, [selectedLanguage]);
 
   const apiName = () => {
     if (roomSlug) {
@@ -48,7 +48,7 @@ const DynamicPriceTableComponent = ({
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/Clients/${apiName()}?Slug=${
           villaSlug || roomSlug
-        }&Language=tr`
+        }&Language=${selectedLanguage}`
       );
       const result = await response.json();
       setData(result);
@@ -60,7 +60,13 @@ const DynamicPriceTableComponent = ({
   };
 
   return (
-    <div ref={ref} style={{ minHeight: "200px", display: data?.data?.length == 0 ? "none" : "block" }}>
+    <div
+      ref={ref}
+      style={{
+        minHeight: "200px",
+        display: data?.data?.length == 0 ? "none" : "block",
+      }}
+    >
       {isLoading ? (
         <PriceTableSkeleton />
       ) : (
