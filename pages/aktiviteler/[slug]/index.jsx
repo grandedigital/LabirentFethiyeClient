@@ -87,7 +87,7 @@ export default function Aktivite({ activate }) {
                   key={index}
                   className={styles2.lightBoxItem}
                   href={
-                    process.env.NEXT_PUBLIC_WEBHOTOS_URL + "k_" + data?.image
+                    process.env.NEXT_PUBLIC_WEBHOTOS_URL + "b_" + data?.image
                   }
                 >
                   <div className={styles2.lightBoxItemChild}>
@@ -107,7 +107,7 @@ export default function Aktivite({ activate }) {
                   <Image
                     alt=""
                     src={
-                      process.env.NEXT_PUBLIC_WEBHOTOS_URL + "k_" + data?.image
+                      process.env.NEXT_PUBLIC_WEBHOTOS_URL + "b_" + data?.image
                     }
                     width={96}
                     height={76}

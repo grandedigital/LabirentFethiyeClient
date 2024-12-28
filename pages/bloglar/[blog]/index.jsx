@@ -68,7 +68,7 @@ export default function Blog({ blog }) {
                 /> */}
                 <div className={styles.imageBox}>
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_WEBHOTOS_URL}k_${blog?.data?.photos[0]?.image}`}
+                    src={`${process.env.NEXT_PUBLIC_WEBHOTOS_URL}b_${blog?.data?.photos[0]?.image}`}
                     alt={"Blog Detail Image"}
                     style={{ objectFit: "cover" }}
                     fill
