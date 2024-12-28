@@ -11,7 +11,7 @@ export default function HeaderTop() {
   const { pathname, query, asPath } = router;
 
   const otherLocales = (locales || []).filter(
-    (locale) => locale !== activeLocale && locale !== "default"
+    (locale) => locale !== activeLocale
   );
 
   const returnLanguageFlag = (language) => {
