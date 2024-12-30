@@ -123,7 +123,7 @@ export default function Page({ t }) {
           <div
             onClick={() =>
               window.open(
-                "https://wa.me/+905378800703/?text=Merhaba, yardımcı olur musunuz ?",
+                `https://wa.me/${t("whatsappNumber")}/?text=Merhaba, yardımcı olur musunuz ?`,
                 "_blank"
               )
             }
@@ -138,7 +138,7 @@ export default function Page({ t }) {
             <span className={styles.iconText}>Whatsapp</span>
           </div>
           <div
-            onClick={() => window.open("tel:+902526166648", "_blank")}
+            onClick={() => window.open(`tel:${t("callNumber")}`, "_blank")}
             className={styles.iconAndText}
           >
             <Image

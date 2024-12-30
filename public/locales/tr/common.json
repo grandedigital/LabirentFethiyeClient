@@ -208,5 +208,7 @@
   "activites": "Aktiviteler",
   "activitesListed": "Toplam {{activiteCount}} adet aktivite listelendi",
   "days": { "1": "Pzt", "2": "Sa", "3": "Çr", "4": "Pr", "5": "Cu", "6": "Ct", "7": "Pz"},
-  "description": "Açıklama"
+  "description": "Açıklama",
+  "whatsappNumber": "+905378800703",
+  "callNumber": "+902526166648"
 }

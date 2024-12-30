@@ -169,7 +169,7 @@ export default function HamburgerMenu() {
                 <Link
                   style={{ backgroundColor: "#3ac007" }}
                   onClick={closeMenu}
-                  href="https://wa.me/+905378800703/?text=Merhaba, yardımcı olur musunuz ?"
+                  href={`https://wa.me/${t("whatsappNumber")}/?text=Merhaba, yardımcı olur musunuz ?`}
                   target="_blank"
                 >
                   <span>WhatsApp</span>
@@ -177,7 +177,7 @@ export default function HamburgerMenu() {
               </div>
               <div className={`${styles["linkBox"]}`}>
                 <Link
-                  href="tel:+902526166648"
+                  href={`tel:${t("callNumber")}`}
                   target="_blank"
                   style={{ backgroundColor: "#c10a0a" }}
                   onClick={closeMenu}
