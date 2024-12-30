@@ -73,81 +73,119 @@ export default function Page({ t }) {
         </div>
       </ModalComponent>
       <div className={styles.makeAReservation}>
-        <div className={styles.section1}>
-          <div onClick={() => router.push("/")} className={styles.iconAndText}>
-            <Image
-              src="/images/bottomHome.png"
-              alt="bottomHomeIcon"
-              width={30}
-              height={30}
-            />
-            <span className={styles.iconText}>
-              {capitalizeWords(t("headerHomePage"))}
-            </span>
-          </div>
-          <div onClick={openModal} className={styles.iconAndText}>
-            <Image
-              src="/images/bottomSearch.png"
-              alt="bottomSearchIcon"
-              width={30}
-              height={30}
-            />
-            <span className={styles.iconText}>
-              {t("searchForaFacilityForBottomMenu")}
-            </span>
-          </div>
-        </div>
-        <div className={styles.section2}>
-          <div
-            onClick={() => scrolltoHash("makeReservation")}
-            className={styles.reservationIcon}
-          >
-            <div className={styles.iconAndText}>
+        <div style={{ height: 70, display: "flex", width: "100%"}}>
+          <div className={styles.section1}>
+            <div
+              onClick={() => router.push("/")}
+              className={styles.iconAndText}
+              style={{marginLeft: 10}}
+            >
               <Image
-                src="/images/bottomCalendar.png"
-                alt="bottomCalendar"
-                width={35}
-                height={35}
-                style={{ marginBottom: 5 }}
+                src="/images/bottomHome.png"
+                alt="bottomHomeIcon"
+                width={22}
+                height={22}
               />
-              <span
-                className={styles.iconText}
-                style={{ color: "#fff", fontSize: "12px" }}
-              >
-                {t("resevation")}
+              <Image
+                src="/images/bottomHomeHover.png"
+                alt="bottomHomeHoverIcon"
+                width={22}
+                height={22}
+                className={styles.hoverIcon}
+              />
+              <span className={styles.iconText}>
+                {capitalizeWords(t("headerHomePage"))}
+              </span>
+            </div>
+            <div onClick={openModal} className={styles.iconAndText}>
+              <Image
+                src="/images/bottomSearch.png"
+                alt="bottomSearchIcon"
+                width={22}
+                height={22}
+              />
+              <Image
+                src="/images/bottomSearchHover.png"
+                alt="bottomSearchHoverIcon"
+                width={22}
+                height={22}
+                className={styles.hoverIcon}
+              />
+              <span className={styles.iconText}>
+                {t("searchForaFacilityForBottomMenu")}
               </span>
             </div>
           </div>
-        </div>
-        <div className={styles.section3}>
-          <div
-            onClick={() =>
-              window.open(
-                `https://wa.me/${t("whatsappNumber")}/?text=Merhaba, yardımcı olur musunuz ?`,
-                "_blank"
-              )
-            }
-            className={styles.iconAndText}
-          >
-            <Image
-              src="/images/bottomWhatsapp.png"
-              alt="bottomWhatsappIcon"
-              width={30}
-              height={30}
-            />
-            <span className={styles.iconText}>Whatsapp</span>
+          <div className={styles.section2}>
+            <div
+              onClick={() => scrolltoHash("makeReservation")}
+              className={styles.reservationIcon}
+            >
+              <div className={styles.reservationIconSubContainer}>
+                <div className={styles.iconAndText}>
+                  <Image
+                    src="/images/bottomCalendar.png"
+                    alt="bottomCalendar"
+                    width={26}
+                    height={26}
+                  />
+                  {/* <span
+                className={styles.iconText}
+                style={{ color: "#fff", fontSize: "12px", marginTop: 3 }}
+              >
+                {t("resevation")}
+              </span> */}
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            onClick={() => window.open(`tel:${t("callNumber")}`, "_blank")}
-            className={styles.iconAndText}
-          >
-            <Image
-              src="/images/bottomCall.png"
-              alt="bottomCallIcon"
-              width={30}
-              height={30}
-            />
-            <span className={styles.iconText}>{t("call")}</span>
+          <div className={styles.section3}>
+            <div
+              onClick={() =>
+                window.open(
+                  `https://wa.me/${t(
+                    "whatsappNumber"
+                  )}/?text=Merhaba, yardımcı olur musunuz ?`,
+                  "_blank"
+                )
+              }
+              className={styles.iconAndText}
+            >
+              <Image
+                src="/images/bottomWhatsapp.png"
+                alt="bottomWhatsappIcon"
+                width={22}
+                height={22}
+              />
+              <Image
+                src="/images/bottomWhatsappHover.png"
+                alt="bottomWhatsappHoverIcon"
+                width={22}
+                height={22}
+                className={styles.hoverIcon}
+              />
+              <span className={styles.iconText}>Whatsapp</span>
+            </div>
+            <div
+              onClick={() => window.open(`tel:${t("callNumber")}`, "_blank")}
+              className={styles.iconAndText}
+              style={{marginRight: 10}}
+            >
+              <Image
+                src="/images/bottomCall.png"
+                alt="bottomCallIcon"
+                width={22}
+                height={22}
+              />
+              <Image
+                src="/images/bottomCallHover.png"
+                alt="bottomCallIconHoverIcon"
+                width={22}
+                height={22}
+                className={styles.hoverIcon}
+              />
+              <span className={styles.iconText}>{t("call")}</span>
+            </div>
           </div>
         </div>
       </div>

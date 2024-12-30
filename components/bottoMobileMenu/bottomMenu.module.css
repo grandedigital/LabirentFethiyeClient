@@ -62,62 +62,88 @@
   left: 0;
   right: 0;
   z-index: 90;
-  background-color: #f6f5f8;
+  background-color: #fff;
   color: #fff;
   cursor: pointer;
-  height: 60px;
-  border-top: 1px solid rgb(136, 133, 133);
+  height: 85px;
+  border-top: 1px solid #ebebeb;
 }
 
 .makeAReservation .iconAndText {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .makeAReservation .iconAndText img {
-  margin-bottom: 3px;
+  display: block;
+}
+
+.makeAReservation .iconAndText img.hoverIcon {
+  display: none;
+}
+
+.makeAReservation .iconAndText:hover img {
+  display: none;
+}
+
+.makeAReservation .iconAndText:hover img.hoverIcon {
+  display: block;
+}
+
+.makeAReservation .iconAndText:hover .iconText {
+  color: #7E53F9;
 }
 
 .makeAReservation .iconText {
   color: #000;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0;
-  font-weight: 600;
+  font-weight: 400;
 }
-
 .makeAReservation .section1 {
-  width: calc(100% / 3);
+  padding-top: 20px;
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 .makeAReservation .section2 {
-  width: calc(100% / 3);
+  width: 20%;
   height: 100%;
-  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .makeAReservation .section2 .reservationIcon {
-  background-color: #7e53f9;
-  width: 100px;
-  height: 110%;
+  padding: 10px;
+  background-color: #fff;
   position: relative;
-  bottom: 15px;
-  border-radius: 13px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ebebeb;
+}
+
+.makeAReservation .section2 .reservationIcon .reservationIconSubContainer {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  background-color: #7e53f9;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .makeAReservation .section3 {
-  width: calc(100% / 3);
+  padding-top: 20px;
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 @media screen and (max-width: 499px) {
