@@ -126,7 +126,7 @@ export default function HamburgerMenu() {
                   {t("headerActivates")}
                 </Link>
               </li>
-              <li className={styles.hmMenuLi}>
+              {/* <li className={styles.hmMenuLi}>
                 <Link
                   onClick={closeMenu}
                   href="/bloglar"
@@ -155,7 +155,7 @@ export default function HamburgerMenu() {
                 >
                   {t("headerContact")}
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className={styles.bottomSection}>
@@ -169,7 +169,9 @@ export default function HamburgerMenu() {
                 <Link
                   style={{ backgroundColor: "#3ac007" }}
                   onClick={closeMenu}
-                  href={`https://wa.me/${t("whatsappNumber")}/?text=Merhaba, yardımcı olur musunuz ?`}
+                  href={`https://wa.me/${t(
+                    "whatsappNumber"
+                  )}/?text=Merhaba, yardımcı olur musunuz ?`}
                   target="_blank"
                 >
                   <span>WhatsApp</span>

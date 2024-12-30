@@ -3,10 +3,10 @@ import FooterBottom from "./bottom/footerBottom";
 import styles from "./footer.module.css";
 import React from "react";
 
-const Footer = ({ regions }) => {
+const Footer = ({ activates }) => {
   return (
     <footer className={styles.footer}>
-      <FooterTop regions={regions} />
+      <FooterTop activates={activates} />
       <FooterBottom />
     </footer>
   );

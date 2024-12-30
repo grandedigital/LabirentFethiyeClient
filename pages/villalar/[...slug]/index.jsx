@@ -24,6 +24,8 @@ import BottomMenu from "@/components/bottoMobileMenu";
 import Reservation from "@/components/villaDetail/rightBar/reservation/reservation";
 import DetailTitleBox from "@/components/villaDetail/detailTitleBox/detailTitleBox";
 import ProductImageBox from "@/components/villaDetail/productImageBox/productImageBox";
+import CommentForm from "@/components/other/commentForm/CommentForm";
+import VillaCard from "@/components/index/villa/card/villaCard";
 import DetailDesc from "@/components/villaDetail/detailDesc/detailsDesc";
 import { getCurrencies } from "@/services";
 import Image from "next/image";
@@ -31,50 +33,6 @@ import DynamicPriceTableComponent from "@/components/villaDetail/leftBar/priceTa
 import DynamicDistanceRulerComponent from "@/components/villaDetail/leftBar/distanceRuler/dynamicDistanceRuler";
 import DynamicCalendarComponent from "@/components/villaDetail/leftBar/calendar/dynamicCalendarComponent";
 import DynamicCommentsComponent from "@/components/other/comment/dynamicCommentsComponent";
-
-const VillaCard = dynamic(
-  () => import("../../../components/index/villa/card/villaCard"),
-  {
-    ssr: true,
-  }
-);
-
-// const DetailTitleBox = dynamic(
-//   () => import("../../../components/villaDetail/detailTitleBox/detailTitleBox"),
-//   {
-//     ssr: true,
-//   }
-// );
-
-// const ProductImageBox = dynamic(
-//   () =>
-//     import("../../../components/villaDetail/productImageBox/productImageBox"),
-//   {
-//     ssr: true,
-//   }
-// );
-
-// const DetailDesc = dynamic(
-//   () => import("../../../components/villaDetail/detailDesc/detailsDesc"),
-//   {
-//     ssr: true,
-//   }
-// );
-
-// const Reservation = dynamic(
-//   () =>
-//     import("../../../components/villaDetail/rightBar/reservation/reservation"),
-//   {
-//     ssr: true,
-//   }
-// );
-
-const CommentForm = dynamic(
-  () => import("../../../components/other/commentForm/CommentForm"),
-  {
-    ssr: true,
-  }
-);
 
 export default function List({
   villa,
@@ -152,7 +110,12 @@ export default function List({
     return (
       <>
         <Seo
-          pageTitle={villaDetail?.data?.metaTitle + " | Labirent Fethiye"}
+          pageTitle={
+            villaDetail?.data?.metaTitle +
+            " " +
+            villaDetail?.data?.town +
+            " | Labirent Fethiye"
+          }
           pageDesc={villaDetail?.data?.metaDescription}
         />
         <section className={styles.breadCrumb}>
@@ -195,7 +158,11 @@ export default function List({
                     isDescOpen={isDescOpen}
                     setIsDescOpen={setIsDescOpen}
                   />
-                  <DynamicDistanceRulerComponent t={t} language={i18n.language} villaSlug={villaSlug} />
+                  <DynamicDistanceRulerComponent
+                    t={t}
+                    language={i18n.language}
+                    villaSlug={villaSlug}
+                  />
                   <DynamicPriceTableComponent
                     villaSlug={villaSlug}
                     t={t}

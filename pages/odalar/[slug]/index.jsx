@@ -53,7 +53,12 @@ export default function List({
     return (
       <>
         <Seo
-          pageTitle={roomDetail?.data?.metaTitle + " | Labirent Fethiye"}
+          pageTitle={
+            roomDetail?.data?.metaTitle +
+            `${
+              roomDetail?.data?.town ? " " + roomDetail?.data?.town : ""
+            } | Labirent Fethiye`
+          }
           pageDesc={roomDetail?.data?.metaDescription}
         />
         {/* <section className={styles.breadCrumb}>
@@ -98,7 +103,11 @@ export default function List({
                     isDescOpen={isDescOpen}
                     setIsDescOpen={setIsDescOpen}
                   />
-                  <DynamicDistanceRulerComponent t={t} language={i18n.language} roomSlug={"room"} />
+                  <DynamicDistanceRulerComponent
+                    t={t}
+                    language={i18n.language}
+                    roomSlug={"room"}
+                  />
                   <DynamicPriceTableComponent
                     roomSlug={roomSlug}
                     t={t}

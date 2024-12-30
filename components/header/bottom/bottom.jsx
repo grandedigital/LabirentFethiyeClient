@@ -131,7 +131,7 @@ export default function HeaderBottom({ from }) {
                     <span>{t("headerActivates")}</span>
                   </Link>
                 </li>
-                <li className={styles.menu_li}>
+                {/* <li className={styles.menu_li}>
                   <Link
                     rel="nofollow"
                     href="/bloglar"
@@ -148,7 +148,7 @@ export default function HeaderBottom({ from }) {
                   >
                     <span>{t("headerAboutUs")}</span>
                   </Link>
-                </li>
+                </li> */}
                 {/* <li className={`${styles["menu_li"]} ${styles["li_open"]}`}>
                                     <Link href="#" onClick={e=> e.preventDefault()} className={styles.menuLink}>
                                         <span>KURUMSAL</span>
@@ -164,7 +164,7 @@ export default function HeaderBottom({ from }) {
                                         </ul>
                                     </div>
                                 </li> */}
-                <li className={styles.menu_li}>
+                {/* <li className={styles.menu_li}>
                   <Link
                     href="/iletisim"
                     rel="nofollow"
@@ -172,7 +172,7 @@ export default function HeaderBottom({ from }) {
                   >
                     <span>{t("headerContact")}</span>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

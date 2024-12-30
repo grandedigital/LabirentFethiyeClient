@@ -4,7 +4,7 @@ import styles from "./footerTop.module.css";
 import { useTranslation } from "react-i18next";
 import { capitalizeWords } from "@/utils/globalUtils";
 
-export default function FooterTop({ regions }) {
+export default function FooterTop({ activates }) {
   const { t } = useTranslation("common");
   return (
     <div className={styles.top}>
@@ -123,6 +123,25 @@ export default function FooterTop({ regions }) {
                         </div> */}
             <div className={styles.footerMenu}>
               <div className={styles.colon}>
+                <ul className={styles.footerMenu}>
+                  <li>
+                    <Link href="/bloglar" rel="nofollow" title="">
+                      <span>{capitalizeWords(t("headerBlog"))}</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/hakkimizda" rel="nofollow" title="">
+                      <span>{capitalizeWords(t("headerAboutUs"))}</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/iletisim" rel="nofollow" title="">
+                      <span>{capitalizeWords(t("headerContact"))}</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.colon}>
                 <div className={styles.colonTitle}>{t("usefulLinks")}</div>
                 <ul className={styles.footerMenu}>
                   <li>
@@ -182,11 +201,11 @@ export default function FooterTop({ regions }) {
                 </ul>
               </div>
               <div className={styles.colon}>
-                <div className={styles.colonTitle}>{t("regions")}</div>
+                <div className={styles.colonTitle}>{t("activites")}</div>
                 <ul className={styles.footerMenu}>
-                  {regions?.map((item, index) => (
-                    <li key={item?.id || "regionItem" + index}>
-                      <Link href={`/bolgeler/${item?.slug || "yok"}`}>
+                  {activates?.map((item, index) => (
+                    <li key={"activateItem" + index + 1}>
+                      <Link href={`/aktiviteler/${item?.slug || "yok"}`}>
                         <span>
                           {item?.webPageDetails
                             ? item?.webPageDetails[0]?.title
