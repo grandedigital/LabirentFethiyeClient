@@ -20,7 +20,7 @@ export default function MyDatePicker({
   priceType,
 }) {
   const { i18n, t } = useTranslation();
-  const twoDifferentYearsWillBeListed = 0 - (currentMounth + 1);
+  const twoDifferentYearsWillBeListed = 0 - currentMounth;
 
   dates = dates.map((reservation) => ({
     id: reservation.id,
