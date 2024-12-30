@@ -46,7 +46,7 @@ export default function Blog({ blog }) {
     return (
       <>
         <Seo
-          pageTitle={blog?.data?.metaTitle}
+          pageTitle={blog?.data?.metaTitle + " | Labirent Fethiye"}
           pageDesc={blog?.data?.metaDescription}
         />
         <BreadCrumb />

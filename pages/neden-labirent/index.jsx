@@ -10,7 +10,7 @@ export default function WhyLabirent() {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Neden Labirent"}
+        pageTitle={"Neden Labirent | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Neden Labirent"}
       />
       <BreadCrumb link="neden-labirent" />

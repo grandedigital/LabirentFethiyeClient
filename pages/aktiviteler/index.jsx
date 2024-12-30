@@ -9,7 +9,7 @@ export default function index({ activates }) {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Aktiviteler"}
+        pageTitle={"Aktiviteler | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Aktiviteler"}
       />
       <section className="listPage_contentDetail listPage_villasDetail">

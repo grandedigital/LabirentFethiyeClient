@@ -103,7 +103,7 @@ export default function List({
     return (
       <>
         <Seo
-          pageTitle={"Labirent Fethiye | " + villa?.data[0]?.categoryMetaTitle}
+          pageTitle={villa?.data[0]?.categoryMetaTitle + " | Labirent Fethiye"}
           pageDesc={
             "Labirent Fethiye Kiralık " +
             villa?.data[0]?.categoryMetaDescription
@@ -152,7 +152,7 @@ export default function List({
     return (
       <>
         <Seo
-          pageTitle={"Labirent Fethiye | " + villaDetail?.data?.metaTitle}
+          pageTitle={villaDetail?.data?.metaTitle + " | Labirent Fethiye"}
           pageDesc={villaDetail?.data?.metaDescription}
         />
         <section className={styles.breadCrumb}>

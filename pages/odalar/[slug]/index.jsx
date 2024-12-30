@@ -53,7 +53,7 @@ export default function List({
     return (
       <>
         <Seo
-          pageTitle={roomDetail?.data?.metaTitle}
+          pageTitle={roomDetail?.data?.metaTitle + " | Labirent Fethiye"}
           pageDesc={roomDetail?.data?.metaDescription}
         />
         {/* <section className={styles.breadCrumb}>

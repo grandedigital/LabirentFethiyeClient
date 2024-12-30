@@ -10,7 +10,7 @@ export default function Blog({ blogs }) {
   const { t } = useTranslation("common");
   return (
     <>
-      <Seo pageTitle={"Labirent Fethiye | Bloglar"} pageDesc={"Bloglar"} />
+      <Seo pageTitle={"Bloglar | Labirent Fethiye"} pageDesc={"Bloglar"} />
       <section
         className={`${styles["contentDetail"]} ${styles["villasDetail"]} ${styles["blogList"]}`}
       >

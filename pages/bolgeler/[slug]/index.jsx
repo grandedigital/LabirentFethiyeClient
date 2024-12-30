@@ -29,7 +29,7 @@ export default function Bolge({ region }) {
     return (
       <>
         <Seo
-          pageTitle={region?.data?.metaTitle}
+          pageTitle={region?.data?.metaTitle + " | Labirent Fethiye"}
           pageDesc={region?.data?.metaDescription}
         />
         <BreadCrumb />

@@ -12,7 +12,7 @@ export default function Hakkimizda() {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Hakkımızda"}
+        pageTitle={"Hakkımızda | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Hakkımızda"}
       />
       <BreadCrumb link="about" />

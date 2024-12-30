@@ -10,7 +10,7 @@ export default function LeaseTerms() {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Kiralama Şartları"}
+        pageTitle={"Kiralama Şartları | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Kiralama Şartları"}
       />
       <BreadCrumb link="kiralama-sartlari" />

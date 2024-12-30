@@ -24,7 +24,7 @@ export default function Searchs({
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Arama Sonuçları"}
+        pageTitle={"Arama Sonuçları | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Arama Sonuçları"}
       />
       <section className="listPage_contentDetail listPage_villasDetail">

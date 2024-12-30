@@ -68,7 +68,7 @@ export default function Iletisim() {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | İletişim"}
+        pageTitle={"İletişim | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye İletişim"}
       />
       <BreadCrumb link="contact" />

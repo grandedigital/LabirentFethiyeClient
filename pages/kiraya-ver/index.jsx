@@ -11,7 +11,7 @@ export default function KirayaVer() {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Villanızı Kiraya Verin"}
+        pageTitle={"Villanızı Kiraya Verin | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Villanızı Kiraya Verin"}
       />
       <BreadCrumb link={"kiraya-ver"} />

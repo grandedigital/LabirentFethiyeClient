@@ -30,7 +30,7 @@ export default function SaleDetail({
     return (
       <>
         <Seo
-          pageTitle={villaDetail?.data?.metaTitle}
+          pageTitle={villaDetail?.data?.metaTitle + " | Labirent Fethiye"}
           pageDesc={villaDetail?.data?.metaDescription}
         />
         <section className={styles.breadCrumb}>

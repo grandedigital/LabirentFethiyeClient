@@ -28,7 +28,7 @@ export default function SSS({ sss }) {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Sıkça Sorulan Sorular"}
+        pageTitle={"Sıkça Sorulan Sorular | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Sıkça Sorulan Sorular"}
       />
       <BreadCrumb link="sss" />

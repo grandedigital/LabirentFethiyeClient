@@ -42,7 +42,7 @@ export default function List({ villaDetail, imgs, allCategories }) {
     return (
       <>
         <Seo
-          pageTitle={"Labirent Fethiye | " + villaDetail?.data?.metaTitle}
+          pageTitle={villaDetail?.data?.metaTitle + " | Labirent Fethiye"}
           pageDesc={villaDetail?.data?.metaDescription}
         />
         {/* <section className={styles.breadCrumb}>

@@ -9,7 +9,7 @@ export default function index({ regions }) {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Bölgeler"}
+        pageTitle={"Bölgeler | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Bölgeler"}
       />
       <section className="listPage_contentDetail listPage_villasDetail">

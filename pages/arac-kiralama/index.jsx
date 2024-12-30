@@ -11,7 +11,7 @@ export default function RentCar() {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Araç Kiralama"}
+        pageTitle={"Araç Kiralama | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Araç Kiralama"}
       />
       <BreadCrumb link="arac-kiralama" />

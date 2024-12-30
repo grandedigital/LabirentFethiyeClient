@@ -302,7 +302,7 @@ export default function Reservation() {
   return (
     <>
       <Seo
-        pageTitle={"Labirent Fethiye | Rezervasyon Oluştur"}
+        pageTitle={"Rezervasyon Oluştur | Labirent Fethiye"}
         pageDesc={"Labirent Fethiye Rezervasyon Oluşturma"}
       />
       <section className={`${styles["contentDetail"]}`}>

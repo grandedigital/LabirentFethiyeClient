@@ -52,7 +52,7 @@ export default function Aktivite({ activate }) {
     return (
       <>
         <Seo
-          pageTitle={activate?.data?.metaTitle}
+          pageTitle={activate?.data?.metaTitle + " | Labirent Fethiye"}
           pageDesc={activate?.data?.metaDescription}
         />
         <BreadCrumb />
