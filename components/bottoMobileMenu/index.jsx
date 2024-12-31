@@ -41,7 +41,7 @@ export default function Page({ t }) {
       <ModalComponent
         isOpen={isModalOpen}
         onClose={closeModal}
-        height="40vh"
+        height="50vh"
         title="Tesis Ara"
       >
         <div
@@ -50,6 +50,7 @@ export default function Page({ t }) {
         >
           <div className={styles.searchInputContainer}>
             <input
+              autoFocus
               value={filterText}
               className={styles.searchInput}
               type="text"

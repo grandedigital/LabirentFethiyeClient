@@ -22,7 +22,7 @@ const ModalComponent = ({ isOpen, onClose, children, height = "90vh", title }) =
                 <div className={styles.title}>
                     <div className={styles.titleSubContainer}>
                         {
-                            title ? <span style={{fontSize: "20px"}}>{title}</span> : <><div className={styles.propsContainer}>
+                            title ? <span style={{ fontSize: "20px" }}>{title}</span> : <><div className={styles.propsContainer}>
                                 <span className={styles.orange}>Opsiyonlu</span>
                                 <span className={styles.red}>Dolu</span>
                             </div></>
@@ -32,7 +32,7 @@ const ModalComponent = ({ isOpen, onClose, children, height = "90vh", title }) =
                         </span>
                     </div>
                 </div>
-                <div className={styles.calendarContainer}>
+                <div className={styles.calendarContainer} style={{ height: `calc(${height} - 200px)` }}>
                     {children}
                 </div>
             </div>
