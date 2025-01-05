@@ -3,8 +3,10 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Rating } from "react-simple-star-rating";
 import { useRef } from "react";
+import { createComment } from "@/services/villa";
 
-export default function CommentForm({ t }) {
+//if type == 0 villa, 1 == hotel
+export default function CommentForm({ t, slug, type }) {
   const mailRef = useRef(null);
 
   const phoneFormat = (string) => {
@@ -194,12 +196,13 @@ export default function CommentForm({ t }) {
           form_rating: 0,
         }}
         validationSchema={Yup.object({
-          form_email: Yup.string().required("Bu alan boş bırakılamaz"),
+          form_email: Yup.string(),
           form_name: Yup.string().required("Bu alan boş bırakılamaz"),
           form_surname: Yup.string().required("Bu alan boş bırakılamaz"),
-          form_phone: Yup.string()
-            .length(15, "Geçerli bir telefon numarası girin")
-            .required("Bu alan boş bırakılamaz"),
+          form_phone: Yup.string().length(
+            15,
+            "Geçerli bir telefon numarası girin"
+          ),
           form_message: Yup.string().required("Bu alan boş bırakılamaz"),
           form_rating: Yup.number()
             .transform((value, originalValue) =>
@@ -209,10 +212,7 @@ export default function CommentForm({ t }) {
             .min(0.5, "Lütfen puan verin"),
         })}
         onSubmit={async (values, { resetForm }) => {
-          const response = await createComment(0, {
-            ...values,
-            id: villaId,
-          });
+          const response = await createComment(type, { ...values, slug });
           if (response.statusCode == 200) {
             alert("Yorum gönderildi");
             resetForm();
@@ -269,7 +269,6 @@ export default function CommentForm({ t }) {
                   onClick={(value) => {
                     setFieldValue("form_rating", value);
                   }}
-                  allowFraction
                 />
                 {errors.form_rating && touched.form_rating && (
                   <div className={styles.inputFeedback}>

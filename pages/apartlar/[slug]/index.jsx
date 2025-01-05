@@ -24,7 +24,7 @@ import DetailTitleBox from "@/components/villaDetail/detailTitleBox/detailTitleB
 import ProductImageBox from "@/components/villaDetail/productImageBox/productImageBox";
 import DetailDesc from "@/components/villaDetail/detailDesc/detailsDesc";
 
-export default function List({ villaDetail, imgs, allCategories }) {
+export default function List({ villaDetail, imgs, allCategories, hotelSlug }) {
   const { t, i18n } = useTranslation("common");
   const currentPriceTypeText = calculatePriceType(i18n.language);
   const router = useRouter();
@@ -37,6 +37,9 @@ export default function List({ villaDetail, imgs, allCategories }) {
   const [ready, setReady] = useState(true);
   const [isDescOpen, setIsDescOpen] = useState(false);
   const activePage = parseInt(router.query.p) || 1;
+
+  console.log(villaDetail?.data);
+  
 
   if (villaDetail?.data != null) {
     return (
@@ -188,8 +191,8 @@ export default function List({ villaDetail, imgs, allCategories }) {
           <div className={styles.customerCommentsBox}>
             <div className={styles.container}>
               <div className={styles.customerComments}>
-                <Comments commentData={villaDetail?.data?.comments} t={t} />
-                <CommentForm t={t} />
+                <Comments commentData={villaDetail?.data?.comments} t={t} i18n={i18n} />
+                <CommentForm t={t} slug={hotelSlug} type={1} />
               </div>
             </div>
           </div>
@@ -210,7 +213,7 @@ export async function getServerSideProps({ params, query, locale }) {
   const imgs = villaDetail?.data?.photos || [];
   return {
     props: {
-      //villaId: slug,
+      hotelSlug: slug,
       //villaName: villaDetail?.data?.hotelDetails[0]?.name || null,
       villaDetail,
       imgs,

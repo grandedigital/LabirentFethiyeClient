@@ -10,7 +10,7 @@ const VideoWithComment = dynamic(
   }
 );
 
-export default function Comments({ commentData, t }) {
+export default function Comments({ commentData, t, i18n }) {
   const [numberOfCommentsShown, setNumberOfCommentsShown] = useState(3);
   const [isShowingAllComments, setShowingAllComments] = useState(
     commentData?.length < 3 ? true : false
@@ -114,14 +114,14 @@ export default function Comments({ commentData, t }) {
                   </div>
                   <div className={styles.dateandRating}>
                     <div className={styles.date}>
-                      {formatDate(item?.createdAt)}
+                      {formatDate(item?.createdAt, i18n.language)}
                     </div>
                     <div className={styles.stars}>
                       <div className={styles.starItems}>
                         <Star rating={item?.rating} />
                       </div>
                       <div className={styles.text}>
-                        ({Math.round(item?.rating)} reviews)
+                        {/* ({Math.round(item?.rating)}) */}
                       </div>
                     </div>
                   </div>

@@ -10,19 +10,16 @@ export function timeStringToDate(timeString) {
     return timeString.substr(0, index)
 }
 
-// "2024-10-08T16:37:27.9603045" to "October 8, 2024 at 4:37 PM"
-export function formatDate(input) {
+// "2024-10-08T16:37:27.9603045" to "en: January 8, 2025, tr: 8 Ocak 2025"
+export function formatDate(input, lang) {
     const date = new Date(input);
-    
-    const options = { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: 'numeric', 
-        minute: 'numeric', 
-        hour12: true 
+
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
     };
-    
-    const formattedDate = date.toLocaleString('en-US', options);
-    return formattedDate.replace(',', ' at');
+
+    const formattedDate = date.toLocaleString(lang, options);
+    return formattedDate;
 }

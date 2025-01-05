@@ -64,14 +64,14 @@ async function getRoom(roomSlug) {
     return data
 }
 
-//type 0 ise VillaId, 1 ise HotelId
+//type 0 ise villaSlug, 1 ise hotelSlug
 async function createComment(type = 0,
     data
 ) {
     // ReservationCreate.Begin
 
     const reservation = {
-        [type == 0 ? 'VillaId' : 'HotelId']: data?.id,
+        [type == 0 ? 'villaSlug' : 'HotelSlug']: data?.slug,
         Title: "",
         CommentText: data?.form_message,
         Rating: data?.form_rating,

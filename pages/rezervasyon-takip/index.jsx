@@ -54,7 +54,7 @@ export default function RezervasyonTakip() {
           });
           setVillaDetail({
             name: res?.data?.villa?.name,
-            region: res?.data?.villa?.district + " / " + res?.data?.villa?.town,
+            region: res?.data?.villa?.town,
             url: res?.data?.villa?.id,
           });
           setReservationDetail({

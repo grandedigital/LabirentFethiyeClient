@@ -29,12 +29,12 @@ const Seo = ({ pageTitle, pageDesc }) => {
             />
             <link
               rel="alternate"
-              hreflang="tr"
+              hrefLang="tr"
               href="https://labirentfethiye.com/"
             />
             <link
               rel="alternate"
-              hreflang="en"
+              hrefLang="en"
               href="https://labirentfethiye.com/en/"
             />
           </>
@@ -50,12 +50,12 @@ const Seo = ({ pageTitle, pageDesc }) => {
             />
             <link
               rel="alternate"
-              hreflang="tr"
+              hrefLang="tr"
               href={`https://labirentfethiye.com${router?.asPath}/`}
             />
             <link
               rel="alternate"
-              hreflang="en"
+              hrefLang="en"
               href={`https://labirentfethiye.com/en${router?.asPath}/`}
             />
           </>
