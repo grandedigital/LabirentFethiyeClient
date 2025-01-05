@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import CommentsSkeleton from "./commentsSkeleton";
 import Comments from "./Comments";
 
-const DynamicCommentsComponent = ({ t, villaSlug }) => {
+const DynamicCommentsComponent = ({ t, villaSlug, i18n }) => {
   const [data, setData] = useState(null); // Veriyi tutar
   const [isLoading, setIsLoading] = useState(true); // Yükleme durumu
   const ref = useRef(null); // Intersection Observer için ref
@@ -34,6 +34,8 @@ const DynamicCommentsComponent = ({ t, villaSlug }) => {
         `${process.env.NEXT_PUBLIC_API_URL}/Clients/GetAllCommentByVillaSlug?Slug=${villaSlug}`
       );
       const result = await response.json();
+      console.log(result);
+      
       setData(result);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -53,7 +55,7 @@ const DynamicCommentsComponent = ({ t, villaSlug }) => {
       {isLoading ? (
         <CommentsSkeleton />
       ) : (
-        <Comments commentData={data?.data} t={t} />
+        <Comments commentData={data?.data} t={t} i18n={i18n} />
       )}
     </div>
   );

@@ -271,8 +271,12 @@ export default function List({
           <div className={styles.customerCommentsBox}>
             <div className={styles.container}>
               <div className={styles.customerComments}>
-                <DynamicCommentsComponent t={t} villaSlug={villaSlug} />
-                <CommentForm t={t} />
+                <DynamicCommentsComponent
+                  t={t}
+                  villaSlug={villaSlug}
+                  i18n={i18n}
+                />
+                <CommentForm t={t} slug={villaSlug} type={0} />
               </div>
             </div>
           </div>
