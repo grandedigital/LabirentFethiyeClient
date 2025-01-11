@@ -207,7 +207,7 @@
   "faqFırstItemDesc": "This page includes frequently asked questions and answers about our services. You can always contact our call center for any other questions you may have.",
   "activites": "Activates",
   "activitesListed": "A total of {{activiteCount}} activites have been listed",
-  "days": { "1": "Su", "2": "Mo", "3": "Tu", "4": "We", "5": "Th", "6": "Fr", "7": "Sa"},
+  "days": { "1": "Mo", "2": "Tu", "3": "We", "4": "Th", "5": "Fr", "6": "Sa", "7": "Su"},
   "description": "Description",
   "whatsappNumber": "+905525609457",
   "callNumber": "+905525609457"
