@@ -8,6 +8,7 @@ import Service from "@/components/index/service/service";
 import Blog from "@/components/index/blog/blog";
 import VillaRent from "@/components/index/villaRentInfo/villaRentInfo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import NewVillas from "@/components/index/newest/newest";
 import nookies from "nookies";
 
 //const Slider = lazy(() => import('@/components/index/slider/slider'));
@@ -34,7 +35,6 @@ export default function Home({
   categories,
   regions,
   blogs,
-  newVillas,
   testimonials,
   aparts,
   activates,
@@ -54,7 +54,7 @@ export default function Home({
         <Activates homePage={true} activates={activates} />
         <Apart aparts={aparts} />
         <Service />
-        {/* <NewVillas villas={newVillas} /> */}
+        <NewVillas villas={villa} />
         {/* <Testimonial testimonials={testimonials} /> */}
         <Blog blog={blogs} />
         <VillaRent />

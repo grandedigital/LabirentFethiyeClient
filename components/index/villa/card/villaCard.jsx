@@ -28,6 +28,7 @@ export default function VillaCard({
   priceType,
   checkIn,
   checkOut,
+  isMoving,
 }) {
   const router = useRouter();
   const { t, i18n } = useTranslation("common");
@@ -167,15 +168,20 @@ export default function VillaCard({
         <div className={styles.testimonialItemContainer}>
           <div className={styles.column}>
             <Link
-              href={`/villalar/${
-                data?.attributes?.categories?.data[0]?.attributes?.slug || "yok"
-              }/${data?.attributes?.slug || "yok"}`}
+              draggable={false}
+              onClick={(e) => {
+                if (isMoving) {
+                  e.preventDefault();
+                }
+              }}
+              href={`/villalar/${data?.slug || "yok"}`}
               rel="nofollow"
             >
               <div className={styles.imgBox}>
                 <div className={styles.carouselBox}>
                   {photos?.map((photo, index) => (
                     <Image
+                      draggable={false}
                       key={"photo" + index + 1}
                       src={
                         process.env.NEXT_PUBLIC_APIPHOTOS_URL +
@@ -214,41 +220,35 @@ export default function VillaCard({
                 )}
               </div>
               <div className={styles.textBox}>
-                <div className={styles.title}>{data.attributes.name}</div>
-                {data?.attributes?.region ? (
-                  <div className={styles.location}>
-                    {data?.attributes?.region}
-                  </div>
+                <div className={styles.title}>{data.name}</div>
+                {data?.town ? (
+                  <div className={styles.location}>{data?.town}</div>
                 ) : (
                   <></>
                 )}
                 <div className={styles.priceTitle}>{t("dailyPriceRange")}</div>
-                {data?.attributes?.price_tables?.data ? (
-                  <div className={styles.price}>
-                    {currentPriceTypeText}
-                    {returnMinPrice()} - {currentPriceTypeText}
-                    {returnMaxPrice()}
-                  </div>
-                ) : (
-                  <></>
-                )}
+                <div className={styles.price}>
+                  {currentPriceTypeText}
+                  {returnMinPrice()} - {currentPriceTypeText}
+                  {returnMaxPrice()}
+                </div>
                 <div className={styles.features}>
                   <div className={styles.colon}>
                     <i className={styles.person_icon}></i>
                     <span>
-                      {data.attributes.person} {t("people")}
+                      {data.person} {t("people")}
                     </span>
                   </div>
                   <div className={styles.colon}>
                     <i className={styles.room_icon}></i>
                     <span>
-                      {data.attributes.room} {t("room")}
+                      {data.room} {t("room")}
                     </span>
                   </div>
                   <div className={styles.colon}>
                     <i className={styles.bath_icon}></i>
                     <span>
-                      {data.attributes.bath} {t("bath")}
+                      {data.bath} {t("bath")}
                     </span>
                   </div>
                 </div>
