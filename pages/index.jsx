@@ -31,6 +31,7 @@ import { getActivates } from "@/services/activite";
 import { getCurrencies } from "@/services";
 import Comments from "@/components/other/comment/Comments";
 import { useTranslation } from "react-i18next";
+import Activate2 from "@/components/index/aktiviteler/activate2/activate2";
 
 export default function Home({
   villa,
@@ -56,7 +57,8 @@ export default function Home({
         <TreeStep />
         <Villa category={categories} villas={villa} />
         {/* <Regions homePage={true} regions={regions} /> */}
-        <Activates homePage={true} activates={activates} />
+        {/* <Activates homePage={true} activates={activates} /> */}
+        <Activate2 activates={activates} />
         <Apart aparts={aparts} />
         <Service />
         <NewVillas villas={villa} />
