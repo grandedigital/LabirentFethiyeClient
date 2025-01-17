@@ -205,9 +205,9 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
+                )} */}
                 {data?.onlineReservation == true && (
                   <div className={styles.cardFeatures2}>
                     {"Anında Rezervasyon"}
@@ -392,9 +392,9 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
+                )} */}
                 {data?.onlineReservation == true && (
                   <div className={styles.cardFeatures2}>
                     {"Anında Rezervasyon"}
@@ -493,9 +493,9 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
+                )} */}
                 {data?.onlineReservation == true && (
                   <div className={styles.cardFeatures2}>
                     {"Anında Rezervasyon"}
@@ -622,9 +622,9 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
+                )} */}
                 {data?.onlineReservation == true && (
                   <div className={styles.cardFeatures2}>
                     {"Anında Rezervasyon"}
@@ -720,9 +720,9 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
+                )} */}
                 {data?.onlineReservation == true && (
                   <div className={styles.cardFeatures2}>
                     {"Anında Rezervasyon"}
@@ -813,9 +813,9 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
+                )} */}
                 {data?.onlineReservation == true && (
                   <div className={styles.cardFeatures2}>
                     {"Anında Rezervasyon"}
