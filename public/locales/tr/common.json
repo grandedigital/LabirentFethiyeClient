@@ -1,6 +1,6 @@
 {
   "contactUs": "Bize Ulaşın",
-  "sliderText1": "ÖZEL KONFOR",
+  "sliderText1": "Türkiye'nin en güvenilir villa kiralama portalı",
   "sliderText2": "Web sitemize hoş geldiniz!",
   "sliderText3": "Kiralama Portalı",
   "searchForaFacility": "Tesis Ara",
@@ -207,7 +207,15 @@
   "faqFırstItemDesc": "Bu sayfamızda hizmetlerimizle alakalı sık sorulan sorulara ve cevaplarına yer verilmektedir. Aklınıza takılan diğer sorularınız için de her zaman çağrı merkezimizle iletişime geçebilirsiniz.",
   "activites": "Aktiviteler",
   "activitesListed": "Toplam {{activiteCount}} adet aktivite listelendi",
-  "days": { "1": "Pzt", "2": "Sa", "3": "Çr", "4": "Pr", "5": "Cu", "6": "Ct", "7": "Pz"},
+  "days": {
+    "1": "Pzt",
+    "2": "Sa",
+    "3": "Çr",
+    "4": "Pr",
+    "5": "Cu",
+    "6": "Ct",
+    "7": "Pz"
+  },
   "description": "Açıklama",
   "whatsappNumber": "+905378800703",
   "callNumber": "+902526166648"
