@@ -10,7 +10,7 @@ const VideoWithComment = dynamic(
   }
 );
 
-export default function Comments({ commentData, t, i18n }) {
+export default function Comments({ commentData, t, i18n, className }) {
   const [numberOfCommentsShown, setNumberOfCommentsShown] = useState(3);
   const [isShowingAllComments, setShowingAllComments] = useState(
     commentData?.length < 3 ? true : false
@@ -92,7 +92,7 @@ export default function Comments({ commentData, t, i18n }) {
             </li>
           </ul>
         </div> */}
-        <div className={styles.comments}>
+        <div className={`${styles["comments"]} ${styles[className]}`}>
           <div
             className={styles.title}
             style={{ textAlign: "center", fontSize: 26 }}

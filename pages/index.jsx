@@ -29,6 +29,8 @@ import { getBlogs } from "@/services/blog";
 //import { lazy, Suspense } from "react";
 import { getActivates } from "@/services/activite";
 import { getCurrencies } from "@/services";
+import Comments from "@/components/other/comment/Comments";
+import { useTranslation } from "react-i18next";
 
 export default function Home({
   villa,
@@ -39,6 +41,9 @@ export default function Home({
   aparts,
   activates,
 }) {
+  const { i18n } = useTranslation();
+  const { t } = useTranslation("common");
+
   return (
     <>
       <Seo
@@ -57,6 +62,54 @@ export default function Home({
         <NewVillas villas={villa} />
         {/* <Testimonial testimonials={testimonials} /> */}
         <Blog blog={blogs} />
+        <Comments
+          className={"homeComment"}
+          t={t}
+          i18n={i18n}
+          commentData={[
+            {
+              video: null,
+              name: "Ahmet",
+              surName: "YILMAZ",
+              createdAt: "2024-09-01T12:20:45.1234567",
+              rating: 3,
+              commentText: "İyi, ama biraz daha geliştirilmesi gerek.",
+            },
+            {
+              video: null,
+              name: "Elif",
+              surName: "ŞEN",
+              createdAt: "2024-07-15T14:10:25.9876543",
+              rating: 5,
+              commentText: "Mükemmel bir deneyimdi!",
+            },
+            {
+              video: null,
+              name: "Burak",
+              surName: "KARA",
+              createdAt: "2024-11-25T16:55:10.5432109",
+              rating: 4,
+              commentText: "Gayet güzel, beğendim.",
+            },
+            {
+              video: null,
+              name: "Seda",
+              surName: "ÇELİK",
+              createdAt: "2024-08-30T19:25:30.1237894",
+              rating: 1,
+              commentText: "Hiç beğenmedim, çok kötü.",
+            },
+            {
+              video: null,
+              name: "Murat",
+              surName: "KÖSE",
+              createdAt: "2024-10-10T11:05:40.6789102",
+              rating: 4,
+              commentText:
+                "İyi bir içerik, ancak biraz daha detaylı olabilirdi.",
+            },
+          ]}
+        />
         <VillaRent />
       </section>
     </>

@@ -73,6 +73,16 @@
   border-bottom: 1px solid #e6e9ec;
 }
 
+.comments.homeComment {
+  margin: 30px 0 30px 0;
+  padding: 0 50px;
+  border: none;
+}
+
+.comments.homeComment .title {
+  margin-bottom: 60px;
+}
+
 .comments ul {
   display: flex;
   flex-wrap: wrap;
@@ -165,15 +175,18 @@
 }
 
 @media screen and (max-width: 1199px) {
+  .comments.homeComment {
+    margin: 90px 0 30px 0;
+  }
   .comments ul li {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 991px) {
-  .comments ul li {
+  /* .comments ul li {
     width: 100%;
-  }
+  } */
 }
 
 @media screen and (max-width: 767px) {
@@ -181,6 +194,10 @@
     margin: 0 0 10px 0;
     font-size: 20px;
     line-height: 30px;
+  }
+
+  .comments ul li {
+    width: 100%;
   }
 
   .commentRating {
