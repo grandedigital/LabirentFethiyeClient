@@ -226,7 +226,7 @@ export default function List({
               </div>
             </div>
           </div>
-          {false && (
+          {true && (
             <div className={styles.dualBoxes}>
               <div className={styles.container}>
                 <div className={styles.row}>
@@ -265,7 +265,7 @@ export default function List({
                         </div>
                       </div>
                     </li>
-                    {false && (
+                    {true && (
                       <li className={styles.popupImage}>
                         <div className={styles.title}>Tanıtım Videosu</div>
                         <div className={styles.box}>
@@ -278,7 +278,11 @@ export default function List({
                                 <div
                                   className={styles.img}
                                   style={{
-                                    backgroundImage: `url(https://i.ytimg.com/vi/1NDcK6CmCBQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLACcOdk2-b-hk29nYbSbAmENJWOuQ)`,
+                                    backgroundImage: `url(${
+                                      process.env.NEXT_PUBLIC_APIPHOTOS_URL +
+                                      "b_" +
+                                      villaDetail?.data?.photos?.[0]?.image
+                                    })`,
                                   }}
                                 ></div>
                               </div>
