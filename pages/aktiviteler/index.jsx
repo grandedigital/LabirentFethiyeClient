@@ -1,4 +1,4 @@
-import { default as ActivateCard } from "@/components/index/region/card/regionCard";
+import ActivateCard from "@/components/index/aktiviteler/activate2/activateCard/activateCard";
 import Seo from "@/components/seo";
 import { getActivates } from "@/services/activite";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

@@ -1,3 +1,8 @@
+.activiteItem {
+  width: 25%;
+  padding: 10px;
+}
+
 .cardContainer {
   padding: 0 10px;
   position: relative;
@@ -109,7 +114,29 @@
   background-position: center;
 }
 
+@media screen and (max-width: 1199px) {
+  .activiteItem {
+    width: 33.33333%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .activiteItem {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .activiteItem {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: 540px) {
+  .activiteItem {
+    width: 100%;
+  }
+
   .cardContainer .card .imgBox {
     height: 350px;
   }
