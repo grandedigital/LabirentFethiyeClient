@@ -206,6 +206,8 @@
   "questionAndAnswer": "Question And Answer",
   "faqFırstItemDesc": "This page includes frequently asked questions and answers about our services. You can always contact our call center for any other questions you may have.",
   "activites": "Activates",
+  "ourActivites": "Our Activates",
+  "ourPopulerActivites": "Our Populer Activates",
   "activitesListed": "A total of {{activiteCount}} activites have been listed",
   "days": {
     "1": "Mo",

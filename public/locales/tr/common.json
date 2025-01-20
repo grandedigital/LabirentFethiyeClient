@@ -206,6 +206,8 @@
   "questionAndAnswer": "Soru Cevap",
   "faqFırstItemDesc": "Bu sayfamızda hizmetlerimizle alakalı sık sorulan sorulara ve cevaplarına yer verilmektedir. Aklınıza takılan diğer sorularınız için de her zaman çağrı merkezimizle iletişime geçebilirsiniz.",
   "activites": "Aktiviteler",
+  "ourActivites": "Aktivitelerimiz",
+  "ourPopulerActivites": "Popüler Aktivitelerimiz",
   "activitesListed": "Toplam {{activiteCount}} adet aktivite listelendi",
   "days": {
     "1": "Pzt",

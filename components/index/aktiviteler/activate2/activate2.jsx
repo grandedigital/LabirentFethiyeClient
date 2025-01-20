@@ -4,7 +4,7 @@ import ActivateCard from "./activateCard/activateCard";
 import "react-multi-carousel/lib/styles.css";
 import { useState } from "react";
 
-export default function Activate2({ activates }) {
+export default function Activate2({ activates, t }) {
   const [isCarouselMoving, setCarouselMoving] = useState(false);
 
   const responsive = {
@@ -77,8 +77,8 @@ export default function Activate2({ activates }) {
       <div className={styles.container}>
         <div className={styles.titleAndTabsContainer}>
           <div className={styles.titleAndSubtitleContainer}>
-            <span className={styles.title}>Aktivitelerimiz</span>
-            <span className={styles.subTitle}>Popüler Aktivitelerimiz</span>
+            <span className={styles.title}>{t("ourActivites")}</span>
+            <span className={styles.subTitle}>{t("ourPopulerActivites")}</span>
           </div>
           {/* <div className={styles.tabContainer}>
             <span className={`${styles["tabItem"]} ${styles["active"]}`}>
