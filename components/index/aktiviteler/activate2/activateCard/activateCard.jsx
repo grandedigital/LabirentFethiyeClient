@@ -2,8 +2,6 @@ import Link from "next/link";
 import styles from "./activateCard.module.css";
 
 export default function ActivateCard({ data, isCarouselMoving }) {
-  console.log(data);
-
   return (
     <div className={styles.cardContainer}>
       <Link
@@ -13,7 +11,7 @@ export default function ActivateCard({ data, isCarouselMoving }) {
             e.preventDefault();
           }
         }}
-        href={"#"}
+        href={`/aktiviteler/${data?.slug}`}
         className={styles.card}
       >
         <div
@@ -27,7 +25,7 @@ export default function ActivateCard({ data, isCarouselMoving }) {
         </div>
         <div className={styles.cardContentContainer}>
           <div className={styles.cardContent}>
-            <div className={styles.nameAndTempatureContainer}>
+            {/* <div className={styles.nameAndTempatureContainer}>
               <span className={styles.nameText}>680 VİLLA</span>
               <div className={styles.temperatureIconAndTextContainer}>
                 <img
@@ -37,11 +35,12 @@ export default function ActivateCard({ data, isCarouselMoving }) {
                 />
                 <span className={styles.temperatureText}>22 °C </span>
               </div>
-            </div>
-            <span className={styles.cardName}>Fethiye Bölgesi</span>
+            </div> */}
+            <span className={styles.cardName}>
+              {data?.webPageDetails?.[0]?.title}
+            </span>
             <span className={styles.cardDesc}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
-              rhoncus lacus.
+              {data?.webPageDetails?.[0]?.descriptionShort}
             </span>
           </div>
         </div>

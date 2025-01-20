@@ -66,8 +66,42 @@
   color: #fff;
 }
 
+/* CUSTOM CAROUSEL BUTTONS */
+.carouselButtonGroup {
+  display: block;
+}
+
+.carouselButtonGroup .arrowButton {
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 60px;
+  position: absolute;
+  top: calc(50% - 50px);
+  background-image: url(/images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.carouselButtonGroup .arrowButton:hover {
+  opacity: 0.8;
+}
+
+.carouselButtonGroup .arrowButton.prev {
+  transform: rotate(180deg);
+  left: 40px;
+}
+
+.carouselButtonGroup .arrowButton.next {
+  right: 40px;
+  left: inherit;
+}
+
 .activates .container .carouselContainer {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 1699px) {
@@ -86,5 +120,20 @@
   .activates .container {
     width: 100%;
     padding: 0 15px;
+  }
+  .carouselButtonGroup .arrowButton.next {
+    right: 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .carouselButtonGroup {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .activates {
+    padding: 60px 0 60px 0;
   }
 }

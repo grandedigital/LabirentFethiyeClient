@@ -26,7 +26,7 @@ export default function Activate2({ activates }) {
     mobile: {
       breakpoint: { max: 767, min: 0 },
       items: 1,
-      partialVisibilityGutter: 40,
+      partialVisibilityGutter: 80,
     },
   };
 
@@ -57,6 +57,21 @@ export default function Activate2({ activates }) {
   //     },
   //   };
 
+  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    return (
+      <div className={styles.carouselButtonGroup}>
+        <div
+          className={`${styles["arrowButton"]} ${styles["prev"]}`}
+          onClick={() => previous()}
+        ></div>
+        <div
+          className={`${styles["arrowButton"]} ${styles["next"]}`}
+          onClick={() => next()}
+        ></div>
+      </div>
+    );
+  };
+
   return (
     <div className={styles.activates}>
       <div className={styles.container}>
@@ -65,7 +80,7 @@ export default function Activate2({ activates }) {
             <span className={styles.title}>Aktivitelerimiz</span>
             <span className={styles.subTitle}>Popüler Aktivitelerimiz</span>
           </div>
-          <div className={styles.tabContainer}>
+          {/* <div className={styles.tabContainer}>
             <span className={`${styles["tabItem"]} ${styles["active"]}`}>
               Tümü
             </span>
@@ -73,18 +88,17 @@ export default function Activate2({ activates }) {
             <span className={`${styles["tabItem"]}`}>Antalya</span>
             <span className={`${styles["tabItem"]}`}>Aydın</span>
             <span className={`${styles["tabItem"]}`}>İzmir</span>
-          </div>
+          </div> */}
         </div>
         <div className={styles.carouselContainer}>
           <Carousel
             beforeChange={() => setCarouselMoving(true)}
             afterChange={() => setCarouselMoving(false)}
             additionalTransfrom={0}
-            arrows
+            arrows={false}
             autoPlaySpeed={3000}
             centerMode={false}
             className=""
-            containerClass="container"
             dotListClass=""
             draggable
             focusOnSelect={false}
@@ -95,7 +109,7 @@ export default function Activate2({ activates }) {
             partialVisible
             pauseOnHover
             renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
+            renderButtonGroupOutside={true}
             renderDotsOutside={false}
             responsive={responsive}
             rewind={false}
@@ -106,6 +120,7 @@ export default function Activate2({ activates }) {
             sliderClass=""
             slidesToSlide={1}
             swipeable
+            customButtonGroup={<ButtonGroup />}
           >
             {activates?.data?.map((item, index) => (
               <ActivateCard
