@@ -12,7 +12,7 @@ import nookies, { parseCookies } from "nookies";
 import Link from "next/link";
 import styles from "./page.module.css";
 import LightGallery from "lightgallery/react";
-import lgZoom from "lightgallery/plugins/zoom";
+import "lightgallery/css/lg-video.css";
 import lgVideo from "lightgallery/plugins/video";
 import { useEffect, useState } from "react";
 import Seo from "@/components/seo";
@@ -226,35 +226,59 @@ export default function List({
               </div>
             </div>
           </div>
-          {villaDetail?.data[0]?.attributes?.video && (
+          {false && (
             <div className={styles.dualBoxes}>
               <div className={styles.container}>
                 <div className={styles.row}>
                   <ul>
-                    {/* <li>
-                                        <div className={styles.title}>Konum</div>
-                                        <div className={styles.box} style={{ backgroundImage: `url(http://3.127.136.179:1337${villa?.attributes?.locationImage?.data?.attributes?.formats?.medium?.url})`, backgroundPosition: "center", backgroundSize: "100% 100%" }}>
-                                            <div className={styles.linkBox} style={{ position: "relative", width: "50px", height: "50px", left: "15px", top: "15px" }}>
-                                                <Link className={styles.blueButton} href={villa?.attributes?.locationLink ? villa?.attributes?.locationLink : '#'} target="_blank">
-                                                    <span>Konum</span>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </li> */}
-                    {villaDetail?.data[0]?.attributes?.video && (
+                    <li>
+                      <div className={styles.title}>Konum</div>
+                      <div
+                        className={styles.box}
+                        style={{
+                          backgroundImage: 'url("/images/maps.png")',
+                          backgroundPosition: "center",
+                          backgroundSize: "100% 100%",
+                        }}
+                      >
+                        <div
+                          className={styles.linkBox}
+                          style={{
+                            position: "relative",
+                            width: "50px",
+                            height: "50px",
+                            left: "15px",
+                            top: "15px",
+                          }}
+                        >
+                          <Link
+                            className={styles.blueButton}
+                            href={
+                              villa?.attributes?.locationLink
+                                ? villa?.attributes?.locationLink
+                                : "#"
+                            }
+                            target="_blank"
+                          >
+                            <span>Konum</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </li>
+                    {false && (
                       <li className={styles.popupImage}>
                         <div className={styles.title}>Tanıtım Videosu</div>
                         <div className={styles.box}>
                           <LightGallery
-                            plugins={[lgZoom, lgVideo]}
+                            plugins={[lgVideo]}
                             elementClassNames={styles.videoContainer}
                           >
-                            <a data-src="https://www.youtube.com/embed/cFYXWYyYcB0">
+                            <a data-src="https://www.youtube.com/watch?v=1NDcK6CmCBQ">
                               <div className={styles.imageBox}>
                                 <div
                                   className={styles.img}
                                   style={{
-                                    backgroundImage: `url(${imgs?.data[0]?.attributes?.photo?.data?.attributes?.url})`,
+                                    backgroundImage: `url(https://i.ytimg.com/vi/1NDcK6CmCBQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLACcOdk2-b-hk29nYbSbAmENJWOuQ)`,
                                   }}
                                 ></div>
                               </div>
