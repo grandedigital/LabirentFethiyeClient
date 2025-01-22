@@ -166,7 +166,7 @@ export default function VillaCard({
     if (data) {
       return (
         <div className={styles.testimonialItemContainer}>
-          <div className={styles.column}>
+          <div className={`${styles["column"]} ${styles["newest"]}`}>
             <Link
               draggable={false}
               onClick={(e) => {

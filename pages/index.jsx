@@ -21,7 +21,11 @@ import nookies from "nookies";
 //const Blog = lazy(() => import("@/components/index/blog/blog"));
 //const VillaRent = lazy(() => import("@/components/index/villaRentInfo/villaRentInfo"));
 
-import { getVillasHome, getHotels } from "@/services/villa";
+import {
+  getVillasHome,
+  getHotels,
+  getAllVillaByCategorySlug,
+} from "@/services/villa";
 import { getCategories } from "@/services/category";
 import Seo from "@/components/seo";
 //import { getRegions } from "@/services/region";
@@ -41,7 +45,10 @@ export default function Home({
   testimonials,
   aparts,
   activates,
+  newVillasData,
 }) {
+  console.log(newVillasData);
+  
   const { i18n } = useTranslation();
   const { t } = useTranslation("common");
 
@@ -61,7 +68,7 @@ export default function Home({
         <Activate2 t={t} activates={activates} />
         <Apart aparts={aparts} />
         <Service />
-        <NewVillas villas={villa} />
+        <NewVillas villas={newVillasData} />
         {/* <Testimonial testimonials={testimonials} /> */}
         <Blog blog={blogs} />
         <Comments
@@ -143,11 +150,12 @@ export async function getServerSideProps(context) {
   // API çağrılarını paralel olarak başlat
   const categories = await getCategories(context.locale);
 
-  const [villa, aparts, activates, blogs] = await Promise.all([
+  const [villa, aparts, activates, blogs, newVillasData] = await Promise.all([
     getVillasHome(8, 0, categories?.data[0]?.slug, context.locale),
     getHotels(0, 4, context.locale),
     getActivates(context.locale),
     getBlogs(context.locale),
+    getAllVillaByCategorySlug(context.locale, "populer-villalar", 0, 8),
   ]);
 
   return {
@@ -157,6 +165,7 @@ export async function getServerSideProps(context) {
       blogs,
       aparts,
       activates,
+      newVillasData,
       ...(await serverSideTranslations(context.locale, ["common"])),
     },
   };
