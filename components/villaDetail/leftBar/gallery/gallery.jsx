@@ -8,11 +8,13 @@ import Image from "next/image";
 import { memo } from "react";
 
 const Gallery = memo(function Gallery({ photos, from }) {
-  const videoObject = photos?.find((item) => item?.videoLink != null);
+  const videoObject = photos?.find((item) => item?.videoUrl != null);
+
   // 1. videoLink'i null olmayan kaydı bul ve diziden çıkar
-  const kayitIndex = photos?.length > 0 ? photos.findIndex(
-    (item) => item?.videoLink && item?.videoLink !== null
-  ) : -1;
+  const kayitIndex =
+    photos?.length > 0
+      ? photos.findIndex((item) => item?.videoUrl && item?.videoUrl !== null)
+      : -1;
   //video var ise
   if (kayitIndex !== -1) {
     const [kayit] = photos.splice(kayitIndex, 1); // Kayıt çıkarıldı
@@ -105,7 +107,7 @@ const Gallery = memo(function Gallery({ photos, from }) {
                 <Link
                   key={index}
                   className={styles.lightBoxItem}
-                  href={videoObject?.videoLink}
+                  href={videoObject?.videoUrl}
                 >
                   <div
                     className={`${styles["lightBoxItemChild"]} ${styles["video-icon"]}`}
@@ -282,7 +284,7 @@ const Gallery = memo(function Gallery({ photos, from }) {
                 <Link
                   key={index}
                   className={styles.lightBoxItem}
-                  href={videoObject?.videoLink}
+                  href={videoObject?.videoUrl}
                 >
                   <div
                     className={`${styles["lightBoxItemChild"]} ${styles["video-icon"]}`}
@@ -450,7 +452,7 @@ const Gallery = memo(function Gallery({ photos, from }) {
                 <Link
                   key={index}
                   className={styles.lightBoxItem}
-                  href={videoObject?.videoLink}
+                  href={videoObject?.videoUrl}
                 >
                   <div
                     className={`${styles["lightBoxItemChild"]} ${styles["video-icon"]}`}
