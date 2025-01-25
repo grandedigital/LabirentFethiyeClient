@@ -34,7 +34,7 @@ const DynamicCommentsComponent = ({ t, villaSlug, i18n }) => {
         `${process.env.NEXT_PUBLIC_API_URL}/Clients/GetAllCommentByVillaSlug?Slug=${villaSlug}`
       );
       const result = await response.json();
-      console.log(result);
+      //console.log(result);
       
       setData(result);
     } catch (error) {

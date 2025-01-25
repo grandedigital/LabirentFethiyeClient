@@ -96,19 +96,19 @@
   overflow: hidden;
 }
 
-.villaDetail .dualBoxes ul li.popupImage:hover .box a::before {
+.villaDetail .dualBoxes ul li.popupImage .box:hover a::before {
   opacity: 1;
 }
 
-.villaDetail .dualBoxes ul li.popupImage:hover {
+.villaDetail .dualBoxes ul li.popupImage .box:hover {
   cursor: pointer;
 }
 
-.villaDetail .dualBoxes ul li.popupImage:hover .box a .imageBox .img {
+.villaDetail .dualBoxes ul li.popupImage .box:hover a .imageBox .img {
   transform: scale(1.1);
 }
 
-.villaDetail .dualBoxes ul li.popupImage:hover .box .videoItem {
+.villaDetail .dualBoxes ul li.popupImage .box:hover .videoItem {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -215,10 +215,14 @@
   width: 375px;
 }
 
-.villaDetail .villaDetailContentBox .villaDetailContent .right .turizmContainer {
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .right
+  .turizmContainer {
   width: 100%;
   max-width: 400px;
-  border: 1px solid #D9D9E4;
+  border: 1px solid #d9d9e4;
   border-radius: 10px;
   margin-bottom: 20px;
   display: flex;
@@ -228,7 +232,12 @@
   padding: 20px 0 20px 27px;
 }
 
-.villaDetail .villaDetailContentBox .villaDetailContent .right .turizmContainer .turizmTitleAndNo {
+.villaDetail
+  .villaDetailContentBox
+  .villaDetailContent
+  .right
+  .turizmContainer
+  .turizmTitleAndNo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -269,6 +278,69 @@ section.villaDetail .customerCommentsBox .customerComments {
   width: 100%;
 }
 
+/* linkbox button css' */
+.linkBox {
+  display: flex;
+}
+
+.linkBox a {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #7e53f9;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkBox a.blueButton2 {
+  background: #3e2093;
+  color: #ffffff;
+  padding: 15px 45px;
+}
+
+.linkBox a.blueButton2:hover {
+  color: #ffffff;
+}
+
+.linkBox a.blueButton2::after {
+  background: #7e53f9;
+}
+
+.linkBox a::after {
+  position: absolute;
+  transition: 0.3s;
+  content: "";
+  width: 0;
+  left: auto;
+  right: -10%;
+  bottom: 0;
+  height: 100%;
+  background: #3e2093;
+  transform: skewX(15deg);
+  z-index: 1;
+}
+
+.linkBox a:hover {
+  color: #ffffff;
+}
+
+.linkBox a:hover::after {
+  left: -10%;
+  right: auto;
+  width: 120%;
+}
+
+.linkBox a span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
 @media screen and (max-width: 1699px) {
   .container {
     width: 1400px;
@@ -305,10 +377,14 @@ section.villaDetail .customerCommentsBox .customerComments {
     left: -40px;
   }
 
-  .villaDetail .villaDetailContentBox .villaDetailContent .right .turizmContainer {
+  .villaDetail
+    .villaDetailContentBox
+    .villaDetailContent
+    .right
+    .turizmContainer {
     width: 100%;
     max-width: 400px;
-    border: 1px solid #D9D9E4;
+    border: 1px solid #d9d9e4;
     border-radius: 10px;
     margin-bottom: 20px;
     display: flex;

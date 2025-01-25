@@ -1,0 +1,155 @@
+.activiteItem {
+  width: 25%;
+  padding: 10px;
+}
+
+.cardContainer {
+  padding: 0 10px;
+  position: relative;
+}
+
+.cardContainer .cardContentContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.cardContainer .cardBackgroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.cardContainer .cardBackground {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: black;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.cardContainer .cardContentContainer .cardContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 30px;
+}
+
+.cardContainer .cardContentContainer .cardContent .nameAndTempatureContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cardContainer
+  .cardContentContainer
+  .cardContent
+  .nameAndTempatureContainer
+  .nameText {
+  padding: 7px 12px;
+  background-color: #fff;
+  color: #02044a;
+  border-radius: 60px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.cardContainer
+  .cardContentContainer
+  .cardContent
+  .nameAndTempatureContainer
+  .temperatureIconAndTextContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cardContainer
+  .cardContentContainer
+  .cardContent
+  .nameAndTempatureContainer
+  .temperatureIconAndTextContainer
+  .temperatureText {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.cardContainer .cardContentContainer .cardContent .cardName {
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.cardContainer .cardContentContainer .cardContent .cardDesc {
+  color: #fff;
+  word-wrap: break-word;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.cardContainer .card .imgBox {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 1199px) {
+  .activiteItem {
+    width: 33.33333%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .activiteItem {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .activiteItem {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .activiteItem {
+    width: 100%;
+  }
+
+  .cardContainer .card .imgBox {
+    height: 350px;
+  }
+
+  .cardContainer .cardContentContainer .cardContent .cardName {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .cardContainer .cardContentContainer .cardContent .cardDesc {
+    line-height: 15px;
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+}

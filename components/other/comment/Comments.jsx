@@ -10,7 +10,7 @@ const VideoWithComment = dynamic(
   }
 );
 
-export default function Comments({ commentData, t, i18n }) {
+export default function Comments({ commentData, t, i18n, className }) {
   const [numberOfCommentsShown, setNumberOfCommentsShown] = useState(3);
   const [isShowingAllComments, setShowingAllComments] = useState(
     commentData?.length < 3 ? true : false
@@ -92,61 +92,69 @@ export default function Comments({ commentData, t, i18n }) {
             </li>
           </ul>
         </div> */}
-        <div className={styles.comments}>
-          <div
-            className={styles.title}
-            style={{ textAlign: "center", fontSize: 26 }}
-          >
-            Yorumlar
-          </div>
-          <ul>
-            {commentData?.slice(0, numberOfCommentsShown).map((item, index) => {
-              return (
-                <li key={"customerComment" + index + 1}>
-                  <div className={styles.imageBox}>
-                    <div className={styles.img}>
-                      <img src="/images/person-3.png" alt="" />
-                    </div>
-                    {item?.video != null ? <VideoWithComment t={t} /> : null}
-                  </div>
-                  <div className={styles.name}>
-                    {item.name} {item.surName}
-                  </div>
-                  <div className={styles.dateandRating}>
-                    <div className={styles.date}>
-                      {formatDate(item?.createdAt, i18n.language)}
-                    </div>
-                    <div className={styles.stars}>
-                      <div className={styles.starItems}>
-                        <Star rating={item?.rating} />
-                      </div>
-                      <div className={styles.text}>
-                        {/* ({Math.round(item?.rating)}) */}
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.descBox}>{item?.commentText}</div>
-                </li>
-              );
-            })}
-          </ul>
-          {!isShowingAllComments && (
-            <div className={styles.linkBox}>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowingAllComments(true);
-                  setNumberOfCommentsShown(commentData?.length);
-                }}
-                className={styles.blueButtonArrowOpa}
-              >
-                <span>
-                  {t("commentLinkText", { commentCount: commentData?.length })}
-                </span>
-              </a>
+        <div className={`${styles["comments"]} ${styles[className]}`}>
+          <div className={styles.container}>
+            <div
+              className={styles.title}
+              style={{ textAlign: "center", fontSize: 26 }}
+            >
+              Yorumlar
             </div>
-          )}
+            <ul>
+              {commentData
+                ?.slice(0, numberOfCommentsShown)
+                .map((item, index) => {
+                  return (
+                    <li key={"customerComment" + index + 1}>
+                      <div className={styles.imageBox}>
+                        <div className={styles.img}>
+                          <img src="/images/person-3.png" alt="" />
+                        </div>
+                        {item?.video != null ? (
+                          <VideoWithComment t={t} />
+                        ) : null}
+                      </div>
+                      <div className={styles.name}>
+                        {item.name} {item.surName}
+                      </div>
+                      <div className={styles.dateandRating}>
+                        <div className={styles.date}>
+                          {formatDate(item?.createdAt, i18n.language)}
+                        </div>
+                        <div className={styles.stars}>
+                          <div className={styles.starItems}>
+                            <Star rating={item?.rating} />
+                          </div>
+                          <div className={styles.text}>
+                            {/* ({Math.round(item?.rating)}) */}
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.descBox}>{item?.commentText}</div>
+                    </li>
+                  );
+                })}
+            </ul>
+            {!isShowingAllComments && (
+              <div className={styles.linkBox}>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowingAllComments(true);
+                    setNumberOfCommentsShown(commentData?.length);
+                  }}
+                  className={styles.blueButtonArrowOpa}
+                >
+                  <span>
+                    {t("commentLinkText", {
+                      commentCount: commentData?.length,
+                    })}
+                  </span>
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </>
     );

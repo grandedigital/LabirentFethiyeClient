@@ -12,7 +12,7 @@ import nookies, { parseCookies } from "nookies";
 import Link from "next/link";
 import styles from "./page.module.css";
 import LightGallery from "lightgallery/react";
-import lgZoom from "lightgallery/plugins/zoom";
+import "lightgallery/css/lg-video.css";
 import lgVideo from "lightgallery/plugins/video";
 import { useEffect, useState } from "react";
 import Seo from "@/components/seo";
@@ -51,6 +51,30 @@ export default function List({
   const [isDescOpen, setIsDescOpen] = useState(false);
   const activePage = parseInt(router.query.p) || 1;
   const [currencies, setCurrencies] = useState(null);
+
+  function getVideoUrlIndex(data) {
+    // Verilen diziyi döngü ile kontrol et
+    for (let i = 0; i < data.length; i++) {
+      // Eğer videoUrl değeri null değilse, index döndür
+      if (data[i].videoUrl !== null) {
+        return i;
+      }
+    }
+    // Eğer hiç bir objede videoUrl null değilse, -1 döndür
+    return -1;
+  }
+
+  function hasVideoUrl(data) {
+    // Verilen diziyi döngü ile kontrol et
+    for (let i = 0; i < data.length; i++) {
+      // Eğer videoUrl değeri null değilse, true döndür
+      if (data[i].videoUrl !== null) {
+        return true;
+      }
+    }
+    // Eğer hiç bir objede videoUrl null değilse, false döndür
+    return false;
+  }
 
   useEffect(() => {
     const cookies = parseCookies();
@@ -226,35 +250,71 @@ export default function List({
               </div>
             </div>
           </div>
-          {villaDetail?.data[0]?.attributes?.video && (
+          {true && (
             <div className={styles.dualBoxes}>
               <div className={styles.container}>
                 <div className={styles.row}>
                   <ul>
-                    {/* <li>
-                                        <div className={styles.title}>Konum</div>
-                                        <div className={styles.box} style={{ backgroundImage: `url(http://3.127.136.179:1337${villa?.attributes?.locationImage?.data?.attributes?.formats?.medium?.url})`, backgroundPosition: "center", backgroundSize: "100% 100%" }}>
-                                            <div className={styles.linkBox} style={{ position: "relative", width: "50px", height: "50px", left: "15px", top: "15px" }}>
-                                                <Link className={styles.blueButton} href={villa?.attributes?.locationLink ? villa?.attributes?.locationLink : '#'} target="_blank">
-                                                    <span>Konum</span>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </li> */}
-                    {villaDetail?.data[0]?.attributes?.video && (
+                    <li>
+                      <div className={styles.title}>{t("location")}</div>
+                      <div
+                        className={styles.box}
+                        style={{
+                          backgroundImage: 'url("/images/labirentMap.png")',
+                          backgroundPosition: "center",
+                          backgroundSize: "cover",
+                        }}
+                      >
+                        <div
+                          className={styles.linkBox}
+                          style={{
+                            position: "relative",
+                            width: "50px",
+                            height: "50px",
+                            left: "15px",
+                            top: "15px",
+                          }}
+                        >
+                          <Link
+                            className={styles.blueButton2}
+                            target="_blank"
+                            href="https://www.google.com/maps?ll=36.575887,29.150176&z=19&t=m&hl=tr&gl=TR&mapclient=embed&cid=1633145916469788623"
+                          >
+                            <span>{t("location")}</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </li>
+                    {hasVideoUrl(villaDetail?.data?.photos) && (
                       <li className={styles.popupImage}>
-                        <div className={styles.title}>Tanıtım Videosu</div>
+                        <div className={styles.title}>
+                          {t("promotionalVideo")}
+                        </div>
                         <div className={styles.box}>
                           <LightGallery
-                            plugins={[lgZoom, lgVideo]}
+                            plugins={[lgVideo]}
                             elementClassNames={styles.videoContainer}
                           >
-                            <a data-src="https://www.youtube.com/embed/cFYXWYyYcB0">
+                            <a
+                              data-src={
+                                villaDetail.data.photos[
+                                  getVideoUrlIndex(villaDetail.data.photos)
+                                ].videoUrl
+                              }
+                            >
                               <div className={styles.imageBox}>
                                 <div
                                   className={styles.img}
                                   style={{
-                                    backgroundImage: `url(${imgs?.data[0]?.attributes?.photo?.data?.attributes?.url})`,
+                                    backgroundImage: `url(${
+                                      process.env.NEXT_PUBLIC_APIPHOTOS_URL +
+                                      "b_" +
+                                      villaDetail.data.photos[
+                                        getVideoUrlIndex(
+                                          villaDetail.data.photos
+                                        )
+                                      ].image
+                                    })`,
                                   }}
                                 ></div>
                               </div>

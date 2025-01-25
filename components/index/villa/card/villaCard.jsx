@@ -28,6 +28,7 @@ export default function VillaCard({
   priceType,
   checkIn,
   checkOut,
+  isMoving,
 }) {
   const router = useRouter();
   const { t, i18n } = useTranslation("common");
@@ -127,6 +128,30 @@ export default function VillaCard({
     return moneyFormat(min, false);
   };
 
+  const RedTag = () => {
+    return (
+      data?.onlineReservation == true && (
+        <div className={styles.cardFeatures2}>{t("instantBooking")}</div>
+      )
+    );
+  };
+
+  const WhiteTag = () => {
+    return (
+      data?.featureTextWhite != null && (
+        <div className={styles.cardFeatures3}>{data?.featureTextWhite}</div>
+      )
+    );
+  };
+
+  const BlueTag = () => {
+    return (
+      data?.featureTextBlue && (
+        <div className={styles.cardFeatures}>{data?.featureTextBlue}</div>
+      )
+    );
+  };
+
   const returnMaxPrice = () => {
     let max = data?.maxPrice;
 
@@ -165,17 +190,22 @@ export default function VillaCard({
     if (data) {
       return (
         <div className={styles.testimonialItemContainer}>
-          <div className={styles.column}>
+          <div className={`${styles["column"]} ${styles["newest"]}`}>
             <Link
-              href={`/villalar/${
-                data?.attributes?.categories?.data[0]?.attributes?.slug || "yok"
-              }/${data?.attributes?.slug || "yok"}`}
+              draggable={false}
+              onClick={(e) => {
+                if (isMoving) {
+                  e.preventDefault();
+                }
+              }}
+              href={`/villalar/${data?.slug || "yok"}`}
               rel="nofollow"
             >
               <div className={styles.imgBox}>
                 <div className={styles.carouselBox}>
                   {photos?.map((photo, index) => (
                     <Image
+                      draggable={false}
                       key={"photo" + index + 1}
                       src={
                         process.env.NEXT_PUBLIC_APIPHOTOS_URL +
@@ -199,56 +229,43 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                )} */}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
-                <div className={styles.title}>{data.attributes.name}</div>
-                {data?.attributes?.region ? (
-                  <div className={styles.location}>
-                    {data?.attributes?.region}
-                  </div>
+                <div className={styles.title}>{data.name}</div>
+                {data?.town ? (
+                  <div className={styles.location}>{data?.town}</div>
                 ) : (
                   <></>
                 )}
                 <div className={styles.priceTitle}>{t("dailyPriceRange")}</div>
-                {data?.attributes?.price_tables?.data ? (
-                  <div className={styles.price}>
-                    {currentPriceTypeText}
-                    {returnMinPrice()} - {currentPriceTypeText}
-                    {returnMaxPrice()}
-                  </div>
-                ) : (
-                  <></>
-                )}
+                <div className={styles.price}>
+                  {currentPriceTypeText}
+                  {returnMinPrice()} - {currentPriceTypeText}
+                  {returnMaxPrice()}
+                </div>
                 <div className={styles.features}>
                   <div className={styles.colon}>
                     <i className={styles.person_icon}></i>
                     <span>
-                      {data.attributes.person} {t("people")}
+                      {data.person} {t("people")}
                     </span>
                   </div>
                   <div className={styles.colon}>
                     <i className={styles.room_icon}></i>
                     <span>
-                      {data.attributes.room} {t("room")}
+                      {data.room} {t("room")}
                     </span>
                   </div>
                   <div className={styles.colon}>
                     <i className={styles.bath_icon}></i>
                     <span>
-                      {data.attributes.bath} {t("bath")}
+                      {data.bath} {t("bath")}
                     </span>
                   </div>
                 </div>
@@ -294,21 +311,12 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.featureTextWhite && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
                 {data?.featureTextRed && (
                   <div className={styles.cardFeatures2}>
                     {data?.hotelDetails?.[0]?.featureTextRed}
                   </div>
                 )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -392,19 +400,12 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                )} */}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -493,19 +494,12 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                )} */}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -622,19 +616,12 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                )} */}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -720,19 +707,12 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                )} */}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -813,19 +793,12 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.villaNumber && (
+                {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                )} */}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>

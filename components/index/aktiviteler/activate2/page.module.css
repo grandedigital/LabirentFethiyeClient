@@ -1,0 +1,140 @@
+.activates {
+  width: 100%;
+  padding: 105px 0 120px 0;
+  background: #f9f9fb;
+}
+
+.activates .container {
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.activates .container .titleAndTabsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activates .container .titleAndTabsContainer .titleAndSubtitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.activates .container .titleAndTabsContainer .titleAndSubtitleContainer .title {
+  color: #02044a;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 55px;
+}
+
+.activates
+  .container
+  .titleAndTabsContainer
+  .titleAndSubtitleContainer
+  .subTitle {
+  font-size: 20px;
+  color: #525265;
+}
+
+.activates .container .titleAndTabsContainer .tabContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.activates .container .titleAndTabsContainer .tabContainer .tabItem {
+  padding: 7px 20px 8px 20px;
+  background-color: #3e209312;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #3e2093;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activates .container .titleAndTabsContainer .tabContainer .tabItem.active {
+  background-color: #3e2093;
+  color: #fff;
+}
+
+.activates
+  .container
+  .titleAndTabsContainer
+  .tabContainer
+  .tabItem:not(.active):hover {
+  background-color: #3e2093;
+  color: #fff;
+}
+
+/* CUSTOM CAROUSEL BUTTONS */
+.carouselButtonGroup {
+  display: block;
+}
+
+.carouselButtonGroup .arrowButton {
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 60px;
+  position: absolute;
+  top: calc(50% - 50px);
+  background-image: url(/images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.carouselButtonGroup .arrowButton:hover {
+  opacity: 0.8;
+}
+
+.carouselButtonGroup .arrowButton.prev {
+  transform: rotate(180deg);
+  left: 40px;
+}
+
+.carouselButtonGroup .arrowButton.next {
+  right: 40px;
+  left: inherit;
+}
+
+.activates .container .carouselContainer {
+  margin-top: 60px;
+  position: relative;
+}
+
+@media screen and (max-width: 1699px) {
+  .activates .container {
+    width: 1400px;
+  }
+}
+
+@media screen and (max-width: 1499px) {
+  .activates .container {
+    width: 1170px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .activates .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .carouselButtonGroup .arrowButton.next {
+    right: 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .carouselButtonGroup {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .activates {
+    padding: 60px 0 60px 0;
+  }
+}
