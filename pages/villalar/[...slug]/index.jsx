@@ -236,9 +236,9 @@ export default function List({
                       <div
                         className={styles.box}
                         style={{
-                          backgroundImage: 'url("/images/maps.png")',
+                          backgroundImage: 'url("/images/labirentMap.png")',
                           backgroundPosition: "center",
-                          backgroundSize: "100% 100%",
+                          backgroundSize: "cover",
                         }}
                       >
                         <div
@@ -252,13 +252,9 @@ export default function List({
                           }}
                         >
                           <Link
-                            className={styles.blueButton}
-                            href={
-                              villa?.attributes?.locationLink
-                                ? villa?.attributes?.locationLink
-                                : "#"
-                            }
+                            className={styles.blueButton2}
                             target="_blank"
+                            href="https://www.google.com/maps?ll=36.575887,29.150176&z=19&t=m&hl=tr&gl=TR&mapclient=embed&cid=1633145916469788623"
                           >
                             <span>Konum</span>
                           </Link>

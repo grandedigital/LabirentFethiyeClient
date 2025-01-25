@@ -278,6 +278,69 @@ section.villaDetail .customerCommentsBox .customerComments {
   width: 100%;
 }
 
+/* linkbox button css' */
+.linkBox {
+  display: flex;
+}
+
+.linkBox a {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #7e53f9;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkBox a.blueButton2 {
+  background: #3e2093;
+  color: #ffffff;
+  padding: 15px 45px;
+}
+
+.linkBox a.blueButton2:hover {
+  color: #ffffff;
+}
+
+.linkBox a.blueButton2::after {
+  background: #7e53f9;
+}
+
+.linkBox a::after {
+  position: absolute;
+  transition: 0.3s;
+  content: "";
+  width: 0;
+  left: auto;
+  right: -10%;
+  bottom: 0;
+  height: 100%;
+  background: #3e2093;
+  transform: skewX(15deg);
+  z-index: 1;
+}
+
+.linkBox a:hover {
+  color: #ffffff;
+}
+
+.linkBox a:hover::after {
+  left: -10%;
+  right: auto;
+  width: 120%;
+}
+
+.linkBox a span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
 @media screen and (max-width: 1699px) {
   .container {
     width: 1400px;
