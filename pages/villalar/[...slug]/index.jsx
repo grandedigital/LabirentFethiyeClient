@@ -52,6 +52,30 @@ export default function List({
   const activePage = parseInt(router.query.p) || 1;
   const [currencies, setCurrencies] = useState(null);
 
+  function getVideoUrlIndex(data) {
+    // Verilen diziyi döngü ile kontrol et
+    for (let i = 0; i < data.length; i++) {
+      // Eğer videoUrl değeri null değilse, index döndür
+      if (data[i].videoUrl !== null) {
+        return i;
+      }
+    }
+    // Eğer hiç bir objede videoUrl null değilse, -1 döndür
+    return -1;
+  }
+
+  function hasVideoUrl(data) {
+    // Verilen diziyi döngü ile kontrol et
+    for (let i = 0; i < data.length; i++) {
+      // Eğer videoUrl değeri null değilse, true döndür
+      if (data[i].videoUrl !== null) {
+        return true;
+      }
+    }
+    // Eğer hiç bir objede videoUrl null değilse, false döndür
+    return false;
+  }
+
   useEffect(() => {
     const cookies = parseCookies();
     setCurrencies(JSON.parse(cookies.currencies));
@@ -261,7 +285,7 @@ export default function List({
                         </div>
                       </div>
                     </li>
-                    {true && (
+                    {hasVideoUrl(villaDetail?.data?.photos) && (
                       <li className={styles.popupImage}>
                         <div className={styles.title}>Tanıtım Videosu</div>
                         <div className={styles.box}>
@@ -269,7 +293,13 @@ export default function List({
                             plugins={[lgVideo]}
                             elementClassNames={styles.videoContainer}
                           >
-                            <a data-src="https://www.youtube.com/watch?v=1NDcK6CmCBQ">
+                            <a
+                              data-src={
+                                villaDetail.data.photos[
+                                  getVideoUrlIndex(villaDetail.data.photos)
+                                ].videoUrl
+                              }
+                            >
                               <div className={styles.imageBox}>
                                 <div
                                   className={styles.img}
@@ -277,7 +307,9 @@ export default function List({
                                     backgroundImage: `url(${
                                       process.env.NEXT_PUBLIC_APIPHOTOS_URL +
                                       "b_" +
-                                      villaDetail?.data?.photos?.[0]?.image
+                                      villaDetail.data.photos[
+                                        getVideoUrlIndex(villaDetail.data.photos)
+                                      ].image
                                     })`,
                                   }}
                                 ></div>
