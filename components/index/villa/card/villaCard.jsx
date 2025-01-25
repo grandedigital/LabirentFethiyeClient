@@ -128,6 +128,30 @@ export default function VillaCard({
     return moneyFormat(min, false);
   };
 
+  const RedTag = () => {
+    return (
+      data?.onlineReservation == true && (
+        <div className={styles.cardFeatures2}>{t("instantBooking")}</div>
+      )
+    );
+  };
+
+  const WhiteTag = () => {
+    return (
+      data?.featureTextWhite != null && (
+        <div className={styles.cardFeatures3}>{data?.featureTextWhite}</div>
+      )
+    );
+  };
+
+  const BlueTag = () => {
+    return (
+      data?.featureTextBlue && (
+        <div className={styles.cardFeatures}>{data?.featureTextBlue}</div>
+      )
+    );
+  };
+
   const returnMaxPrice = () => {
     let max = data?.maxPrice;
 
@@ -208,21 +232,9 @@ export default function VillaCard({
                 {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
                 )} */}
-                {data?.featureTextBlue && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextBlue}
-                  </div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data.name}</div>
@@ -299,21 +311,12 @@ export default function VillaCard({
                     onClick={(e) => imageHandler(e, "next")}
                   ></button>
                 </div>
-                {data?.featureTextWhite && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
                 {data?.featureTextRed && (
                   <div className={styles.cardFeatures2}>
                     {data?.hotelDetails?.[0]?.featureTextRed}
                   </div>
                 )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -400,21 +403,9 @@ export default function VillaCard({
                 {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
                 )} */}
-                {data?.featureTextBlue && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextBlue}
-                  </div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -506,21 +497,9 @@ export default function VillaCard({
                 {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
                 )} */}
-                {data?.featureTextBlue && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextBlue}
-                  </div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -640,26 +619,9 @@ export default function VillaCard({
                 {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
                 )} */}
-                {data?.featureTextBlue && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextBlue}
-                  </div>
-                )}
-                {data?.featureTextBlue && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextBlue}
-                  </div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -748,21 +710,9 @@ export default function VillaCard({
                 {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
                 )} */}
-                {data?.featureTextBlue && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextBlue}
-                  </div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>
@@ -846,21 +796,9 @@ export default function VillaCard({
                 {/* {data?.villaNumber && (
                   <div className={styles.cardFeatures}>{data?.villaNumber}</div>
                 )} */}
-                {data?.featureTextBlue && (
-                  <div className={styles.cardFeatures}>
-                    {data?.featureTextBlue}
-                  </div>
-                )}
-                {data?.onlineReservation == true && (
-                  <div className={styles.cardFeatures2}>
-                    {"Anında Rezervasyon"}
-                  </div>
-                )}
-                {data?.featureTextWhite != null && (
-                  <div className={styles.cardFeatures3}>
-                    {data?.featureTextWhite}
-                  </div>
-                )}
+                <BlueTag />
+                <RedTag />
+                <WhiteTag />
               </div>
               <div className={styles.textBox}>
                 <div className={styles.title}>{data?.name}</div>

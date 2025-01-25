@@ -209,6 +209,7 @@
   "ourActivites": "Aktivitelerimiz",
   "ourPopulerActivites": "Popüler Aktivitelerimiz",
   "activitesListed": "Toplam {{activiteCount}} adet aktivite listelendi",
+  "instantBooking": "Anında Rezervasyon",
   "days": {
     "1": "Pzt",
     "2": "Sa",
