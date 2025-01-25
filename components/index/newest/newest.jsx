@@ -50,7 +50,7 @@ export default function NewVillas({ villas }) {
         <div className={styles.container}>
           <div className={styles.box}>
             <div className={`${styles.titleBox} ${styles.white}`}>
-              <div className={styles.title}>{t("newlyAddedVillas")}</div>
+              <div className={styles.title}>{t("populerVillas")}</div>
               <div className={styles.subTitle}>{t("ourVillasText")}.</div>
             </div>
             <div className={styles.top}>
