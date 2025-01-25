@@ -210,6 +210,7 @@
   "ourPopulerActivites": "Our Populer Activates",
   "activitesListed": "A total of {{activiteCount}} activites have been listed",
   "instantBooking": "Instant Booking",
+  "location": "Location",
   "days": {
     "1": "Mo",
     "2": "Tu",

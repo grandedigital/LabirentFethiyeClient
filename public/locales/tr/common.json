@@ -210,6 +210,7 @@
   "ourPopulerActivites": "Popüler Aktivitelerimiz",
   "activitesListed": "Toplam {{activiteCount}} adet aktivite listelendi",
   "instantBooking": "Anında Rezervasyon",
+  "location": "Konum",
   "days": {
     "1": "Pzt",
     "2": "Sa",

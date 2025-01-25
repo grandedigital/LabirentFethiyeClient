@@ -256,7 +256,7 @@ export default function List({
                 <div className={styles.row}>
                   <ul>
                     <li>
-                      <div className={styles.title}>Konum</div>
+                      <div className={styles.title}>{t("location")}</div>
                       <div
                         className={styles.box}
                         style={{
@@ -280,14 +280,16 @@ export default function List({
                             target="_blank"
                             href="https://www.google.com/maps?ll=36.575887,29.150176&z=19&t=m&hl=tr&gl=TR&mapclient=embed&cid=1633145916469788623"
                           >
-                            <span>Konum</span>
+                            <span>{t("location")}</span>
                           </Link>
                         </div>
                       </div>
                     </li>
                     {hasVideoUrl(villaDetail?.data?.photos) && (
                       <li className={styles.popupImage}>
-                        <div className={styles.title}>Tanıtım Videosu</div>
+                        <div className={styles.title}>
+                          {t("promotionalVideo")}
+                        </div>
                         <div className={styles.box}>
                           <LightGallery
                             plugins={[lgVideo]}
@@ -308,7 +310,9 @@ export default function List({
                                       process.env.NEXT_PUBLIC_APIPHOTOS_URL +
                                       "b_" +
                                       villaDetail.data.photos[
-                                        getVideoUrlIndex(villaDetail.data.photos)
+                                        getVideoUrlIndex(
+                                          villaDetail.data.photos
+                                        )
                                       ].image
                                     })`,
                                   }}
