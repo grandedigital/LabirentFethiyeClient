@@ -98,7 +98,7 @@ export default function BlogCard({ data, t }) {
             </div>
             <div className={styles.colon}>
               <i className={styles.date_icon}></i>
-              <span>1</span>
+              <span>{data?.createdAt || "-"}</span>
             </div>
           </div>
           <div className={styles.title}>{data?.webPageDetails[0]?.title}</div>

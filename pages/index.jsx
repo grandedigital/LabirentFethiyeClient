@@ -47,8 +47,6 @@ export default function Home({
   activates,
   newVillasData,
 }) {
-  console.log(newVillasData);
-  
   const { i18n } = useTranslation();
   const { t } = useTranslation("common");
 
