@@ -337,6 +337,298 @@ img {
   z-index: 100 !important;
 }
 
+/* detay müsaitlik takvimi tasarımı */
+
+/* ana kapsayıcı */
+.detailAvailabilityCalendar {
+  width: 100%;
+  padding: 1px;
+  border: none;
+}
+
+.detailAvailabilityCalendar .react-datepicker__month {
+  margin: 0;
+}
+
+.detailAvailabilityCalendar .react-datepicker__month-container {
+  width: 50%;
+  padding: 10px;
+}
+
+.detailAvailabilityCalendar .react-datepicker__week {
+  display: flex;
+  margin: 10px 0;
+}
+
+/* Günler */
+.detailAvailabilityCalendar .react-datepicker__day {
+  flex: 1;
+  /* height: 50px; */
+  display: table-cell;
+  font-weight: 400;
+  margin: 0;
+  aspect-ratio: 1/1;
+}
+
+/* Güne fare hover olduğunda */
+.detailAvailabilityCalendar
+  .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
+  background-color: #daf0fa !important;
+  color: initial;
+}
+
+/* Giriş gününe fare hover olunca */
+.detailAvailabilityCalendar
+  .react-datepicker__day.start-date:not(
+    .react-datepicker__day--disabled
+  ):hover {
+  background: linear-gradient(to top left, #e8543e 50%, #daf0fa 0);
+  color: initial;
+}
+
+.detailAvailabilityCalendar .react-datepicker__day--outside-month {
+  background-color: #f1f9fd !important;
+}
+
+/* Aralıktaki tarihler */
+.detailAvailabilityCalendar .react-datepicker__day--in-range {
+  color: black;
+  border-radius: 0;
+  /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); */
+}
+.detailAvailabilityCalendar
+  .react-datepicker__day--in-range:not(.react-datepicker__day--range-start) {
+  background-color: #daf0fa !important;
+}
+
+/* eski günler */
+.detailAvailabilityCalendar .react-datepicker__day.old-day {
+  background-color: #f4fbff !important;
+  border-radius: 6px !important;
+  color: #727272 !important;
+}
+
+/* eski günler hover */
+.detailAvailabilityCalendar .react-datepicker__day.old-day:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+  cursor: not-allowed;
+}
+
+/* eski günler hover day number */
+.detailAvailabilityCalendar .react-datepicker__day.old-day:hover .day-number {
+  color: #727272 !important;
+}
+
+/* Kapalı olmayan günler */
+.detailAvailabilityCalendar
+  .react-datepicker__day:not(.react-datepicker__day--disabled):not(
+    .start-date
+  ):not(.end-date) {
+  background-color: #f1f9fd;
+  border-radius: 6px;
+}
+
+/* Giriş tarihi */
+.detailAvailabilityCalendar
+  .start-date:not(.react-datepicker__day--outside-month) {
+  background: linear-gradient(to top left, #e8543e 50%, #f1f9fd 0);
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+}
+
+/* Giriş tarihi yeni rezervasyon seçerken son tarih üzerine gelince */
+.detailAvailabilityCalendar
+  .start-date.react-datepicker__day--selecting-range-end:not(
+    .react-datepicker__day--outside-month
+  ) {
+  background: linear-gradient(to top left, #e8543e 50%, #daf0fa 0);
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+}
+
+/* Giriş tarihi yeni rezervasyonun çıkış tarihi seçildiğinde */
+.detailAvailabilityCalendar
+  .start-date.react-datepicker__day--range-end:not(
+    .react-datepicker__day--outside-month
+  ) {
+  background: linear-gradient(to top left, #e8543e 50%, #daf0fa 0);
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+}
+
+/* Çıkış tarihi */
+.detailAvailabilityCalendar
+  .end-date:not(.react-datepicker__day--outside-month) {
+  background: linear-gradient(to top left, #f1f9fd 50%, #e8543e 0);
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+/* Çıkış tarihi yeni rezervasyon için giriş olarak seçilince */
+.detailAvailabilityCalendar
+  .end-date.react-datepicker__day--range-start:not(
+    .react-datepicker__day--outside-month
+  ) {
+  background: linear-gradient(to top left, #daf0fa 50%, #e8543e 0);
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.detailAvailabilityCalendar
+  .end-date.react-datepicker__day--selecting-range-start:not(
+    .react-datepicker__day--outside-month
+  ) {
+  background: linear-gradient(to top left, #daf0fa 50%, #e8543e 0);
+}
+
+/* Devre dışı tarihler */
+.detailAvailabilityCalendar .react-datepicker__day--disabled {
+  background-color: #e8543e;
+  color: #000;
+  cursor: not-allowed;
+  border-radius: 6px;
+}
+
+.detailAvailabilityCalendar
+  .react-datepicker__day--disabled:not(.end-date)
+  .day-price {
+  visibility: hidden;
+}
+
+.detailAvailabilityCalendar .react-datepicker__day-name {
+  flex: 1;
+  height: 50px;
+  display: table-cell;
+  font-weight: 400;
+  font-size: 14px;
+  color: #7b85a1;
+  margin: 0;
+}
+
+/* Gün hücresi */
+.detailAvailabilityCalendar .custom-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 60px; */
+  width: 100%;
+  height: 100%;
+}
+
+/* Gün numarası */
+.detailAvailabilityCalendar .day-number {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Gün fiyatı */
+.detailAvailabilityCalendar .day-price {
+  font-size: 10px;
+  color: #8f2c00; /* Yeşil */
+  font-weight: 500;
+}
+
+.detailAvailabilityCalendar .react-datepicker__day--outside-month {
+  visibility: hidden;
+}
+
+.detailAvailabilityCalendar .react-datepicker__navigation {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  padding: 3px;
+  top: 15px !important;
+}
+
+.detailAvailabilityCalendar .react-datepicker__navigation span {
+  background-image: url(/images/arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.detailAvailabilityCalendar .react-datepicker__navigation span::before {
+  display: none;
+}
+.detailAvailabilityCalendar .react-datepicker__navigation--next {
+  background-color: #000;
+  top: 5px;
+  right: 5px;
+}
+
+.detailAvailabilityCalendar .react-datepicker__navigation-icon {
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+}
+
+.detailAvailabilityCalendar .react-datepicker__navigation-icon--previous {
+  transform: rotate(-180deg);
+}
+
+.detailAvailabilityCalendar .react-datepicker__navigation--previous {
+  background-color: #000;
+  left: 5px;
+  top: 5px;
+}
+.detailAvailabilityCalendar .react-datepicker__header {
+  background: transparent;
+  border: 0;
+  padding: 8px 0 0 0;
+}
+.detailAvailabilityCalendar .react-datepicker__current-month {
+}
+
+.detailAvailabilityCalendar .react-datepicker__day-names {
+  display: flex;
+  padding-top: 30px;
+}
+
+/* 2 tarih seçimi yapıldıktan sonra ilk gün kutucuk css */
+.detailAvailabilityCalendar .react-datepicker__day--range-start {
+  box-shadow: none !important;
+  background: linear-gradient(to top left, #daf0fa 50%, transparent 0);
+}
+
+/* 2 tarih seçimi yapıldıktan sonra son gün kutucuk css */
+.detailAvailabilityCalendar .react-datepicker__day--range-end {
+  box-shadow: none !important;
+  background: linear-gradient(to top left, #f1f9fd 50%, transparent 0);
+}
+
+.detailAvailabilityCalendar .react-datepicker__day--range-end {
+  background-color: red !important;
+  box-shadow: none !important;
+}
+
+/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan giriş kutucukları cssleri */
+.detailAvailabilityCalendar
+  .react-datepicker__day--in-selecting-range.start-date {
+  background: linear-gradient(to top left, #e8543e 50%, transparent 0);
+  color: initial;
+}
+
+/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan çıkış kutucukları cssleri */
+.detailAvailabilityCalendar
+  .react-datepicker__day--in-selecting-range.end-date {
+  background: linear-gradient(to top left, transparent 50%, #e8543e 0);
+  color: initial;
+}
+
+/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar seçim aralığında olan tarihler */
+.detailAvailabilityCalendar .react-datepicker__day--in-selecting-range {
+  background-color: #daf0fa !important;
+  color: initial;
+}
+
 @keyframes loadingRotate {
   100% {
     transform: rotate(360deg);
@@ -379,12 +671,14 @@ img {
   width: 100% !important;
 }
 
-.react-datepicker__month-container {
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__month-container {
   width: 50% !important;
   margin-bottom: 20px !important;
 }
 
-.react-datepicker__current-month {
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__current-month {
   margin: 0px !important;
   line-height: 25px !important;
   color: #02044a !important;
@@ -395,50 +689,57 @@ img {
   margin-bottom: 10px !important;
 }
 
-.react-datepicker__day-names {
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__day-names {
   display: flex;
   justify-content: center;
   gap: 0.8rem;
 }
 
-.react-datepicker__day-name {
+.react-datepicker:not(.detailAvailabilityCalendar) .react-datepicker__day-name {
   font-weight: 600 !important;
   font-size: 14px !important;
   line-height: 19px !important;
   color: #02044a !important;
 }
 
-.react-datepicker__week {
+.react-datepicker:not(.detailAvailabilityCalendar) .react-datepicker__week {
   font-size: 15px !important;
 }
 
-.react-datepicker__header {
+.react-datepicker:not(.detailAvailabilityCalendar) .react-datepicker__header {
   background-color: #fff !important;
   border: none !important;
 }
 
-.react-datepicker__day,
-.react-datepicker__month-text,
-.react-datepicker__quarter-text,
-.react-datepicker__year-text {
+.react-datepicker:not(.detailAvailabilityCalendar) .react-datepicker__day,
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__month-text,
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__quarter-text,
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__year-text {
   line-height: 40px !important;
   width: 40px !important;
 }
 
-.react-datepicker__day--keyboard-selected {
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__day--keyboard-selected {
   background: #7e53f9 !important;
   color: #ffffff !important;
   border-radius: 50% !important;
   width: 40px !important;
 }
 
-.react-datepicker__day--in-range {
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__day--in-range {
   background: #7e53f9 !important;
   border-radius: 50% !important;
   color: #ffffff !important;
 }
 
-.react-datepicker__day--in-selecting-range:not(
+.react-datepicker:not(.detailAvailabilityCalendar)
+  .react-datepicker__day--in-selecting-range:not(
     .react-datepicker__day--in-range,
     .react-datepicker__month-text--in-range,
     .react-datepicker__quarter-text--in-range,
@@ -449,7 +750,7 @@ img {
   opacity: 0.8;
 }
 
-.react-datepicker {
+.react-datepicker:not(.detailAvailabilityCalendar) {
   display: flex !important;
   font-family: "Sofia Pro", sans-serif !important;
   background: #ffffff;
@@ -458,7 +759,7 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  .react-datepicker {
+  .react-datepicker:not(.detailAvailabilityCalendar) {
     display: block !important;
     padding: 15px;
   }
@@ -475,7 +776,7 @@ img {
     background-color: rgba(25, 25, 46, 0.75);
   }
 
-  .react-datepicker__month-container {
+  .react-datepicker .react-datepicker__month-container {
     width: 100% !important;
     margin-bottom: 20px !important;
     float: none !important;
@@ -485,28 +786,40 @@ img {
     padding: 30px 0;
   }
 
-  .react-datepicker__navigation {
+  .react-datepicker:not(.detailAvailabilityCalendar)
+    .react-datepicker__navigation {
     width: 50px !important;
     height: 50px !important;
+  }
+
+  .detailAvailabilityCalendar .react-datepicker__navigation {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  .react-datepicker__day,
-  .react-datepicker__month-text,
-  .react-datepicker__quarter-text,
-  .react-datepicker__year-text {
+  .react-datepicker:not(.detailAvailabilityCalendar) .react-datepicker__day,
+  .react-datepicker:not(.detailAvailabilityCalendar)
+    .react-datepicker__month-text,
+  .react-datepicker:not(.detailAvailabilityCalendar)
+    .react-datepicker__quarter-text,
+  .react-datepicker:not(.detailAvailabilityCalendar)
+    .react-datepicker__year-text {
     line-height: 30px !important;
     width: 30px !important;
   }
 
-  .react-datepicker__day-names {
+  .react-datepicker:not(.detailAvailabilityCalendar)
+    .react-datepicker__day-names {
     display: flex;
     justify-content: center;
     gap: 0.2rem;
   }
 
-  .react-datepicker__day--keyboard-selected {
+  .react-datepicker:not(.detailAvailabilityCalendar)
+    .react-datepicker__day--keyboard-selected {
     width: 30px !important;
   }
 }
@@ -523,8 +836,4 @@ img {
   width: 100% !important;
   margin-bottom: 20px !important;
   float: none !important;
-}
-
-.activatesGallery {
-  margin-bottom: 50px;
 }
