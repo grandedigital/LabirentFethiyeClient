@@ -342,7 +342,7 @@ img {
 /* ana kapsayıcı */
 .detailAvailabilityCalendar {
   width: 100%;
-  padding: 1px;
+  padding: 0 20px;
   border: none;
 }
 
@@ -352,7 +352,7 @@ img {
 
 .detailAvailabilityCalendar .react-datepicker__month-container {
   width: 50%;
-  padding: 10px;
+  padding: 20px;
 }
 
 .detailAvailabilityCalendar .react-datepicker__week {
@@ -368,22 +368,122 @@ img {
   font-weight: 400;
   margin: 0;
   aspect-ratio: 1/1;
+  color: #333333;
+}
+
+/* onaylanmış bitiş ve onaylanmış başlangıç kutucuğu */
+.detailAvailabilityCalendar .react-datepicker__day.onaydanOnaya {
+  background: linear-gradient(
+    135deg,
+    #f5988a 0%,
+    #f5988a 48%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(255, 255, 255, 1) 52%,
+    #f5988a 55%,
+    #f5988a 100%
+  );
+}
+
+/* onaylanmış bitiş ve opsiyonlu başlangıç kutucuğu */
+.detailAvailabilityCalendar .react-datepicker__day.onaydanOpsiyona {
+  background: linear-gradient(
+    135deg,
+    #f5988a 0%,
+    #f5988a 48%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(255, 255, 255, 1) 52%,
+    #ffc299 55%,
+    #ffc299 100%
+  );
+}
+
+/* opsiyonlu bitiş ve onaylanmış başlangıç kutucuğu */
+.detailAvailabilityCalendar .react-datepicker__day.opsiyondanOnaya {
+  background: linear-gradient(
+    135deg,
+    #ffc299 0%,
+    #ffc299 48%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(255, 255, 255, 1) 52%,
+    #f5988a 55%,
+    #f5988a 100%
+  );
+}
+
+.detailAvailabilityCalendar .react-datepicker__day.onaydanOnaya .day-price,
+.detailAvailabilityCalendar .react-datepicker__day.onaydanOpsiyona .day-price,
+.detailAvailabilityCalendar .react-datepicker__day.opsiyondanOnaya .day-price,
+.detailAvailabilityCalendar .react-datepicker__day.opsiyondanOpsiyona .day-price {
+  visibility: hidden;
+}
+
+/* opsiyonlu bitiş ve opsiyonlu başlangıç kutucuğu */
+.detailAvailabilityCalendar .react-datepicker__day.opsiyondanOpsiyona {
+  background: linear-gradient(
+    135deg,
+    #ffc299 0%,
+    #ffc299 48%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(255, 255, 255, 1) 52%,
+    #ffc299 55%,
+    #ffc299 100%
+  );
+}
+
+.detailAvailabilityCalendar .react-datepicker__day.start-date.end-date {
+  background: linear-gradient(
+    135deg,
+    #f5988a 0%,
+    #f5988a 48%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(255, 255, 255, 1) 52%,
+    #f5988a 55%,
+    #f5988a 100%
+  ) !important;
+}
+
+.detailAvailabilityCalendar
+  .react-datepicker__day.start-date.end-date
+  .day-price {
+  visibility: hidden;
 }
 
 /* Güne fare hover olduğunda */
 .detailAvailabilityCalendar
   .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
   background-color: #daf0fa !important;
-  color: initial;
 }
 
-/* Giriş gününe fare hover olunca */
+/* Giriş gününe fare hover olunca onaylanmış */
 .detailAvailabilityCalendar
-  .react-datepicker__day.start-date:not(
+  .react-datepicker__day.start-date.onaylanmis:not(
     .react-datepicker__day--disabled
   ):hover {
-  background: linear-gradient(to top left, #e8543e 50%, #daf0fa 0);
-  color: initial;
+  background: linear-gradient(to top left, #f5988a 50%, #daf0fa 0);
+}
+
+/* Giriş gününe fare hover olunca opsiyonlu */
+.detailAvailabilityCalendar
+  .react-datepicker__day.start-date.opsiyonlu:not(
+    .react-datepicker__day--disabled
+  ):hover {
+  background: linear-gradient(to top left, #ffc299 50%, #daf0fa 0);
+}
+
+/* Çıkış gününe fare hover olunca onaylanmış */
+.detailAvailabilityCalendar
+  .react-datepicker__day.end-date.onaylanmis:not(
+    .react-datepicker__day--disabled
+  ):hover {
+  background: linear-gradient(to top left, #daf0fa 50%, #f5988a 0);
+}
+
+/* Çıkış gününe fare hover olunca opsiyonlu */
+.detailAvailabilityCalendar
+  .react-datepicker__day.end-date.opsiyonlu:not(
+    .react-datepicker__day--disabled
+  ):hover {
+  background: linear-gradient(to top left, #daf0fa 50%, #ffc299 0);
 }
 
 .detailAvailabilityCalendar .react-datepicker__day--outside-month {
@@ -403,21 +503,20 @@ img {
 
 /* eski günler */
 .detailAvailabilityCalendar .react-datepicker__day.old-day {
-  background-color: #f4fbff !important;
+  background-color: #f9f9f9 !important;
   border-radius: 6px !important;
-  color: #727272 !important;
+  color: #cfc9c9 !important;
 }
 
 /* eski günler hover */
 .detailAvailabilityCalendar .react-datepicker__day.old-day:hover {
   background-color: inherit !important;
-  color: inherit !important;
   cursor: not-allowed;
 }
 
 /* eski günler hover day number */
 .detailAvailabilityCalendar .react-datepicker__day.old-day:hover .day-number {
-  color: #727272 !important;
+  color: inherit !important;
 }
 
 /* Kapalı olmayan günler */
@@ -429,12 +528,18 @@ img {
   border-radius: 6px;
 }
 
-/* Giriş tarihi */
+/* Giriş tarihi onaylanmis */
 .detailAvailabilityCalendar
   .start-date:not(.react-datepicker__day--outside-month) {
-  background: linear-gradient(to top left, #e8543e 50%, #f1f9fd 0);
-  color: rgb(0, 0, 0);
+  background: linear-gradient(to top left, #f5988a 50%, #f1f9fd 0);
+  color: #615f5f;
   border-radius: 6px;
+}
+
+/* Giriş tarihi opsiyonlu */
+.detailAvailabilityCalendar
+  .start-date.opsiyonlu:not(.react-datepicker__day--outside-month) {
+  background: linear-gradient(to top left, #ffc299 50%, #f1f9fd 0);
 }
 
 /* Giriş tarihi yeni rezervasyon seçerken son tarih üzerine gelince */
@@ -442,7 +547,7 @@ img {
   .start-date.react-datepicker__day--selecting-range-end:not(
     .react-datepicker__day--outside-month
   ) {
-  background: linear-gradient(to top left, #e8543e 50%, #daf0fa 0);
+  background: linear-gradient(to top left, #f5988a 50%, #daf0fa 0);
   color: rgb(0, 0, 0);
   border-radius: 6px;
 }
@@ -452,42 +557,79 @@ img {
   .start-date.react-datepicker__day--range-end:not(
     .react-datepicker__day--outside-month
   ) {
-  background: linear-gradient(to top left, #e8543e 50%, #daf0fa 0);
+  background: linear-gradient(to top left, #f5988a 50%, #daf0fa 0);
   color: rgb(0, 0, 0);
   border-radius: 6px;
 }
 
-/* Çıkış tarihi */
+/* Çıkış tarihi onaylanmış */
 .detailAvailabilityCalendar
   .end-date:not(.react-datepicker__day--outside-month) {
-  background: linear-gradient(to top left, #f1f9fd 50%, #e8543e 0);
+  background: linear-gradient(to top left, #f1f9fd 50%, #f5988a 0);
+  color: #615f5f;
+  border-radius: 6px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+/* Çıkış tarihi opsiyonlu */
+.detailAvailabilityCalendar
+  .end-date.opsiyonlu:not(.react-datepicker__day--outside-month) {
+  background: linear-gradient(to top left, #f1f9fd 50%, #ffc299 0);
+  color: #615f5f;
+  border-radius: 6px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
+}
+
+/* Çıkış tarihi yeni rezervasyon için giriş olarak seçilince seçim bittiğinde onaylanmış */
+.detailAvailabilityCalendar
+  .end-date.react-datepicker__day--range-start.onaylanmis:not(
+    .react-datepicker__day--outside-month
+  ) {
+  background: linear-gradient(to top left, #daf0fa 50%, #f5988a 0);
   color: rgb(0, 0, 0);
   border-radius: 6px;
   /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
 }
 
-/* Çıkış tarihi yeni rezervasyon için giriş olarak seçilince */
+/* Çıkış tarihi yeni rezervasyon için giriş olarak seçilince seçim bittiğinde opsiyonlu */
 .detailAvailabilityCalendar
-  .end-date.react-datepicker__day--range-start:not(
+  .end-date.react-datepicker__day--range-start.opsiyonlu:not(
     .react-datepicker__day--outside-month
   ) {
-  background: linear-gradient(to top left, #daf0fa 50%, #e8543e 0);
+  background: linear-gradient(to top left, #daf0fa 50%, #ffc299 0);
   color: rgb(0, 0, 0);
   border-radius: 6px;
   /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
 }
 
+/* Çıkış olan tarih giriş tarihi seçildiğince 2.seçim yapılana kadar onaylanmış */
 .detailAvailabilityCalendar
-  .end-date.react-datepicker__day--selecting-range-start:not(
+  .end-date.react-datepicker__day--selecting-range-start.opsiyonlu:not(
     .react-datepicker__day--outside-month
   ) {
-  background: linear-gradient(to top left, #daf0fa 50%, #e8543e 0);
+  background: linear-gradient(to top left, #daf0fa 50%, #f5988a 0);
 }
 
-/* Devre dışı tarihler */
-.detailAvailabilityCalendar .react-datepicker__day--disabled {
-  background-color: #e8543e;
-  color: #000;
+/* Çıkış olan tarih giriş tarihi seçildiğince 2.seçim yapılana kadar opsiyonlu */
+.detailAvailabilityCalendar
+  .end-date.react-datepicker__day--selecting-range-start.opsiyonlu:not(
+    .react-datepicker__day--outside-month
+  ) {
+  background: linear-gradient(to top left, #daf0fa 50%, #ffc299 0);
+}
+
+/* Devre dışı tarihler onaylanmis */
+.detailAvailabilityCalendar .react-datepicker__day--disabled.onaylanmis {
+  background-color: #f5988a;
+  color: #615f5f;
+  cursor: not-allowed;
+  border-radius: 6px;
+}
+
+/* Devre dışı tarihler opsiyonlu */
+.detailAvailabilityCalendar .react-datepicker__day--disabled.opsiyonlu {
+  background-color: #ffc299;
+  color: #615f5f;
   cursor: not-allowed;
   border-radius: 6px;
 }
@@ -542,7 +684,8 @@ img {
   height: 24px;
   border-radius: 100%;
   padding: 3px;
-  top: 15px !important;
+  top: 25px !important;
+  background-color: #02044a;
 }
 
 .detailAvailabilityCalendar .react-datepicker__navigation span {
@@ -558,9 +701,8 @@ img {
   display: none;
 }
 .detailAvailabilityCalendar .react-datepicker__navigation--next {
-  background-color: #000;
   top: 5px;
-  right: 5px;
+  right: 45px;
 }
 
 .detailAvailabilityCalendar .react-datepicker__navigation-icon {
@@ -575,8 +717,7 @@ img {
 }
 
 .detailAvailabilityCalendar .react-datepicker__navigation--previous {
-  background-color: #000;
-  left: 5px;
+  left: 45px;
   top: 5px;
 }
 .detailAvailabilityCalendar .react-datepicker__header {
@@ -585,11 +726,15 @@ img {
   padding: 8px 0 0 0;
 }
 .detailAvailabilityCalendar .react-datepicker__current-month {
+  color: #02044a;
+  font-family: "Sofia Pro";
+  font-size: 20px;
 }
 
 .detailAvailabilityCalendar .react-datepicker__day-names {
   display: flex;
   padding-top: 30px;
+  margin-bottom: -20px;
 }
 
 /* 2 tarih seçimi yapıldıktan sonra ilk gün kutucuk css */
@@ -609,17 +754,24 @@ img {
   box-shadow: none !important;
 }
 
-/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan giriş kutucukları cssleri */
+/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan giriş kutucukları cssleri onaylanmis */
 .detailAvailabilityCalendar
-  .react-datepicker__day--in-selecting-range.start-date {
-  background: linear-gradient(to top left, #e8543e 50%, transparent 0);
+  .react-datepicker__day--in-selecting-range.start-date.onaylanmis {
+  background: linear-gradient(to top left, #f5988a 50%, #daf0fa 0);
+  color: initial;
+}
+
+/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan giriş kutucukları cssleri opsiyonlu */
+.detailAvailabilityCalendar
+  .react-datepicker__day--in-selecting-range.start-date.opsiyonlu {
+  background: linear-gradient(to top left, #ffc299 50%, #daf0fa 0);
   color: initial;
 }
 
 /* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan çıkış kutucukları cssleri */
 .detailAvailabilityCalendar
   .react-datepicker__day--in-selecting-range.end-date {
-  background: linear-gradient(to top left, transparent 50%, #e8543e 0);
+  background: linear-gradient(to top left, transparent 50%, #f5988a 0);
   color: initial;
 }
 
@@ -673,7 +825,7 @@ img {
 
 .react-datepicker:not(.detailAvailabilityCalendar)
   .react-datepicker__month-container {
-  width: 50% !important;
+  width: 100% !important;
   margin-bottom: 20px !important;
 }
 
@@ -782,6 +934,11 @@ img {
     float: none !important;
   }
 
+  .react-datepicker.detailAvailabilityCalendar
+    .react-datepicker__month-container {
+    padding: 0;
+  }
+
   .listPage_contentDetail.listPage_villasDetail {
     padding: 30px 0;
   }
@@ -792,10 +949,23 @@ img {
     height: 50px !important;
   }
 
+  .detailAvailabilityCalendar {
+    padding: 0;
+  }
+
   .detailAvailabilityCalendar .react-datepicker__navigation {
     width: 30px;
     height: 30px;
     padding: 5px;
+    top: 7px !important;
+  }
+
+  .detailAvailabilityCalendar .react-datepicker__navigation--next {
+    right: 0;
+  }
+
+  .detailAvailabilityCalendar .react-datepicker__navigation--previous {
+    left: 0;
   }
 }
 

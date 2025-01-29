@@ -2,8 +2,15 @@ import styles from "./calendar.module.css";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { tr, enUS } from "date-fns/locale";
-import { format, isWithinInterval, eachDayOfInterval } from "date-fns";
+import {
+  format,
+  isWithinInterval,
+  eachDayOfInterval,
+  addYears,
+} from "date-fns";
 import DatePicker from "react-datepicker";
+import moment from "moment";
+import { parseCookies } from "nookies";
 
 const ModalComponent = dynamic(() => import("../../../other/modalComponent"), {
   ssr: true,
@@ -28,38 +35,72 @@ const Calendar = function Calendar({
   const [selectedDates, setSelectedDates] = useState([null, null]); // Tarih aralığı
   const [startDate, endDate] = selectedDates; // startDate ve endDate'i buradan çıkarıyoruz
   const [monthsShown, setMonthsShown] = useState(2); // Başlangıçta 2 ay göster
+  const [currencies, setCurrencies] = useState(null);
 
   // Rezervasyonlar
-  const rezervasyonlar = [
-    { start: new Date("2025-02-02"), end: new Date("2025-02-09") },
-    { start: new Date("2025-02-10"), end: new Date("2025-02-15") },
-    { start: new Date("2025-03-01"), end: new Date("2025-03-05") },
-  ];
+  // const rezervasyonlar = [
+  //   {
+  //     start: new Date("2025-02-02"),
+  //     end: new Date("2025-02-09"),
+  //     reservationStatusType: 1,
+  //   },
+  //   {
+  //     start: new Date("2025-02-10"),
+  //     end: new Date("2025-02-15"),
+  //     reservationStatusType: 2,
+  //   },
+  //   {
+  //     start: new Date("2025-02-15"),
+  //     end: new Date("2025-02-20"),
+  //     reservationStatusType: 1,
+  //   },
+  //   {
+  //     start: new Date("2025-03-01"),
+  //     end: new Date("2025-03-05"),
+  //     reservationStatusType: 1,
+  //   },
+  // ];
+
+  const rezervasyonlar = dates;
 
   // Fiyatlar
-  const ranges = [
-    { startDate: "2025-02-01", endDate: "2025-02-28", price: 100 },
-    { startDate: "2025-03-01", endDate: "2025-03-31", price: 150 },
-  ];
+  // const ranges = [
+  //   { startDate: "2025-02-01", endDate: "2025-02-28", price: 100 },
+  //   { startDate: "2025-03-01", endDate: "2025-03-31", price: 150 },
+  // ];
+
+  const ranges = calendarPrices;
 
   // Rezervasyon kontrol fonksiyonu
   const checkReservation = (start, end) => {
     const selectedDates = eachDayOfInterval({ start, end }); // Giriş ve çıkış arası günleri al
 
     const index1 = rezervasyonlar.some(
-      (item, index) =>
-        format(item.end, "yyyy-MM-dd") == format(start, "yyyy-MM-dd")
+      (item) =>
+        format(new Date(item.checkOut), "yyyy-MM-dd") ==
+        format(start, "yyyy-MM-dd")
+    );
+
+    //test edilecek yapılacak iş bekleyen
+    const index2 = rezervasyonlar.some(
+      (item) =>
+        format(new Date(item.checkIn), "yyyy-MM-dd") ==
+        format(end, "yyyy-MM-dd")
     );
 
     //çıkış tarihinden itibaren bir rezervasyon seçileceği zaman patlıyordu burada o çözüldü
     if (index1) {
       selectedDates.shift();
     }
-    console.log(selectedDates);
+
+    //seçilen yeni rezervasyonun çıkış tarihi bir rezervasyon başlangıcı ise patlıyor burada o düzeltiliyor
+    if (index2) {
+      selectedDates.pop();
+    }
 
     const reserved = selectedDates.some((date) =>
-      rezervasyonlar.some(({ start: rStart, end: rEnd }) =>
-        isWithinInterval(date, { start: rStart, end: rEnd })
+      rezervasyonlar.some(({ checkIn: rStart, checkOut: rEnd }) =>
+        isWithinInterval(date, { start: new Date(rStart), end: new Date(rEnd) })
       )
     );
     return reserved;
@@ -75,8 +116,9 @@ const Calendar = function Calendar({
 
       let currentDate = new Date(start);
 
-      while (currentDate <= end) {
-        const dateKey = currentDate.toISOString().split("T")[0];
+      // format(todayDate, "yyyy-MM-dd")
+      while (format(currentDate, "yyyy-MM-dd") <= format(end, "yyyy-MM-dd")) {
+        const dateKey = format(currentDate, "yyyy-MM-dd");
         result[dateKey] = price;
         currentDate.setDate(currentDate.getDate() + 1);
       }
@@ -137,8 +179,36 @@ const Calendar = function Calendar({
     }
     setSelectedDates(dates);
 
-    //giriş ve çıkış tarihleri seçilince çalışacak kod bloğu
+    //hem giriş hem çıkış tarihini seçmeyi engelle (seçilen ilk tarih hem giriş hem çıkış ise true döner)
+    if (
+      rezervasyonlar.some(
+        (item) =>
+          format(new Date(item.checkIn), "yyyy-MM-dd") ==
+          format(dates[0], "yyyy-MM-dd")
+      ) &&
+      rezervasyonlar.some(
+        (item) =>
+          format(new Date(item.checkOut), "yyyy-MM-dd") ==
+          format(dates[0], "yyyy-MM-dd")
+      )
+    ) {
+      setSelectedDates([null, null]);
+    }
+
+    //giriş ve çıkış tarihleri seçilince çalışacak kod bloğu (iki tarih de seçilince)
     if (!dates.includes(null)) {
+      //minimum 5 gece seçmeye izin ver
+      if (
+        moment
+          .duration(
+            moment(dates[1], "YYYY-MM-DD").diff(moment(dates[0], "YYYY-MM-DD"))
+          )
+          .asDays() < 5
+      ) {
+        setSelectedDates([null, null]);
+        alert("Minimum 5 gece rezervasyon yapılabilir");
+      }
+
       if (checkReservation(dates[0], dates[1])) {
         setSelectedDates([null, null]);
         alert(
@@ -154,16 +224,20 @@ const Calendar = function Calendar({
     if (
       rezervasyonlar.some(
         (range) =>
-          format(date, "yyyy-MM-dd") == format(range.start, "yyyy-MM-dd")
+          format(date, "yyyy-MM-dd") ==
+          format(new Date(range.checkIn), "yyyy-MM-dd")
       ) ||
       rezervasyonlar.some(
-        (range) => format(date, "yyyy-MM-dd") == format(range.end, "yyyy-MM-dd")
+        (range) =>
+          format(date, "yyyy-MM-dd") ==
+          format(new Date(range.checkOut), "yyyy-MM-dd")
       )
     )
       return true;
 
     var result = !rezervasyonlar.some(
-      (range) => date >= range.start && date <= range.end
+      (range) =>
+        date >= new Date(range.checkIn) && date <= new Date(range.checkOut)
     );
     return result;
   };
@@ -174,6 +248,26 @@ const Calendar = function Calendar({
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
+  };
+
+  //bu fonksiyonun içinde keşişen rezervasyonlar için de hangi renkler olacağı yapılacak
+  const reservationStatus = (date) => {
+    //status 1 ise onaylanmış, 2 ise opsiyonlu
+    const status =
+      rezervasyonlar.find((item) => {
+        const entryDate = format(new Date(item.checkIn), "yyyy-MM-dd");
+        const exitDate = format(new Date(item.checkOut), "yyyy-MM-dd");
+        return (
+          entryDate === format(date, "yyyy-MM-dd") ||
+          exitDate === format(date, "yyyy-MM-dd")
+        );
+      }).reservationStatusType || null;
+
+    if (status == 1) {
+      return "onaylanmis";
+    } else if (status == 2) {
+      return "opsiyonlu";
+    }
   };
 
   const checkDateType = (date) => {
@@ -188,20 +282,88 @@ const Calendar = function Calendar({
     if (
       rezervasyonlar.find(
         (item) =>
-          format(item.start, "yyyy-MM-dd") === format(date, "yyyy-MM-dd")
+          format(new Date(item.checkIn), "yyyy-MM-dd") ===
+          format(date, "yyyy-MM-dd")
       )
     ) {
-      string == "" ? (string += "start-date") : (string += " start-date");
+      string == ""
+        ? (string += `start-date ${reservationStatus(date)}`)
+        : (string += ` start-date ${reservationStatus(date)}`);
     }
 
     //çıkış tarihi class name ekle
     if (
       rezervasyonlar.find(
-        (item) => format(item.end, "yyyy-MM-dd") === format(date, "yyyy-MM-dd")
+        (item) =>
+          format(new Date(item.checkOut), "yyyy-MM-dd") ===
+          format(date, "yyyy-MM-dd")
       )
     ) {
-      string == "" ? (string += "end-date") : (string += " end-date");
+      string == ""
+        ? (string += `end-date ${reservationStatus(date)}`)
+        : (string += ` end-date ${reservationStatus(date)}`);
     }
+
+    const normalDayStatus =
+      rezervasyonlar.find((item) => {
+        const entryDate = format(new Date(item.checkIn), "yyyy-MM-dd");
+        const exitDate = format(new Date(item.checkOut), "yyyy-MM-dd");
+
+        return (
+          format(new Date(date), "yyyy-MM-dd") > entryDate &&
+          format(new Date(date), "yyyy-MM-dd") < exitDate
+        ); // Tarih aralığında mı kontrol et
+      })?.reservationStatusType || null;
+
+    if (normalDayStatus == 1) {
+      string == "" ? (string += "onaylanmis") : (string += " onaylanmis");
+    } else if (normalDayStatus == 2) {
+      string == "" ? (string += "opsiyonlu") : (string += " opsiyonlu");
+    }
+
+    //eğer bir günde start-date ve end-date sınıfları aynı anda var ise opsiyonludan onaylanmışa mı yoksa onaylanmıştan
+    // opsiyonluya doğru mu olduğunu tespit et ve ona göre sınıf ekle
+    if (string.includes("start-date") && string.includes("end-date")) {
+      function getStatusMapping(status1, status2) {
+        const statusMap = {
+          "1-1": "onaydanOnaya",
+          "1-2": "onaydanOpsiyona",
+          "2-1": "opsiyondanOnaya",
+          "2-2": "opsiyondanOpsiyona",
+        };
+
+        return statusMap[`${status1}-${status2}`] || null; // Varsayılan olarak `null`
+      }
+
+      function removeMultipleWords(text, words) {
+        const regex = new RegExp(words.join("|"), "gi"); // '|' ile alternatifleri belirler
+        return text.replace(regex, "");
+      }
+
+      const index = rezervasyonlar.findIndex((item) => {
+        const entryDate = format(new Date(item.checkIn), "yyyy-MM-dd");
+        const exitDate = format(new Date(item.checkOut), "yyyy-MM-dd");
+
+        return (
+          format(new Date(date), "yyyy-MM-dd") >= entryDate &&
+          format(new Date(date), "yyyy-MM-dd") <= exitDate
+        );
+      });
+
+      const status1 = rezervasyonlar[index]?.reservationStatusType;
+      const status2 = rezervasyonlar[index + 1]?.reservationStatusType;
+
+      string = removeMultipleWords(string, [
+        "start-date",
+        "end-date",
+        "opsiyonlu",
+      ]);
+
+      string == ""
+        ? (string = getStatusMapping(status1, status2))
+        : (string += ` ${getStatusMapping(status1, status2)}`);
+    }
+
     return string;
   };
 
@@ -211,7 +373,12 @@ const Calendar = function Calendar({
     return (
       <div className="custom-day">
         <span className="day-number">{date.getDate()}</span>
-        {price !== undefined && <span className="day-price">${price}</span>}
+        {price !== undefined && (
+          <span className="day-price">
+            {priceTypeText}
+            {price}
+          </span>
+        )}
       </div>
     );
   };
@@ -221,6 +388,9 @@ const Calendar = function Calendar({
 
   // Ekran boyutunu takip etmek için useEffect
   useEffect(() => {
+    const cookies = parseCookies();
+    setCurrencies(JSON.parse(cookies.currencies));
+
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setMonthsShown(1); // Ekran boyutu 768px'den küçükse sadece 1 ay göster
@@ -239,7 +409,7 @@ const Calendar = function Calendar({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [startDate, endDate]);
 
   return (
     <>
@@ -304,13 +474,15 @@ const Calendar = function Calendar({
             inline
             monthsShown={monthsShown}
             selected={startDate}
-            onChange={(dates) => popop(dates)}
+            onChange={popop}
             startDate={startDate}
             endDate={endDate}
             selectsRange
             filterDate={isDateSelectable}
             dayClassName={(date) => checkDateType(date)}
             renderDayContents={(day, date) => dayContentRenderer(date)}
+            minDate={todayDate}
+            maxDate={addYears(todayDate, 1)}
           />
         </div>
       </div>
