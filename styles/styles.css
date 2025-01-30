@@ -552,12 +552,22 @@ img {
   border-radius: 6px;
 }
 
-/* Giriş tarihi yeni rezervasyonun çıkış tarihi seçildiğinde */
+/* Giriş tarihi yeni rezervasyonun çıkış tarihi seçildiğinde onaylanmis */
 .detailAvailabilityCalendar
-  .start-date.react-datepicker__day--range-end:not(
+  .start-date.onaylanmis.react-datepicker__day--range-end:not(
     .react-datepicker__day--outside-month
   ) {
   background: linear-gradient(to top left, #f5988a 50%, #daf0fa 0);
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+}
+
+/* Giriş tarihi yeni rezervasyonun çıkış tarihi seçildiğinde opsiyonlu */
+.detailAvailabilityCalendar
+  .start-date.opsiyonlu.react-datepicker__day--range-end:not(
+    .react-datepicker__day--outside-month
+  ) {
+  background: linear-gradient(to top left, #ffc299 50%, #daf0fa 0);
   color: rgb(0, 0, 0);
   border-radius: 6px;
 }
@@ -768,10 +778,17 @@ img {
   color: initial;
 }
 
-/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan çıkış kutucukları cssleri */
+/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan çıkış kutucuğu onaylanmis */
 .detailAvailabilityCalendar
-  .react-datepicker__day--in-selecting-range.end-date {
+  .react-datepicker__day--in-selecting-range.end-date.onaylanmis {
   background: linear-gradient(to top left, transparent 50%, #f5988a 0);
+  color: initial;
+}
+
+/* ilk tarihi seçtikten sonra 2. tarihi seçene kadar arada kalan çıkış kutucuğu opsiyonlu */
+.detailAvailabilityCalendar
+  .react-datepicker__day--in-selecting-range.end-date.opsiyonlu {
+  background: linear-gradient(to top left, transparent 50%, #ffc299 0);
   color: initial;
 }
 

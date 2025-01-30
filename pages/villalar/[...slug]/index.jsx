@@ -51,6 +51,10 @@ export default function List({
   const [isDescOpen, setIsDescOpen] = useState(false);
   const activePage = parseInt(router.query.p) || 1;
   const [currencies, setCurrencies] = useState(null);
+  const [
+    selectedAvailabilityCalendarDates,
+    setSelectedAvailabilityCalendarDates,
+  ] = useState([null, null]);
 
   function getVideoUrlIndex(data) {
     // Verilen diziyi döngü ile kontrol et
@@ -195,6 +199,7 @@ export default function List({
                     selectedLanguage={i18n.language}
                   />
                   <DynamicCalendarComponent
+                  setSelectedAvailabilityCalendarDates={setSelectedAvailabilityCalendarDates}
                     t={t}
                     ready={ready}
                     priceTypeText={currentPriceTypeText}
@@ -223,6 +228,7 @@ export default function List({
                     </div>
                     <div className={styles.general}>
                       <Reservation
+                        selectedAvailabilityCalendarDates={selectedAvailabilityCalendarDates}
                         t={t}
                         priceType={villaDetail?.data?.priceType}
                         priceTypeText={currentPriceTypeText}

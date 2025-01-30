@@ -43,6 +43,10 @@ export default function List({
   const [ready, setReady] = useState(true);
   const [isDescOpen, setIsDescOpen] = useState(false);
   const [currencies, setCurrencies] = useState(null);
+  const [
+    selectedAvailabilityCalendarDates,
+    setSelectedAvailabilityCalendarDates,
+  ] = useState([null, null]);
 
   useEffect(() => {
     const cookies = parseCookies();
@@ -116,6 +120,9 @@ export default function List({
                     selectedLanguage={i18n.language}
                   />
                   <DynamicCalendarComponent
+                    setSelectedAvailabilityCalendarDates={
+                      setSelectedAvailabilityCalendarDates
+                    }
                     t={t}
                     ready={ready}
                     priceTypeText={currentPriceTypeText}
@@ -136,6 +143,9 @@ export default function List({
                   <div className={styles.right}>
                     <div className={styles.general}>
                       <Reservation
+                        selectedAvailabilityCalendarDates={
+                          selectedAvailabilityCalendarDates
+                        }
                         t={t}
                         priceType={roomDetail?.data?.priceType}
                         priceTypeText={currentPriceTypeText}

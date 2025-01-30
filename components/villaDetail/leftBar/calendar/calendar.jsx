@@ -11,6 +11,11 @@ import {
 import DatePicker from "react-datepicker";
 import moment from "moment";
 import { parseCookies } from "nookies";
+import { priceTypes } from "@/data/data";
+import {
+  calculatePricetoTargetPriceType,
+  moneyFormat,
+} from "@/utils/globalUtils";
 
 const ModalComponent = dynamic(() => import("../../../other/modalComponent"), {
   ssr: true,
@@ -27,6 +32,8 @@ const Calendar = function Calendar({
   priceTypeText,
   priceType,
   t,
+  setSelectedAvailabilityCalendarDates,
+  selectedLanguage,
 }) {
   const todayDate = new Date();
   const [yearTab, setYearTab] = useState(todayDate.getFullYear());
@@ -172,6 +179,18 @@ const Calendar = function Calendar({
   };
 
   function popop(dates) {
+    //ilk tarih bir rezervasyonun giriş tarihi ise bu seçimi iptal et
+    if (
+      rezervasyonlar.some(
+        (item) =>
+          format(new Date(item.checkIn), "yyyy-MM-dd") ==
+          format(dates[0], "yyyy-MM-dd")
+      )
+    ) {
+      setSelectedDates([null, null]);
+      return;
+    }
+
     //geçmiş tarih seçmeyi engelle
     if (format(dates[0], "yyyy-MM-dd") < format(todayDate, "yyyy-MM-dd")) {
       setSelectedDates([null, null]);
@@ -207,6 +226,7 @@ const Calendar = function Calendar({
       ) {
         setSelectedDates([null, null]);
         alert("Minimum 5 gece rezervasyon yapılabilir");
+        return;
       }
 
       if (checkReservation(dates[0], dates[1])) {
@@ -214,7 +234,10 @@ const Calendar = function Calendar({
         alert(
           "Seçilen tarihler arasında rezervasyon mevcut. Lütfen farklı tarihler seçin"
         );
+        return;
       }
+      setSelectedAvailabilityCalendarDates(dates);
+
       // alert(dates);
     }
   }
@@ -369,14 +392,19 @@ const Calendar = function Calendar({
 
   const dayContentRenderer = (date) => {
     const formattedDate = formatDate(date);
-    const price = dailyPrices[formattedDate];
+    const price = calculatePricetoTargetPriceType(
+      dailyPrices[formattedDate],
+      priceType,
+      currencies,
+      selectedLanguage
+    );
     return (
       <div className="custom-day">
         <span className="day-number">{date.getDate()}</span>
-        {price !== undefined && (
+        {price > 0 && (
           <span className="day-price">
             {priceTypeText}
-            {price}
+            {moneyFormat(price)}
           </span>
         )}
       </div>

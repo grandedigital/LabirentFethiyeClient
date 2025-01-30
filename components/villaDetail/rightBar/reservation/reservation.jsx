@@ -28,9 +28,19 @@ export default function Reservation({
   priceTypeText,
   t,
   priceType,
+  selectedAvailabilityCalendarDates,
 }) {
   const { i18n } = useTranslation();
   const router = useRouter();
+
+  useEffect(() => {
+    console.log(selectedAvailabilityCalendarDates);
+    if(selectedAvailabilityCalendarDates[0] != null && selectedAvailabilityCalendarDates[1] != null){
+      console.log("awes")
+      setDateRange(selectedAvailabilityCalendarDates)
+
+    }
+  }, [selectedAvailabilityCalendarDates]);
 
   //console.log('villaId: ' + villaId);
   const [availible, setAvailible] = useState(false);
@@ -44,7 +54,9 @@ export default function Reservation({
   const [numberOfChild1, setNumberOfChild1] = useState(0);
   const [numberOfBabies1, setNumberOfBabies1] = useState(0);
 
-  const [dateRange, setDateRange] = useState([]);
+  const [dateRange, setDateRange] = useState(
+    selectedAvailabilityCalendarDates || []
+  );
   const [minCalendarDate, setMinCalendarDate] = useState(new Date());
   const [startDate, endDate] = dateRange;
 
