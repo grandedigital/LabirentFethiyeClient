@@ -34,11 +34,11 @@ export default function Reservation({
   const router = useRouter();
 
   useEffect(() => {
-    console.log(selectedAvailabilityCalendarDates);
-    if(selectedAvailabilityCalendarDates[0] != null && selectedAvailabilityCalendarDates[1] != null){
-      console.log("awes")
-      setDateRange(selectedAvailabilityCalendarDates)
-
+    if (
+      selectedAvailabilityCalendarDates[0] != null &&
+      selectedAvailabilityCalendarDates[1] != null
+    ) {
+      setDateRange(selectedAvailabilityCalendarDates);
     }
   }, [selectedAvailabilityCalendarDates]);
 
