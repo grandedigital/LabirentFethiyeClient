@@ -14,7 +14,7 @@ import styles from "./page.module.css";
 import LightGallery from "lightgallery/react";
 import "lightgallery/css/lg-video.css";
 import lgVideo from "lightgallery/plugins/video";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Seo from "@/components/seo";
 import Pagination from "@/components/pagination/Pagination";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -56,6 +56,14 @@ export default function List({
     setSelectedAvailabilityCalendarDates,
   ] = useState([null, null]);
 
+  //sağdaki reservationun fixedlenmesi için
+  const generalRef = useRef(null);
+  const topRef = useRef(null);
+  const facilitiesRef = useRef(null);
+  const [scrollStart, setScrollStart] = useState(0);
+  const [firstScrollFinish, setFirstScrollFinish] = useState(0);
+  const [position, setPosition] = useState("");
+
   function getVideoUrlIndex(data) {
     // Verilen diziyi döngü ile kontrol et
     for (let i = 0; i < data.length; i++) {
@@ -81,8 +89,72 @@ export default function List({
   }
 
   useEffect(() => {
+    if (window.innerWidth > 1199 && topRef.current && facilitiesRef.current) {
+      setScrollStart(
+        topRef.current.getBoundingClientRect().top + window.scrollY
+      );
+      setFirstScrollFinish(
+        facilitiesRef.current.getBoundingClientRect().top +
+          window.scrollY -
+          generalRef.current.getBoundingClientRect().height
+      );
+    }
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (
+        facilitiesRef.current.getBoundingClientRect().top +
+          window.scrollY -
+          generalRef.current.getBoundingClientRect().height !=
+        firstScrollFinish
+      ) {
+        setFirstScrollFinish(
+          facilitiesRef.current.getBoundingClientRect().top +
+            window.scrollY -
+            generalRef.current.getBoundingClientRect().height
+        );
+      }
+      if (window.innerWidth > 1199) {
+        if (scrollPosition > firstScrollFinish) {
+          setPosition("fixedBottom");
+          return;
+        }
+
+        if (
+          scrollPosition > scrollStart &&
+          scrollPosition < firstScrollFinish
+        ) {
+          setPosition("fixed");
+        } else if (scrollPosition > firstScrollFinish) {
+          setPosition("absolute");
+        } else {
+          setPosition("");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollStart, firstScrollFinish]);
+
+  useEffect(() => {
     const cookies = parseCookies();
     setCurrencies(JSON.parse(cookies.currencies));
+
+    //Genişlik  1199dan küçük olunca reservation bileşeninin css ini sabitleme
+    const updateReservationCss = () => {
+      if (window.innerWidth <= 1199) {
+        setPosition("");
+      }
+    };
+    window.addEventListener("resize", updateReservationCss);
+
+    return () => {
+      window.removeEventListener("resize", updateReservationCss);
+    };
   }, []);
 
   if (villa && slug.length == 1 && villa?.data?.length > 0) {
@@ -176,7 +248,7 @@ export default function List({
             currentPriceTypeText={currentPriceTypeText}
           />
           <ProductImageBox imgs={imgs} />
-          <div className={styles.villaDetailContentBox}>
+          <div ref={topRef} className={styles.villaDetailContentBox}>
             <div className={styles.container}>
               <div className={styles.villaDetailContent}>
                 <div className={styles.left}>
@@ -199,7 +271,9 @@ export default function List({
                     selectedLanguage={i18n.language}
                   />
                   <DynamicCalendarComponent
-                  setSelectedAvailabilityCalendarDates={setSelectedAvailabilityCalendarDates}
+                    setSelectedAvailabilityCalendarDates={
+                      setSelectedAvailabilityCalendarDates
+                    }
                     t={t}
                     ready={ready}
                     priceTypeText={currentPriceTypeText}
@@ -207,9 +281,13 @@ export default function List({
                     villaSlug={villaSlug}
                     selectedLanguage={i18n.language}
                   />
+                  <div ref={facilitiesRef}></div>
                 </div>
-                <div id="makeReservation" style={{ paddingTop: 20 }}>
-                  <div className={styles.right}>
+                <div id="makeReservation">
+                  <div
+                    ref={generalRef}
+                    className={`${styles["right"]} ${position}`}
+                  >
                     <div className={styles.turizmContainer}>
                       <Image
                         src="/images/tcTurizm.png"
@@ -228,7 +306,9 @@ export default function List({
                     </div>
                     <div className={styles.general}>
                       <Reservation
-                        selectedAvailabilityCalendarDates={selectedAvailabilityCalendarDates}
+                        selectedAvailabilityCalendarDates={
+                          selectedAvailabilityCalendarDates
+                        }
                         t={t}
                         priceType={villaDetail?.data?.priceType}
                         priceTypeText={currentPriceTypeText}

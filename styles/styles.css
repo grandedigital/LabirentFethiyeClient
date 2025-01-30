@@ -927,6 +927,21 @@ img {
   border-radius: 8px !important;
 }
 
+#makeReservation {
+  padding-top: 20px;
+  position: relative;
+}
+
+#makeReservation .fixed {
+  position: fixed;
+  top: 10px;
+}
+
+#makeReservation .fixedBottom {
+  position: absolute;
+  bottom: 0;
+}
+
 @media screen and (max-width: 767px) {
   .react-datepicker:not(.detailAvailabilityCalendar) {
     display: block !important;
