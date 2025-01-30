@@ -498,13 +498,10 @@
 
 .villaDetail .villaDetailContentBox .villaDetailContent .right {
   width: 375px;
-  position: relative;
 }
 
 .villaDetail .villaDetailContentBox .villaDetailContent .right .general {
   width: 375px;
-  position: absolute;
-  top: 0;
 }
 
 .linkBox {

@@ -15,7 +15,7 @@
 .fullDatepicker {
     width: 100%;
     margin: 0 0 60px 0;
-    border-bottom: 1px solid #E6E9EC;
+    /* border-bottom: 1px solid #E6E9EC; */
     display: flex;
     flex-direction: column;
 }
@@ -33,6 +33,11 @@
     margin: 0 0 35px 0;
     display: flex;
     justify-content: space-between;
+}
+
+.fullDatepicker .title .options {
+    display: flex;
+    gap: 20px;
 }
 
 .fullDatepicker.modal .title {
@@ -137,17 +142,19 @@
 }
 
 @media screen and (max-width: 490px) {
-    .fullDatepicker {
+    /* .fullDatepicker {
         display: none;
-    }
+    } */
 
     .fullDatepicker.modal {
         display: flex;
     }
 }
 
-@media (min-width: 0px) and (max-width: 490px) {
-    .mobileAvailabilityCalendarButton {
-      display: inline-block; /* Veya görünür olmasını sağlayacak herhangi bir stil */
+@media screen and (max-width: 400px) {
+    .fullDatepicker .title .options {
+        flex-direction: column;
+        gap: 0;
     }
-  }
+    
+}

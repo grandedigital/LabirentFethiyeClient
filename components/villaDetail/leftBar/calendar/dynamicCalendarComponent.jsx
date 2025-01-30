@@ -11,6 +11,7 @@ const DynamicCalendarComponent = ({
   villaSlug,
   roomSlug,
   selectedLanguage,
+  setSelectedAvailabilityCalendarDates,
 }) => {
   const [calendarReservations, setCalendarReservationsData] = useState(null);
   const [calendarPrices, setCalendarPrices] = useState(null);
@@ -58,12 +59,16 @@ const DynamicCalendarComponent = ({
     try {
       const [reservationResponse, pricesResponse] = await Promise.all([
         fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/Clients/${getReservationCalendarApiName()}?Slug=${
+          `${
+            process.env.NEXT_PUBLIC_API_URL
+          }/Clients/${getReservationCalendarApiName()}?Slug=${
             villaSlug || roomSlug
           }&Language=${selectedLanguage}`
         ),
         fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/Clients/${getReservationPriceApiName()}?Slug=${
+          `${
+            process.env.NEXT_PUBLIC_API_URL
+          }/Clients/${getReservationPriceApiName()}?Slug=${
             villaSlug || roomSlug
           }`
         ),
@@ -73,7 +78,7 @@ const DynamicCalendarComponent = ({
         reservationResponse.json(),
         pricesResponse.json(),
       ]);
-      
+
       setCalendarReservationsData(reservationsResult);
       setCalendarPrices(pricesResult);
     } catch (error) {
@@ -89,6 +94,10 @@ const DynamicCalendarComponent = ({
         <CalendarSkeleton />
       ) : (
         <Calendar
+          setSelectedAvailabilityCalendarDates={
+            setSelectedAvailabilityCalendarDates
+          }
+          selectedLanguage={selectedLanguage}
           t={t}
           ready={ready}
           dates={calendarReservations?.data || []}

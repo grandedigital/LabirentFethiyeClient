@@ -38,9 +38,6 @@ export default function List({ villaDetail, imgs, allCategories, hotelSlug }) {
   const [isDescOpen, setIsDescOpen] = useState(false);
   const activePage = parseInt(router.query.p) || 1;
 
-  console.log(villaDetail?.data);
-  
-
   if (villaDetail?.data != null) {
     return (
       <>
@@ -191,7 +188,11 @@ export default function List({ villaDetail, imgs, allCategories, hotelSlug }) {
           <div className={styles.customerCommentsBox}>
             <div className={styles.container}>
               <div className={styles.customerComments}>
-                <Comments commentData={villaDetail?.data?.comments} t={t} i18n={i18n} />
+                <Comments
+                  commentData={villaDetail?.data?.comments}
+                  t={t}
+                  i18n={i18n}
+                />
                 <CommentForm t={t} slug={hotelSlug} type={1} />
               </div>
             </div>
