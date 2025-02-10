@@ -222,5 +222,6 @@
   },
   "description": "Description",
   "whatsappNumber": "+905525609457",
-  "callNumber": "+905525609457"
+  "callNumber": "+905525609457",
+  "recaptchaAlertText": "Please prove that you are not a robot."
 }

@@ -222,5 +222,6 @@
   },
   "description": "Açıklama",
   "whatsappNumber": "+905378800703",
-  "callNumber": "+902526166648"
+  "callNumber": "+902526166648",
+  "recaptchaAlertText": "Lütfen robot olmadığını kanıtlayın"
 }

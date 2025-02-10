@@ -413,7 +413,9 @@ img {
 .detailAvailabilityCalendar .react-datepicker__day.onaydanOnaya .day-price,
 .detailAvailabilityCalendar .react-datepicker__day.onaydanOpsiyona .day-price,
 .detailAvailabilityCalendar .react-datepicker__day.opsiyondanOnaya .day-price,
-.detailAvailabilityCalendar .react-datepicker__day.opsiyondanOpsiyona .day-price {
+.detailAvailabilityCalendar
+  .react-datepicker__day.opsiyondanOpsiyona
+  .day-price {
   visibility: hidden;
 }
 
@@ -796,6 +798,11 @@ img {
 .detailAvailabilityCalendar .react-datepicker__day--in-selecting-range {
   background-color: #daf0fa !important;
   color: initial;
+}
+
+/* aktiviteler foto, fotoğraf gallery galerisi */
+.activatesGallery {
+  margin-bottom: 120px;
 }
 
 @keyframes loadingRotate {

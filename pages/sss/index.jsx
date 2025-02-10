@@ -12,15 +12,47 @@ export default function SSS({ sss }) {
   const fieldRef = useRef();
   const [accordionIndex, setIndex] = useState(0);
 
-  const scroolBottom = () => {
-    fieldRef.current.scrollIntoView({
-      behavior: "smooth",
-    });
+  // const scroolBottom = () => {
+  //   fieldRef.current.scrollIntoView({
+  //     behavior: "smooth",
+  //   });
+  // };
+
+  const scrollBottom = () => {
+    if (!fieldRef.current) return;
+
+    const targetY =
+      fieldRef.current.offsetTop -
+      fieldRef.current.getBoundingClientRect().height; // Hedef Y konumu
+    const startY = window.scrollY; // Mevcut Y konumu
+    const distance = targetY - startY;
+    const duration = 1500; // Animasyon süresi (ms)
+    let startTime = null;
+
+    const animateScroll = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+
+      // Ease-in-out fonksiyonu (daha yumuşak efekt için)
+      const easeInOut =
+        progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+      window.scrollTo(0, startY + distance * easeInOut);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
   };
 
   useEffect(() => {
     if (fieldRef.current && accordionIndex != 0) {
-      const timer = setTimeout(() => scroolBottom(), 600);
+      const timer = setTimeout(() => scrollBottom(), 600);
       return () => clearTimeout(timer);
     }
   }, [accordionIndex]);

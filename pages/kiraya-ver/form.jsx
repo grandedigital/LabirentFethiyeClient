@@ -6,6 +6,7 @@ import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
+import Recaptcha from "@/components/global/recaptcha";
 
 export default function Form() {
   const { t } = useTranslation("common");
@@ -101,7 +102,7 @@ export default function Form() {
                 }
               );
           } else {
-            alert("Lütfen robot olmadığınızı kanıtlayın");
+            alert(t("recaptchaAlertText"));
           }
         }}
       >
@@ -214,11 +215,9 @@ export default function Form() {
                 </div>
               </li>
             </ul>
-            <ReCAPTCHA
+            <Recaptcha
+              setCaptchaIsDone={setCaptchaIsDone}
               style={{ marginTop: "20px" }}
-              sitekey="6LcAW8MpAAAAAKYC7E-Ozne_W61-fmMVlyDvgXmG"
-              onChange={onChange}
-              onExpired={() => setCaptchaIsDone(false)}
             />
             {!isMailSending && (
               <div className={styles.linkBox}>
