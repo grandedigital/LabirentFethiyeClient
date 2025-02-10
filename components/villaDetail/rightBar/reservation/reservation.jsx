@@ -42,7 +42,6 @@ export default function Reservation({
     }
   }, [selectedAvailabilityCalendarDates]);
 
-  //console.log('villaId: ' + villaId);
   const [availible, setAvailible] = useState(false);
   const inputRefNumberOfPeople = useRef();
   const menuRefNumberOfPeople = useRef();
@@ -63,6 +62,8 @@ export default function Reservation({
   const [isNumberPeopleMenuOpen, setNumberPeople] = useState(false);
 
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [isCalendarFirstTimeOpened, setIsCalendarFirstTimeOpened] =
+    useState(false);
 
   const returnMinPrice = () => {
     let min = Math.min(...prices?.map((o) => o.price));
@@ -124,7 +125,7 @@ export default function Reservation({
   });
 
   useEffect(() => {
-    if (dateRange?.includes(null)) {
+    if (dateRange?.includes(null) && isCalendarFirstTimeOpened) {
       setDateRange([]);
     }
   }, [isCalendarOpen]);
@@ -201,7 +202,7 @@ export default function Reservation({
         alert(t("facilityNotAvailableMessage"));
       }
     } else {
-      console.log(t("chooseDate"));
+      alert(t("chooseDate"));
     }
   }
 
@@ -282,7 +283,10 @@ export default function Reservation({
                 minDate={minCalendarDate}
                 width="100%"
                 customInput={<CustomInput />}
-                onCalendarOpen={() => setIsCalendarOpen(true)} // Takvim açıldığında
+                onCalendarOpen={() => {
+                  setIsCalendarFirstTimeOpened(true);
+                  setIsCalendarOpen(true);
+                }} // Takvim açıldığında
                 onCalendarClose={() => {
                   setIsCalendarOpen(false);
                   setMinCalendarDate(new Date());
