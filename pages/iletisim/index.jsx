@@ -11,6 +11,7 @@ import { Formik, Form, Field } from "formik";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 import { capitalizeWords } from "@/utils/globalUtils";
+import Recaptcha from "@/components/global/recaptcha";
 
 export default function Iletisim() {
   const { t } = useTranslation("common");
@@ -315,11 +316,7 @@ export default function Iletisim() {
                         </li>
                         <li className={styles.full}>
                           <div className={styles.inputBox}>
-                            <ReCAPTCHA
-                              sitekey="6LcAW8MpAAAAAKYC7E-Ozne_W61-fmMVlyDvgXmG"
-                              onChange={onChange}
-                              onExpired={() => setCaptchaIsDone(false)}
-                            />
+                            <Recaptcha setCaptchaIsDone={setCaptchaIsDone} />
                           </div>
                         </li>
                       </ul>

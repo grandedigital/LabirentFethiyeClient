@@ -5,6 +5,7 @@ import { Rating } from "react-simple-star-rating";
 import { useRef, useState } from "react";
 import { createComment } from "@/services/villa";
 import ReCAPTCHA from "react-google-recaptcha";
+import Recaptcha from "@/components/global/recaptcha";
 
 //if type == 0 villa, 1 == hotel
 export default function CommentForm({ t, slug, type }) {
@@ -370,10 +371,8 @@ export default function CommentForm({ t, slug, type }) {
                 </div>
               </li>
             </ul>
-            <ReCAPTCHA
-              sitekey="6LcAW8MpAAAAAKYC7E-Ozne_W61-fmMVlyDvgXmG"
-              onChange={onChange}
-              onExpired={() => setCaptchaIsDone(false)}
+            <Recaptcha
+              setCaptchaIsDone={setCaptchaIsDone}
               style={{ marginBottom: "20px" }}
             />
             <div className={styles.linkBox}>
