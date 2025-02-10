@@ -201,7 +201,7 @@ export default function Iletisim() {
                           }
                         );
                     } else {
-                      alert("Lütfen robot olmadığınızı kanıtlayın");
+                      alert(t("recaptchaAlertText"));
                     }
 
                     //showContactFormSuccesMessage()

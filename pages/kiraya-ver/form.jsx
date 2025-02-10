@@ -101,7 +101,7 @@ export default function Form() {
                 }
               );
           } else {
-            alert("Lütfen robot olmadığınızı kanıtlayın");
+            alert(t("recaptchaAlertText"));
           }
         }}
       >

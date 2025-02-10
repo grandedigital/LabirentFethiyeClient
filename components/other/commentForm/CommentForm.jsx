@@ -219,7 +219,7 @@ export default function CommentForm({ t, slug, type }) {
         })}
         onSubmit={async (values, { resetForm }) => {
           if (!captchaIsDone) {
-            alert("Lütfen robot olmadığınızı kanıtlayın");
+            alert(t("recaptchaAlertText"));
             return;
           }
 
