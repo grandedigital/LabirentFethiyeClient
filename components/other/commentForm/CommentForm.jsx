@@ -2,12 +2,14 @@ import styles from "./page.module.css";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Rating } from "react-simple-star-rating";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { createComment } from "@/services/villa";
+import ReCAPTCHA from "react-google-recaptcha";
 
 //if type == 0 villa, 1 == hotel
 export default function CommentForm({ t, slug, type }) {
   const mailRef = useRef(null);
+  const [captchaIsDone, setCaptchaIsDone] = useState(false);
 
   const phoneFormat = (string) => {
     // Rakam dışındaki karakterleri temizle
@@ -34,6 +36,10 @@ export default function CommentForm({ t, slug, type }) {
 
     return formattedNumber;
   };
+
+  function onChange() {
+    setCaptchaIsDone(true);
+  }
 
   return (
     <div className={styles.commentForm}>
@@ -212,6 +218,11 @@ export default function CommentForm({ t, slug, type }) {
             .min(0.5, "Lütfen puan verin"),
         })}
         onSubmit={async (values, { resetForm }) => {
+          if (!captchaIsDone) {
+            alert("Lütfen robot olmadığınızı kanıtlayın");
+            return;
+          }
+
           const response = await createComment(type, { ...values, slug });
           if (response.statusCode == 200) {
             alert("Yorum gönderildi");
@@ -359,6 +370,12 @@ export default function CommentForm({ t, slug, type }) {
                 </div>
               </li>
             </ul>
+            <ReCAPTCHA
+              sitekey="6LcAW8MpAAAAAKYC7E-Ozne_W61-fmMVlyDvgXmG"
+              onChange={onChange}
+              onExpired={() => setCaptchaIsDone(false)}
+              style={{ marginBottom: "20px" }}
+            />
             <div className={styles.linkBox}>
               <button
                 type={"submit"}
