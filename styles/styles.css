@@ -224,12 +224,8 @@ img {
 }
 
 .listPage_villasDetail .villas .box .top .titleBox {
-  /*width: 50%;*/
+  width: 100%;
   margin: 0 0 60px 0;
-}
-
-.listPage_villasDetail .villas .box .top .titleBox .title {
-  text-align: left;
 }
 
 .listPage_villasDetail .villas .box .top .titleBox .subTitle {
@@ -237,7 +233,7 @@ img {
 }
 
 .listPage_villasDetail .titleBox .title {
-  width: 100%;
+  display: inline;
   color: #02044a;
   font-weight: 600;
   font-size: 40px;
@@ -246,7 +242,6 @@ img {
 }
 
 .listPage_villasDetail .titleBox .subTitle {
-  width: 100%;
   margin: 10px 0 0 0;
   color: #525265;
   font-size: 15px;
@@ -803,6 +798,73 @@ img {
 /* aktiviteler foto, fotoğraf gallery galerisi */
 .activatesGallery {
   margin-bottom: 120px;
+}
+
+/* My custom dropdown, açılır menu */
+.filterDropdownContainer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 10px;
+  background-color: #fff;
+  border: 1px solid #d9d9e4;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px #404f680d;
+  position: relative;
+  z-index: 9999;
+}
+
+.filterDropdownContainer .filterTitle {
+  color: #525265;
+  overflow: hidden;
+  width: 90%;
+}
+
+.filterDropdownContainer .filterIcon {
+  transition: all 0.2s ease 0s;
+  position: absolute;
+  right: 10px;
+}
+
+.filterDropdownContainer.open .filterIcon {
+  transform: rotate(180deg);
+}
+
+.filterDropdownContainer .menu {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 5px 5px 5px #404f680d;
+}
+
+.filterDropdownContainer .menu ul li {
+  color: #525265;
+  background-color: #fff;
+  border: 1px solid #d9d9e4;
+  border-bottom: none;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+
+.filterDropdownContainer .menu ul li:last-child {
+  border-bottom: 1px solid #d9d9e4;
+}
+
+.filterDropdownContainer .menu ul li:hover {
+  background-color: #ebebeb;
+}
+
+.filterDropdownContainer .menu ul li.selected {
+  background-color: #ebebeb;
 }
 
 @keyframes loadingRotate {
