@@ -507,7 +507,6 @@ img {
 
 /* eski günler hover */
 .detailAvailabilityCalendar .react-datepicker__day.old-day:hover {
-  background-color: inherit !important;
   cursor: not-allowed;
 }
 

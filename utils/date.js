@@ -42,3 +42,33 @@ export function formatDateByCustomSeperator(_date, _format = 'ymd', seperator = 
             break;
     }
 }
+
+//bir tarih dizi olarak verilen tarihler arasında ise true döndürür
+//kontrolEdilecekTarih would be Date
+//tarihAraliklari would be [{"startDate":"2025-04-01T00:00:00","endDate":"2025-04-30T00:00:00","price":110}...{}]
+export function tarihAralikIcindeKontrolEt(kontrolEdilecekTarih, tarihAraliklari) {
+    // Giriş tarihini string ise Date nesnesine çevir
+    const kontrol =
+        kontrolEdilecekTarih instanceof Date
+            ? kontrolEdilecekTarih
+            : new Date(kontrolEdilecekTarih);
+
+    // Tarihin geçerli olduğundan emin ol
+    if (isNaN(kontrol.getTime())) {
+        throw new Error("Geçersiz tarih girişi");
+    }
+
+    // Her tarih aralığını kontrol et
+    for (const aralik of tarihAraliklari) {
+        const baslangicTarihi = new Date(aralik.startDate);
+        const bitisTarihi = new Date(aralik.endDate);
+
+        // Tarihin mevcut aralık içinde olup olmadığını kontrol et
+        if (kontrol >= baslangicTarihi && kontrol <= bitisTarihi) {
+            return true;
+        }
+    }
+
+    // Tüm aralıkları kontrol ettik ve eşleşme bulunamadı
+    return false;
+}

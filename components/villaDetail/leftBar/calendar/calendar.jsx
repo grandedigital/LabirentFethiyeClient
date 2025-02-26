@@ -16,6 +16,7 @@ import {
   calculatePricetoTargetPriceType,
   moneyFormat,
 } from "@/utils/globalUtils";
+import { tarihAralikIcindeKontrolEt } from "@/utils/date";
 
 const ModalComponent = dynamic(() => import("../../../other/modalComponent"), {
   ssr: true,
@@ -179,7 +180,20 @@ const Calendar = function Calendar({
   };
 
   function popop(dates) {
-    //ilk tarih bir rezervasyonun giriş tarihi ise bu seçimi iptal et
+    //ilk seçilen tarih fiyatı yok ise
+    if (!tarihAralikIcindeKontrolEt(dates[0], calendarPrices)) {
+      setSelectedDates([null, null]);
+      return;
+    }
+
+    //ikinci seçilen tarih fiyatı yok ise
+    if (!dates.includes(null)) {
+      if (!tarihAralikIcindeKontrolEt(dates[1], calendarPrices)) {
+        setSelectedDates([null, null]);
+        return;
+      }
+    }
+
     if (
       rezervasyonlar.some(
         (item) =>
@@ -187,6 +201,7 @@ const Calendar = function Calendar({
           format(dates[0], "yyyy-MM-dd")
       )
     ) {
+      //ilk tarih bir rezervasyonun giriş tarihi ise bu seçimi iptal et
       setSelectedDates([null, null]);
       return;
     }
@@ -236,6 +251,7 @@ const Calendar = function Calendar({
         );
         return;
       }
+
       setSelectedAvailabilityCalendarDates(dates);
 
       // alert(dates);
