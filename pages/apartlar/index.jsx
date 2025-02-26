@@ -28,20 +28,15 @@ export default function List({ hotels }) {
                   <div className="title">
                     {capitalizeWords(t("headerApartmentsForRent"))}
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                    }}
-                  >
+                  <div className="facilityListTitleAndDropdownContainer">
                     <div className="subTitle">
                       {t("thereAreFacilities", {
                         facilityCount: hotels?.pageInfo?.totalRow,
                       })}
                     </div>
-                    <div style={{ display: "flex", gap: 10 }}>
+                    <div className="dropdownsContainer">
                       <FilterDropdown
+                        customClassName="filter1"
                         label="Villa Özellikleri"
                         options={[
                           { id: 1, option: "Merhaba" },

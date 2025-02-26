@@ -5,6 +5,7 @@ export default function FilterDropdown({
   options = [],
   allowSelectDefault = true,
   width = 170,
+  customClassName = "",
 }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [selectedItemId, setSelectedId] = useState(0);
@@ -37,7 +38,9 @@ export default function FilterDropdown({
     <div
       onClick={handleMenu}
       ref={menuRef}
-      className={`filterDropdownContainer${isMenuOpen ? " open" : ""}`}
+      className={`filterDropdownContainer${
+        customClassName != "" ? ` ${customClassName}` : ""
+      }${isMenuOpen ? " open" : ""}`}
       style={{ width: `${width}px` }}
     >
       <span className="filterTitle">

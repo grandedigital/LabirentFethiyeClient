@@ -814,7 +814,7 @@ img {
   cursor: pointer;
   box-shadow: 5px 5px 5px #404f680d;
   position: relative;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 .filterDropdownContainer .filterTitle {
@@ -865,6 +865,18 @@ img {
 
 .filterDropdownContainer .menu ul li.selected {
   background-color: #ebebeb;
+}
+
+/*Listeleme sayfası title ve dropdowncontainer*/
+.facilityListTitleAndDropdownContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.facilityListTitleAndDropdownContainer .dropdownsContainer {
+  display: flex;
+  gap: 10px;
 }
 
 @keyframes loadingRotate {
@@ -1068,6 +1080,29 @@ img {
   .detailAvailabilityCalendar .react-datepicker__navigation--previous {
     left: 0;
   }
+
+  /*Listeleme sayfası title ve dropdowncontainer*/
+  .facilityListTitleAndDropdownContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .facilityListTitleAndDropdownContainer .dropdownsContainer {
+    width: 100%;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .filterDropdownContainer {
+    width: 100% !important;
+  }
+
+  .filterDropdownContainer.filter1 {
+    z-index: 9999;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -1092,6 +1127,10 @@ img {
   .react-datepicker:not(.detailAvailabilityCalendar)
     .react-datepicker__day--keyboard-selected {
     width: 30px !important;
+  }
+
+  /*Listeleme sayfası title ve dropdowncontainer*/
+  .facilityListTitleAndDropdownContainer {
   }
 }
 
