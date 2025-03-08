@@ -810,23 +810,14 @@ export default function Reservation() {
                             }}
                             validationSchema={Yup.object({
                               cardNo: Yup.string()
-                                .length(
-                                  16,
-                                  "Lütfen geçerli kart numarası girin"
-                                )
-                                .required("Lütfen card numaranızı girin"),
+                                .length(16, t("pleaseEnterAValidCardNo"))
+                                .required(t("pleaseEnterCardNo")),
                               lastDate: Yup.string()
-                                .length(
-                                  4,
-                                  "Lütfen geçerli son kullanma tarihi girin"
-                                )
-                                .required("Lütfen son kullanma tarihi girin"),
+                                .length(4, t("pleaseEnterAValidExpiryDate"))
+                                .required(t("pleaseEnterExpiryDate")),
                               securityCode: Yup.string()
-                                .min(
-                                  3,
-                                  "Lütfen geçerli son kullanma tarihi girin"
-                                )
-                                .required("Lütfen CVV girin"),
+                                .min(3, t("pleaseEnterCardCVV"))
+                                .required(t("pleaseEnterAValidCardCVV")),
                             })}
                             onSubmit={(values) => {
                               submitFormPay(reservationItems, values);
