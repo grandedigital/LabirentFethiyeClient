@@ -422,7 +422,7 @@
 }
 
 .contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li.creditCard a {
-    cursor: not-allowed;
+    /* cursor: not-allowed; */
 }
 
 /* .contentDetail .rezervationBox .reservation .left .paymentBox .payment .paymentType ul li:hover {

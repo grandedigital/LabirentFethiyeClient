@@ -55,7 +55,7 @@ export default function RezervasyonTakip() {
           setVillaDetail({
             name: res?.data?.villa?.name,
             region: res?.data?.villa?.town,
-            url: res?.data?.villa?.id,
+            url: res?.data?.villa?.slug,
           });
           setReservationDetail({
             checkIn: timeStringToDate(res?.data?.checkIn),
