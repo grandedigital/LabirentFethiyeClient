@@ -162,7 +162,9 @@ export default function Reservation({
 
     //giriş ve çıkış tarihleri seçildiğinde çalışacak
     if (!dateRange.includes(null) && dateRange.length == 2) {
-      getTotalPrice();
+      if (villaSlug) {
+        getTotalPrice();
+      }
     }
   }, [dateRange]);
 
