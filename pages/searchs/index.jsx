@@ -47,7 +47,7 @@ export default function Searchs({
                         facilityCount: getFilterVillas?.pageInfo?.totalRow,
                       })}
                     </div>
-                    <div style={{ display: "flex", gap: 10 }}>
+                    {/* <div style={{ display: "flex", gap: 10 }}>
                       <FilterDropdown
                         label="Villa Özellikleri"
                         options={[
@@ -65,7 +65,7 @@ export default function Searchs({
                           { id: 3, option: "Nasılsın" },
                         ]}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

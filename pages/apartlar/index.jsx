@@ -34,7 +34,7 @@ export default function List({ hotels }) {
                         facilityCount: hotels?.pageInfo?.totalRow,
                       })}
                     </div>
-                    <div className="dropdownsContainer">
+                    {/* <div className="dropdownsContainer">
                       <FilterDropdown
                         customClassName="filter1"
                         label="Villa Özellikleri"
@@ -53,7 +53,7 @@ export default function List({ hotels }) {
                           { id: 3, option: "Nasılsın" },
                         ]}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
