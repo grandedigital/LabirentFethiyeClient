@@ -12,6 +12,7 @@ export default function Recaptcha({ style = {}, setCaptchaIsDone }) {
 
   useEffect(() => {
     setRecaptchaKey((prevKey) => prevKey + 1);
+    setCaptchaIsDone(false);
   }, [i18n.language]);
 
   return (

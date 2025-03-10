@@ -33,6 +33,7 @@ import DynamicPriceTableComponent from "@/components/villaDetail/leftBar/priceTa
 import DynamicDistanceRulerComponent from "@/components/villaDetail/leftBar/distanceRuler/dynamicDistanceRuler";
 import DynamicCalendarComponent from "@/components/villaDetail/leftBar/calendar/dynamicCalendarComponent";
 import DynamicCommentsComponent from "@/components/other/comment/dynamicCommentsComponent";
+import FilterDropdown from "@/components/customDropdown/filterDropdown";
 
 export default function List({
   villa,
@@ -174,10 +175,32 @@ export default function List({
                 <div className="top">
                   <div className="titleBox">
                     <div className="title">{category?.name || "Yok"}</div>
-                    <div className="subTitle">
-                      {t("thereAreFacilities", {
-                        facilityCount: villa.pageInfo.totalRow,
-                      })}
+                    <div className="facilityListTitleAndDropdownContainer">
+                      <div className="subTitle">
+                        {t("thereAreFacilities", {
+                          facilityCount: villa.pageInfo.totalRow,
+                        })}
+                      </div>
+                      {/* <div className="dropdownsContainer">
+                        <FilterDropdown
+                          customClassName="filter1"
+                          label="Villa Özellikleri"
+                          options={[
+                            { id: 1, option: "Merhaba" },
+                            { id: 2, option: "Selam" },
+                            { id: 3, option: "Nasılsın" },
+                          ]}
+                        />
+                        <FilterDropdown
+                          label="Sıralama şeklini seçiniz"
+                          width={220}
+                          options={[
+                            { id: 1, option: "Merhaba" },
+                            { id: 2, option: "Selam" },
+                            { id: 3, option: "Nasılsın" },
+                          ]}
+                        />
+                      </div> */}
                     </div>
                   </div>
                 </div>

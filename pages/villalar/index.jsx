@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { capitalizeWords } from "@/utils/globalUtils";
 import nookies from "nookies";
 import { getCurrencies } from "@/services";
+import FilterDropdown from "@/components/customDropdown/filterDropdown";
 
 const VillaCard = dynamic(
   () => import("../../components/index/villa/card/villaCard"),
@@ -36,10 +37,32 @@ export default function List({ villas }) {
                   <div className="title">
                     {capitalizeWords(t("headerVillasForRent"))}
                   </div>
-                  <div className="subTitle">
-                    {t("thereAreFacilities", {
-                      facilityCount: villas?.pageInfo?.totalRow,
-                    })}
+                  <div className="facilityListTitleAndDropdownContainer">
+                    <div className="subTitle">
+                      {t("thereAreFacilities", {
+                        facilityCount: villas?.pageInfo?.totalRow,
+                      })}
+                    </div>
+                    {/* <div className="dropdownsContainer">
+                      <FilterDropdown
+                        customClassName="filter1"
+                        label="Villa Özellikleri"
+                        options={[
+                          { id: 1, option: "Merhaba" },
+                          { id: 2, option: "Selam" },
+                          { id: 3, option: "Nasılsın" },
+                        ]}
+                      />
+                      <FilterDropdown
+                        label="Sıralama şeklini seçiniz"
+                        width={220}
+                        options={[
+                          { id: 1, option: "Merhaba" },
+                          { id: 2, option: "Selam" },
+                          { id: 3, option: "Nasılsın" },
+                        ]}
+                      />
+                    </div> */}
                   </div>
                 </div>
               </div>

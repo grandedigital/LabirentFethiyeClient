@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 import { capitalizeWords } from "@/utils/globalUtils";
+import FilterDropdown from "@/components/customDropdown/filterDropdown";
 
 export default function List({ hotels }) {
   const { t } = useTranslation("common");
@@ -27,10 +28,32 @@ export default function List({ hotels }) {
                   <div className="title">
                     {capitalizeWords(t("headerApartmentsForRent"))}
                   </div>
-                  <div className="subTitle">
-                    {t("thereAreFacilities", {
-                      facilityCount: hotels?.pageInfo?.totalRow,
-                    })}
+                  <div className="facilityListTitleAndDropdownContainer">
+                    <div className="subTitle">
+                      {t("thereAreFacilities", {
+                        facilityCount: hotels?.pageInfo?.totalRow,
+                      })}
+                    </div>
+                    {/* <div className="dropdownsContainer">
+                      <FilterDropdown
+                        customClassName="filter1"
+                        label="Villa Özellikleri"
+                        options={[
+                          { id: 1, option: "Merhaba" },
+                          { id: 2, option: "Selam" },
+                          { id: 3, option: "Nasılsın" },
+                        ]}
+                      />
+                      <FilterDropdown
+                        label="Sıralama şeklini seçiniz"
+                        width={220}
+                        options={[
+                          { id: 1, option: "Merhaba" },
+                          { id: 2, option: "Selam" },
+                          { id: 3, option: "Nasılsın" },
+                        ]}
+                      />
+                    </div> */}
                   </div>
                 </div>
               </div>

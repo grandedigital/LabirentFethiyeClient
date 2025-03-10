@@ -93,14 +93,17 @@ export default function VillaCard({
   };
 
   const getPrice = () => {
-    return moneyFormat(
-      calculatePricetoTargetPriceType(
-        price,
-        priceType,
-        currencies,
-        i18n.language
-      )
+    const price1 = calculatePricetoTargetPriceType(
+      price,
+      priceType,
+      currencies,
+      i18n.language
     );
+    if (typeof price1 == "number" && !isNaN(price1)) {
+      return false;
+    }
+
+    return moneyFormat(price1);
   };
 
   const returnMinPrice = () => {
@@ -521,16 +524,16 @@ export default function VillaCard({
                 {nightLength != undefined ? (
                   <div className={styles.price}>
                     {currentPriceTypeText}
-                    {getPrice()}
+                    {getPrice() == false
+                      ? `${returnMinPrice()} - ${currentPriceTypeText}${returnMaxPrice()}`
+                      : getPrice()}
                   </div>
-                ) : data?.priceTables?.length > 0 ? (
+                ) : (
                   <div className={styles.price}>
                     {currentPriceTypeText}
                     {returnMinPrice()} - {currentPriceTypeText}
                     {returnMaxPrice()}
                   </div>
-                ) : (
-                  <div className={styles.price}>{currentPriceTypeText}0</div>
                 )}
 
                 {/* {data?.priceTables?.length > 0 &&

@@ -4,14 +4,22 @@ import { useRouter } from "next/navigation";
 import { useRef, useState, useEffect, forwardRef } from "react";
 import Image from "next/image";
 import moment from "moment";
-import { isVillaAvailable } from "@/services/reservation";
+import {
+  getPricesBySelectedDate,
+  isVillaAvailable,
+} from "@/services/reservation";
 import DatePicker from "react-datepicker";
 import { useTranslation } from "react-i18next";
 import { priceTypes } from "@/data/data";
 
 import { tr, enUS } from "date-fns/locale";
-import { convertToTurkishLira, moneyFormat } from "@/utils/globalUtils";
+import {
+  convertToTurkishLira,
+  moneyFormat,
+  calculatePricetoTargetPriceType,
+} from "@/utils/globalUtils";
 import { parseCookies, destroyCookie } from "nookies";
+import { dateDiff, formatDateByCustomSeperator } from "@/utils/date";
 
 const localeMap = {
   tr,
@@ -48,6 +56,7 @@ export default function Reservation({
   const menuRefCalendar = useRef();
   const datepickerRef = useRef();
   const [currencies, setCurrencies] = useState(null);
+  const [totalPriceBySelectedDates, setTotalPriceBySelectedDates] = useState(0);
 
   const [numberOfAdults1, setNumberOfAdults1] = useState(1);
   const [numberOfChild1, setNumberOfChild1] = useState(0);
@@ -127,8 +136,37 @@ export default function Reservation({
   useEffect(() => {
     if (dateRange?.includes(null) && isCalendarFirstTimeOpened) {
       setDateRange([]);
+      setTotalPriceBySelectedDates(0);
     }
   }, [isCalendarOpen]);
+
+  //dateRange state i her değiştiğinde çalışacak
+  useEffect(() => {
+    const getTotalPrice = async () => {
+      const data = await getPricesBySelectedDate(
+        villaSlug || roomSlug,
+        formatDateByCustomSeperator(startDate),
+        formatDateByCustomSeperator(endDate)
+      );
+      if (data?.data?.price != 0) {
+        setTotalPriceBySelectedDates(
+          calculatePricetoTargetPriceType(
+            data?.data?.price,
+            priceType,
+            currencies,
+            i18n.language
+          )
+        );
+      }
+    };
+
+    //giriş ve çıkış tarihleri seçildiğinde çalışacak
+    if (!dateRange.includes(null) && dateRange.length == 2) {
+      if (villaSlug) {
+        getTotalPrice();
+      }
+    }
+  }, [dateRange]);
 
   //Change People Number
   const changeNumber = (operation, type) => {
@@ -159,16 +197,6 @@ export default function Reservation({
   ));
 
   async function handleClick() {
-    // const countOfNight = Math.abs(
-    //   moment
-    //     .duration(
-    //       moment(dateRange[0], "YYYY-MM-DD").diff(
-    //         moment(dateRange[1], "YYYY-MM-DD")
-    //       )
-    //     )
-    //     .asDays()
-    // );
-
     if (dateRange[1] != null) {
       const isVillaAvailableResponse = await isVillaAvailable(
         villaSlug || roomSlug,
@@ -235,13 +263,22 @@ export default function Reservation({
           <div className={styles.textTop}>
             <div className={styles.price}>
               {priceTypeText}
-              {prices?.length > 0 ? returnMinPrice() : 0}
+              {prices?.length > 0 && totalPriceBySelectedDates == 0
+                ? returnMinPrice()
+                : moneyFormat(totalPriceBySelectedDates)}
             </div>
           </div>
           <div className={styles.textBottom}>
-            <span>
-              {t("pricesStartingFrom")}({t("nighty")})
-            </span>
+            {totalPriceBySelectedDates == 0 ? (
+              <span>
+                {t("pricesStartingFrom")}({t("nighty")})
+              </span>
+            ) : (
+              <span>
+                {t("totalCount")}({Math.abs(dateDiff(startDate, endDate)) || 0}{" "}
+                {t("night")})
+              </span>
+            )}
           </div>
         </div>
         <div

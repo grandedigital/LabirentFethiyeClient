@@ -38,6 +38,9 @@ export default function Reservation() {
   const [isPageLoading, setLoading] = useState(true);
   const [reservationItems, setreservationItems] = useState([]);
   const [currencies, setCurrencies] = useState(null);
+  const [cardNumber, setCardNumber] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
+  const [cvv, setCVV] = useState("");
 
   const [completedReservationData, setCompletedReservationData] = useState("");
   const currentPriceTypeText = calculatePriceType(i18n.language);
@@ -66,6 +69,78 @@ export default function Reservation() {
     "Kasım",
     "Aralık",
   ];
+
+  const handleChangeCardNo = (e, setterCardNo) => {
+    // Sadece rakamları al
+    const inputValue = e.target.value.replace(/\D/g, "");
+
+    // 16 karakterden fazla girişe izin verme
+    if (inputValue.length > 16) return;
+
+    // 4'lü gruplar halinde formatlama
+    let formattedValue = "";
+    for (let i = 0; i < inputValue.length; i++) {
+      if (i > 0 && i % 4 === 0) {
+        formattedValue += " ";
+      }
+      formattedValue += inputValue[i];
+    }
+
+    setCardNumber(formattedValue);
+    setterCardNo("cardNo", inputValue);
+  };
+
+  const handleChangeExpiryDate = (e, setterExpiryDate) => {
+    // Sadece rakamları al
+    const inputValue = e.target.value.replace(/\D/g, "");
+
+    // 4 karakterden fazla girişe izin verme (MM/YY formatı için)
+    if (inputValue.length > 4) return;
+
+    // MM/YY formatında biçimlendirme
+    let formattedValue = "";
+    if (inputValue.length > 0) {
+      // Ay
+      const month = inputValue.substring(0, 2);
+      formattedValue = month;
+
+      // Eğer ilk rakam 1'den büyükse ve ikinci rakam girilmemişse
+      if (month.length === 1 && parseInt(month[0]) > 1) {
+        formattedValue = `0${month}`;
+      }
+
+      // Ay kontrolü (01-12 arası)
+      if (month.length === 2) {
+        const monthNum = parseInt(month);
+        if (monthNum > 12) {
+          formattedValue = "12";
+        } else if (monthNum === 0) {
+          formattedValue = "01";
+        }
+      }
+
+      // Yıl
+      if (inputValue.length > 2) {
+        formattedValue += "/" + inputValue.substring(2);
+      }
+    }
+
+    setterExpiryDate("lastDate", inputValue);
+    setExpiryDate(formattedValue);
+  };
+
+  const handleChangeCVV = (e, setterCvv) => {
+    // Sadece rakamları al
+    const inputValue = e.target.value.replace(/\D/g, "");
+
+    // Genellikle CVV 3-4 haneli olabilir, standart olarak 3 haneli kabul ediyoruz
+    // American Express için 4 haneli olabilir
+    if (inputValue.length > 4) return;
+
+    setterCvv("securityCode", inputValue);
+    setCVV(inputValue);
+  };
+
   useEffect(() => {
     const cookies = parseCookies();
     setCurrencies(JSON.parse(cookies.currencies));
@@ -132,7 +207,7 @@ export default function Reservation() {
   //         }, 3000)
   //     }
   // }, [activeStep])
-  const [transferType, settransferType] = useState(1); // 0 = creditCard, 1= transfer
+  const [transferType, settransferType] = useState(0); // 0 = creditCard, 1= transfer
 
   const [isCitySelectionOpened, setisCitySelectionOpened] = useState(false);
 
@@ -265,11 +340,36 @@ export default function Reservation() {
     window.scrollTo(0, 0);
   }
 
-  async function submitFormPay(values) {
+  async function submitFormPay(values, cardInfos = {}) {
     const personData = JSON.parse(localStorage.getItem("personInfo"));
     const reservationData = JSON.parse(localStorage.getItem("reservation"));
 
     if (transferType == 1) {
+      const availableResponse = await isVillaAvailable(
+        reservationData?.villaSlug || reservationData?.roomSlug,
+        values.checkIn,
+        values.checkOut
+      );
+
+      if (availableResponse?.data?.isAvailible) {
+        const createResponse = await createReservation(
+          reservationData?.villaSlug ? 0 : 1,
+          reservationData,
+          personData?.data,
+          values.villaName
+        );
+        if (createResponse?.statusCode == 200) {
+          setActiveStep(2);
+          setCompletedReservationData(createResponse?.data);
+        } else {
+          alert(createResponse?.message || t("aProblemOccurred"));
+        }
+      } else {
+        alert(t("facilityNotAvailableMessage"));
+        router.back();
+      }
+    } else {
+      // console.log(cardInfos);
       const availableResponse = await isVillaAvailable(
         reservationData?.villaSlug || reservationData?.roomSlug,
         values.checkIn,
@@ -644,14 +744,24 @@ export default function Reservation() {
                     <div className={styles.payment}>
                       <div className={styles.paymentType}>
                         <ul>
-                          <li className={`${styles["creditCard"]}`}>
-                            <Link onClick={(e) => e.preventDefault()} href="#">
+                          <li
+                            className={`${styles["creditCard"]} ${
+                              transferType == 0 && styles["active"]
+                            }`}
+                          >
+                            <Link
+                              onClick={(e) => {
+                                e.preventDefault();
+                                settransferType(0);
+                              }}
+                              href="#"
+                            >
                               <div className={styles.imageBox}>
                                 <i className={styles.creditCardIcon}></i>
                               </div>
                               <div className={styles.textBox}>
                                 <div className={styles.title}>
-                                  {t("paymentByCreditCard")} ( {t("soon")}! )
+                                  {t("paymentByCreditCard")}
                                 </div>
                                 <div className={styles.desc}>
                                   {t("paymentByCreditCardMessage")}.
@@ -699,12 +809,18 @@ export default function Reservation() {
                               securityCode: "",
                             }}
                             validationSchema={Yup.object({
-                              cardNo: Yup.string(),
-                              lastDate: Yup.string(),
-                              securityCode: Yup.string(),
+                              cardNo: Yup.string()
+                                .length(16, t("pleaseEnterAValidCardNo"))
+                                .required(t("pleaseEnterCardNo")),
+                              lastDate: Yup.string()
+                                .length(4, t("pleaseEnterAValidExpiryDate"))
+                                .required(t("pleaseEnterExpiryDate")),
+                              securityCode: Yup.string()
+                                .min(3, t("pleaseEnterCardCVV"))
+                                .required(t("pleaseEnterAValidCardCVV")),
                             })}
                             onSubmit={(values) => {
-                              submitFormPay(values);
+                              submitFormPay(reservationItems, values);
 
                               //console.log(values)
                               //console.log(transferType);
@@ -721,6 +837,7 @@ export default function Reservation() {
                               dirty,
                               isSubmitting,
                               touched,
+                              setFieldValue,
                             }) => (
                               <form onSubmit={handleSubmit}>
                                 <ul>
@@ -730,13 +847,21 @@ export default function Reservation() {
                                         {t("cardNo")}
                                       </div>
                                       <input
-                                        onChange={handleChange}
+                                        value={cardNumber}
+                                        onChange={(e) => {
+                                          handleChangeCardNo(e, setFieldValue);
+                                        }}
                                         name="cardNo"
                                         type="text"
                                         placeholder="•••• •••• •••• ••••"
                                         minLength="19"
                                         maxLength="19"
                                       />
+                                      {errors.cardNo && touched.cardNo && (
+                                        <div className={styles.inputFeedback}>
+                                          {errors.cardNo}
+                                        </div>
+                                      )}
                                     </div>
                                   </li>
                                   <li>
@@ -745,13 +870,24 @@ export default function Reservation() {
                                         {t("expirationDate")}
                                       </div>
                                       <input
-                                        onChange={handleChange}
+                                        onChange={(e) =>
+                                          handleChangeExpiryDate(
+                                            e,
+                                            setFieldValue
+                                          )
+                                        }
+                                        value={expiryDate}
                                         name="lastDate"
                                         type="text"
-                                        placeholder="•• / ••"
-                                        minLength="7"
-                                        maxLength="7"
+                                        placeholder="MM/YY"
+                                        minLength="5"
+                                        maxLength="5"
                                       />
+                                      {errors.lastDate && touched.lastDate && (
+                                        <div className={styles.inputFeedback}>
+                                          {errors.lastDate}
+                                        </div>
+                                      )}
                                     </div>
                                   </li>
                                   <li>
@@ -760,13 +896,22 @@ export default function Reservation() {
                                         CVV
                                       </div>
                                       <input
-                                        onChange={handleChange}
+                                        value={cvv}
+                                        onChange={(e) =>
+                                          handleChangeCVV(e, setFieldValue)
+                                        }
                                         name="securityCode"
                                         type="text"
                                         placeholder="•••"
                                         minLength="3"
-                                        maxLength="3"
+                                        maxLength="4"
                                       />
+                                      {errors.securityCode &&
+                                        touched.securityCode && (
+                                          <div className={styles.inputFeedback}>
+                                            {errors.securityCode}
+                                          </div>
+                                        )}
                                     </div>
                                   </li>
                                 </ul>
@@ -777,7 +922,7 @@ export default function Reservation() {
                                     className={styles.blueButtonArrow}
                                     type="submit"
                                   >
-                                    <span>{t("continue")}</span>
+                                    <span>{t("createReservation")}</span>
                                   </button>
                                 </div>
                               </form>

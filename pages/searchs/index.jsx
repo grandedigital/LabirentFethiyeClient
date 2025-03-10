@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import moment from "moment";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
+import FilterDropdown from "@/components/customDropdown/filterDropdown";
 
 export default function Searchs({
   getFilterVillas,
@@ -34,10 +35,37 @@ export default function Searchs({
               <div className="top">
                 <div className="titleBox">
                   <div className="title">{t("searchResults")}</div>
-                  <div className="subTitle">
-                    {t("thereAreFacilities", {
-                      facilityCount: getFilterVillas?.pageInfo?.totalRow,
-                    })}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div className="subTitle">
+                      {t("thereAreFacilities", {
+                        facilityCount: getFilterVillas?.pageInfo?.totalRow,
+                      })}
+                    </div>
+                    {/* <div style={{ display: "flex", gap: 10 }}>
+                      <FilterDropdown
+                        label="Villa Özellikleri"
+                        options={[
+                          { id: 1, option: "Merhaba" },
+                          { id: 2, option: "Selam" },
+                          { id: 3, option: "Nasılsın" },
+                        ]}
+                      />
+                      <FilterDropdown
+                        label="Sıralama şeklini seçiniz"
+                        width={220}
+                        options={[
+                          { id: 1, option: "Merhaba" },
+                          { id: 2, option: "Selam" },
+                          { id: 3, option: "Nasılsın" },
+                        ]}
+                      />
+                    </div> */}
                   </div>
                 </div>
               </div>
