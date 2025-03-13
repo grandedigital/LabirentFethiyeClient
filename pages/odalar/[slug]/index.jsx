@@ -169,7 +169,7 @@ export default function List({
             i18n={i18n}
             t={t}
           />
-          <ProductImageBox from="roomDetail" imgs={roomDetail?.photos} />
+          <ProductImageBox from="roomDetail" imgs={roomDetail?.data?.photos} />
           <div ref={topRef} className={styles.villaDetailContentBox}>
             <div className={styles.container}>
               <div className={styles.villaDetailContent}>

@@ -159,6 +159,7 @@ export default function List({
   }, []);
 
   if (villa && slug.length == 1 && villa?.data?.length > 0) {
+    //kategori /villalar/balayi-villalari
     return (
       <>
         <Seo
