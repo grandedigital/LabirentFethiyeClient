@@ -162,6 +162,7 @@ export default function Reservation({
 
     //giriş ve çıkış tarihleri seçildiğinde çalışacak
     if (!dateRange.includes(null) && dateRange.length == 2) {
+      //apart için fiyat gelmiyor apide sorun var ona bakılacak yapılacak iş
       if (villaSlug) {
         getTotalPrice();
       }
