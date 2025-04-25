@@ -84,14 +84,16 @@ export default function Reservation({
         currencies?.[priceTypes?.find((item) => item?.type == priceType)?.key]
       );
     }
+
+    //kur hesaplama iptal edildi aktif için aşağıdaki if i aktif et
     //tl ücreti ilgili kura çevir
-    if (i18n.language != "tr") {
-      min =
-        min /
-        currencies?.[
-          priceTypes.find((item) => item.lang == i18n.language)?.key
-        ];
-    }
+    // if (i18n.language != "tr") {
+    //   min =
+    //     min /
+    //     currencies?.[
+    //       priceTypes.find((item) => item.lang == i18n.language)?.key
+    //     ];
+    // }
 
     return moneyFormat(min, false);
   };
@@ -263,7 +265,9 @@ export default function Reservation({
         <div className={styles.reservationTitleText}>
           <div className={styles.textTop}>
             <div className={styles.price}>
-              {priceTypeText}
+              {/* {priceTypeText} */}
+              {/* kur hesaplama iptal, aktif için yukarıdaki yorumu aç aşşağıdakini sil */}
+              {"₺"}
               {prices?.length > 0 && totalPriceBySelectedDates == 0
                 ? returnMinPrice()
                 : moneyFormat(totalPriceBySelectedDates)}

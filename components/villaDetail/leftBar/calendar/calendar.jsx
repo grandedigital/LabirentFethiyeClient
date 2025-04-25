@@ -419,7 +419,9 @@ const Calendar = function Calendar({
         <span className="day-number">{date.getDate()}</span>
         {price > 0 && (
           <span className="day-price">
-            {priceTypeText}
+            {"₺"}
+            {/* kur hesaplama için aşağıyı aktif et yukarıyı sil */}
+            {/* {priceTypeText} */}
             {moneyFormat(price)}
           </span>
         )}
@@ -514,7 +516,7 @@ const Calendar = function Calendar({
           /> */}
           <DatePicker
             calendarClassName="detailAvailabilityCalendar"
-            locale={tr}
+            locale={selectedLanguage == "tr" ? tr : enUS}
             inline
             monthsShown={monthsShown}
             selected={startDate}

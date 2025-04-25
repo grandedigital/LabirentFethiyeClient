@@ -102,35 +102,37 @@ export default function List({
     }
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-
-      if (
-        facilitiesRef.current.getBoundingClientRect().top +
-          window.scrollY -
-          generalRef.current.getBoundingClientRect().height !=
-        firstScrollFinish
-      ) {
-        setFirstScrollFinish(
-          facilitiesRef.current.getBoundingClientRect().top +
-            window.scrollY -
-            generalRef.current.getBoundingClientRect().height
-        );
-      }
-      if (window.innerWidth > 1199) {
-        if (scrollPosition > firstScrollFinish) {
-          setPosition("fixedBottom");
-          return;
-        }
+      if (facilitiesRef?.current) {
+        const scrollPosition = window.scrollY;
 
         if (
-          scrollPosition > scrollStart &&
-          scrollPosition < firstScrollFinish
+          facilitiesRef.current.getBoundingClientRect().top +
+            window.scrollY -
+            generalRef.current.getBoundingClientRect().height !=
+          firstScrollFinish
         ) {
-          setPosition("fixed");
-        } else if (scrollPosition > firstScrollFinish) {
-          setPosition("absolute");
-        } else {
-          setPosition("");
+          setFirstScrollFinish(
+            facilitiesRef.current.getBoundingClientRect().top +
+              window.scrollY -
+              generalRef.current.getBoundingClientRect().height
+          );
+        }
+        if (window.innerWidth > 1199) {
+          if (scrollPosition > firstScrollFinish) {
+            setPosition("fixedBottom");
+            return;
+          }
+
+          if (
+            scrollPosition > scrollStart &&
+            scrollPosition < firstScrollFinish
+          ) {
+            setPosition("fixed");
+          } else if (scrollPosition > firstScrollFinish) {
+            setPosition("absolute");
+          } else {
+            setPosition("");
+          }
         }
       }
     };

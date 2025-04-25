@@ -43,7 +43,13 @@ export default function Reservation() {
   const [cvv, setCVV] = useState("");
 
   const [completedReservationData, setCompletedReservationData] = useState("");
-  const currentPriceTypeText = calculatePriceType(i18n.language);
+
+
+  // const currentPriceTypeText = calculatePriceType(i18n.language);
+  //kur hesaplama iptal edildi aktif için aşağıyı sil yukaryı aç
+  const currentPriceTypeText = "₺";
+
+
   const [citys, setCitys] = useState(null);
   const [villa, setVilla] = useState([]);
   const turkishDays = [
