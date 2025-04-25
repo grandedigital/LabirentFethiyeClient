@@ -33,7 +33,9 @@ export default function VillaCard({
   const router = useRouter();
   const { t, i18n } = useTranslation("common");
 
-  const currentPriceTypeText = calculatePriceType(i18n.language);
+  // const currentPriceTypeText = calculatePriceType(i18n.language);
+  //kur hesaplama iptal aktif için aşağıyı sil yukarıyı aktif et
+  const currentPriceTypeText = "₺";
 
   // const a = Math.max(...data.attributes.price_tables.data.map(o => o.attributes.price))
   const [activeImage, setActiveImage] = useState(0);
@@ -93,18 +95,23 @@ export default function VillaCard({
   };
 
   const getPrice = () => {
-    const price1 = calculatePricetoTargetPriceType(
-      price,
-      priceType,
-      currencies,
-      i18n.language
-    );
-    if (typeof price1 == "number" && !isNaN(price1)) {
-      return false;
-    }
-
-    return moneyFormat(price1);
+    return moneyFormat(price);
   };
+
+  //kur hesaplama iptal edilci açmak için aşşağıyı aktif et yukarıyı kapat
+  // const getPrice = () => {
+  //   const price1 = calculatePricetoTargetPriceType(
+  //     price,
+  //     priceType,
+  //     currencies,
+  //     i18n.language
+  //   );
+  //   if (typeof price1 == "number" && !isNaN(price1)) {
+  //     return false;
+  //   }
+
+  //   return moneyFormat(price1);
+  // };
 
   const returnMinPrice = () => {
     let min = data?.minPrice;
@@ -120,13 +127,14 @@ export default function VillaCard({
     }
 
     //tl ücreti ilgili kura çevir
-    if (i18n.language != "tr") {
-      min =
-        min /
-        currencies?.[
-          priceTypes.find((item) => item.lang == i18n.language)?.key
-        ];
-    }
+    //kur hesaplama iptal edildi aktif etmek için aşağıdaki kod bloğunu aç
+    // if (i18n.language != "tr") {
+    //   min =
+    //     min /
+    //     currencies?.[
+    //       priceTypes.find((item) => item.lang == i18n.language)?.key
+    //     ];
+    // }
 
     return moneyFormat(min, false);
   };
@@ -168,14 +176,15 @@ export default function VillaCard({
       );
     }
 
+    //kur hesaplama iptal edildi aktif etmek için aşağı if bloğunu aç
     //tl ücreti ilgili kura çevir
-    if (i18n.language != "tr") {
-      max =
-        max /
-        currencies?.[
-          priceTypes.find((item) => item.lang == i18n.language)?.key
-        ];
-    }
+    // if (i18n.language != "tr") {
+    //   max =
+    //     max /
+    //     currencies?.[
+    //       priceTypes.find((item) => item.lang == i18n.language)?.key
+    //     ];
+    // }
 
     return moneyFormat(max, false);
   };

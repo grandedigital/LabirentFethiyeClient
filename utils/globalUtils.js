@@ -17,14 +17,15 @@ export function getPriceRange(priceTablesArray = [], currentPriceTypeText, price
             );
         }
 
+        //kur hesaplama için aşağı if i aktif et
         //tl ücreti ilgili kura çevir
-        if (i18n.language != "tr") {
-            min =
-                min /
-                currencies?.[
-                priceTypes?.find((item) => item.lang == i18n.language)?.key
-                ];
-        }
+        // if (i18n.language != "tr") {
+        //     min =
+        //         min /
+        //         currencies?.[
+        //         priceTypes?.find((item) => item.lang == i18n.language)?.key
+        //         ];
+        // }
 
         return moneyFormat(min, false);
     };
@@ -43,14 +44,15 @@ export function getPriceRange(priceTablesArray = [], currentPriceTypeText, price
             );
         }
 
+        //kur hesaplama için aşağı ifi aktif et
         //tl ücreti ilgili kura çevir
-        if (i18n.language != "tr") {
-            max =
-                max /
-                currencies?.[
-                priceTypes?.find((item) => item.lang == i18n.language)?.key
-                ];
-        }
+        // if (i18n.language != "tr") {
+        //     max =
+        //         max /
+        //         currencies?.[
+        //         priceTypes?.find((item) => item.lang == i18n.language)?.key
+        //         ];
+        // }
 
         return moneyFormat(max, false);
     };
@@ -65,9 +67,13 @@ export function getPriceRange(priceTablesArray = [], currentPriceTypeText, price
     }
 
     return <>
-        {currentPriceTypeText}
+        {"₺"}
+        {/* kur hesaplama için aşağıyı aktif et yukarıyı sil */}
+        {/* {currentPriceTypeText} */}
         {returnMinPrice()} {" "}
-        - {currentPriceTypeText}
+        {/* - {currentPriceTypeText} */}
+        {/* kur hesaplama için aşağıyı aktif et yukarıyı sil */}
+        - {"₺"}
         {returnMaxPrice()} {" "}
     </>
 }
@@ -105,22 +111,25 @@ export function capitalizeWords(text) {
 
 //"15924.000004" to "15.924"
 export function moneyFormat(value, includeDecimals = true) {
-    // Sayıyı 1 haneli ondalıklı sayıya yuvarlayın
-    const roundedValue = value.toFixed(1);
+    if (value) {
+        // Sayıyı 1 haneli ondalıklı sayıya yuvarlayın
+        const roundedValue = value.toFixed(1);
 
-    // Tam sayı kısmını ve ondalık kısmı ayırın
-    const [integerPart, decimalPart] = roundedValue.split(".");
+        // Tam sayı kısmını ve ondalık kısmı ayırın
+        const [integerPart, decimalPart] = roundedValue.split(".");
 
-    // Tam sayı kısmını 3'er haneli gruplara ayırın
-    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        // Tam sayı kısmını 3'er haneli gruplara ayırın
+        const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-    // Eğer includeDecimals false veya ondalık kısım 0 ise sadece tam sayı kısmını döndürün
-    if (!includeDecimals || decimalPart === "0") {
-        return formattedInteger;
+        // Eğer includeDecimals false veya ondalık kısım 0 ise sadece tam sayı kısmını döndürün
+        if (!includeDecimals || decimalPart === "0") {
+            return formattedInteger;
+        }
+
+        // Sonuç
+        return `${formattedInteger},${decimalPart}`;
     }
 
-    // Sonuç
-    return `${formattedInteger},${decimalPart}`;
 }
 
 export function calculatePriceType(language) {
@@ -160,5 +169,7 @@ export function calculatePricetoTargetPriceType(price, priceType, currencies, la
             ];
     }
 
-    return returnPrice
+    return price
+    //kur hesaplama aktif etmek için aşağıyı aç yukarıdakini sil
+    // return returnPrice
 }
