@@ -13,15 +13,16 @@ export default function PriceTable({
   t,
   selectedLanguage,
 }) {
-  const [priceTableActiveIndex, setPriceTableActiveIndex] = useState(
-    priceTypes.find((item) => item.lang == selectedLanguage).type
-  );
+  // const [priceTableActiveIndex, setPriceTableActiveIndex] = useState(
+  //   priceTypes.find((item) => item.lang == selectedLanguage).type
+  // );
+  const [priceTableActiveIndex, setPriceTableActiveIndex] = useState(1);
 
-  useEffect(() => {
-    setPriceTableActiveIndex(
-      priceTypes.find((item) => item.lang == selectedLanguage).type
-    );
-  }, [selectedLanguage]);
+  // useEffect(() => {
+  //   setPriceTableActiveIndex(
+  //     priceTypes.find((item) => item.lang == selectedLanguage).type
+  //   );
+  // }, [selectedLanguage]);
 
   const handlePriceTable = (index) => {
     setPriceTableActiveIndex(index);
@@ -61,6 +62,11 @@ export default function PriceTable({
 
     // Eğer seçilen kur TL değilse, fiyatı TL'ye dönüştürüp hedef kura çevir
     const convertedPrice = (price * baseCurrency) / selectedCurrency;
+
+    //eğer tl seçilmedi ise fiyatı 0 gönder (kur hesaplama burda devre dışı bırakıldı aktif etmek istersen bu if bloğunu kaldır.)
+    if (priceTableActiveIndex != 1) {
+      return 0 + " " + getPriceTypeDetail(priceTableActiveIndex)?.text;
+    }
 
     return (
       moneyFormat(convertedPrice, false) +
@@ -129,12 +135,8 @@ export default function PriceTable({
                   </div>
                 </div>
                 <div className={styles.rightBox}>
-                  <div className={styles.name}>
-                    {data?.title}
-                  </div>
-                  <div className={styles.desc}>
-                    {data?.description}
-                  </div>
+                  <div className={styles.name}>{data?.title}</div>
+                  <div className={styles.desc}>{data?.description}</div>
                   <div className={styles.price}>
                     {getPrice(data?.price)}
                     {/* {priceTableActiveIndex === 2
