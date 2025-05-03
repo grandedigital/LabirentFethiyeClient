@@ -69,7 +69,7 @@ export default function Home({
         <NewVillas villas={newVillasData} />
         {/* <Testimonial testimonials={testimonials} /> */}
         <Blog blog={blogs} />
-        <Comments
+        {/* <Comments
           className={"homeComment"}
           t={t}
           i18n={i18n}
@@ -116,7 +116,7 @@ export default function Home({
                 "İyi bir içerik, ancak biraz daha detaylı olabilirdi.",
             },
           ]}
-        />
+        /> */}
         <VillaRent />
       </section>
     </>
